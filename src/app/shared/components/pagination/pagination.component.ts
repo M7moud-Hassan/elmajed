@@ -35,6 +35,7 @@ export class PaginationComponent implements OnInit {
       for (let i = 1; i <= numbers; i++) {
         this.pageNumberList.push(i);
       }
+      
   }
   next(){
     if(this.hasNextPage){
