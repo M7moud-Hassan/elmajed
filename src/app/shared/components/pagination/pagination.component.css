@@ -1,0 +1,73 @@
+.pagination-container{
+    direction: ltr;
+    padding: 20px 0px 50px 0px;
+}
+
+.active-arrow,.in-active-arrow{
+    width: 35px;
+    width: 35px;
+    user-select: none;
+}
+.active-arrow:hover{
+    cursor: pointer;
+}
+.active-arrow span img,.in-active-arrow span img{
+    width: 35px;
+    height: 35px;
+}
+
+.next-text-active,.prev-text-active, .next-text-in-active,.prev-text-in-active{
+    display: inline-block;
+    text-decoration: none;
+}
+.next-text-active span,.prev-text-active span, .next-text-in-active span,.prev-text-in-active span{
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 18px;
+    color: #00A58C;
+    padding: 5px;
+    text-decoration: none;
+    user-select: none;
+}
+.next-text-active:hover,.prev-text-active:hover{
+    cursor: pointer;
+}
+.next-text-in-active span,.prev-text-in-active span{
+    color: #DEDEDE;
+}
+
+.pagination-number-active{
+    display: inline-block;
+    color: white;
+    background-color: #00A88E;
+    width: 45px;
+    height: 45px;
+    border-radius: 50% 50%;
+    text-align: center;
+    vertical-align: bottom;
+    font-size: 16px;
+    margin: 0px 5px;
+}
+.pagination-number-in-active{
+    display: inline-block;
+    color: #BABABA;
+    background-color: white;
+    width: 45px;
+    height: 45px;
+    border-radius: 50% 50%;
+    text-align: center;
+    vertical-align: bottom;
+    font-size: 16px;
+    margin: 0px 5px;
+}
+.number{
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.page-no-link{
+    user-select: none;
+    cursor: pointer;
+}

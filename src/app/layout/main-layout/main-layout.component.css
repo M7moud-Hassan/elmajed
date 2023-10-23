@@ -1,0 +1,14 @@
+.main-layout-container{
+    background-image: url('/assets/images/background.svg');
+    background-color: #f2f2f2;
+}
+@media(0px <= width <= 767px) {
+    .main-layout-container{
+        padding: 0px 16px;
+    }
+}
+@media(767px <= width <=5000px) {
+    .main-layout-container{
+        padding: 0px 86px;
+    }
+}

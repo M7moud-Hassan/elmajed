@@ -1,0 +1,97 @@
+/* You can add global styles to this file, and also import other style files */
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'almarai';
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'almarai';
+    src: url('/assets/fonts/Almarai-Regular.ttf') format('truetype');
+}
+
+.pageUser .ql-toolbar{
+  position: relative;
+  top: 180px;
+  z-index: 20;
+  text-align: left;
+  border: none !important;
+  
+}
+:root {
+    --black-color: #171717;
+    --black-color:#1A201D;
+    --grey-color: #C0C0C0;
+  }
+  .border-right{
+    border-right: 2px solid var(--secondary-main, #A18131);
+  }
+  .truncate-1-lines {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+  }
+  .truncate-2-lines {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+  .truncate-3-lines {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+  }
+  .truncate-4-lines {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+  }
+  .truncate-5-lines {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    overflow: hidden;
+  }
+  .truncate-6-lines {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 6;
+    overflow: hidden;
+  }
+  .truncate-7-lines {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 7;
+    overflow: hidden;
+  }
+  .truncate-10-lines {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 10;
+    overflow: hidden;
+  }
+::-webkit-scrollbar{
+    width: 8px;
+}
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(to bottom ,#00a88e,#00a88e);
+    border-radius: 6px;
+    transition: all .5s ease-in-out;
+}
+::-webkit-scrollbar-thumb:hover{
+    /* background: linear-gradient(to bottom ,#ffffff,#00a88e,#ffffff); */
+    cursor: pointer;
+}
+.small-information{
+  color: var(--grey-color);
+  display: inline-block;
+  margin-right: 15px;
+  font-size: 20px;
+  line-height: 23px;
+}
