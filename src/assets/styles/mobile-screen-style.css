@@ -1,0 +1,9 @@
+@media(0px <= width <= 767px) {
+    .site-header{
+        display: inline-block;
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--black-color);
+        line-height: 23px;
+      }
+}

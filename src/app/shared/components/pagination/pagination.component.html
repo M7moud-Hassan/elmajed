@@ -1,0 +1,16 @@
+<div class="pagination-container">
+    <a *ngIf="hasNextPage" class="active-arrow"  (click)="next()"><span class="left-arrow-active"> <img src="/assets/images/left-arrow-active.svg" alt=""> </span> </a>
+    <a *ngIf="!hasNextPage" class="in-active-arrow" ><span class="left-arrow-inactive"> <img src="/assets/images/left-arrow-inactive.svg" alt=""> </span> </a>
+
+    <a *ngIf="hasNextPage" class="next-text-active" (click)="next()"><span>التالي</span></a>
+    <a *ngIf="!hasNextPage" class="next-text-in-active"><span>التالي</span></a>
+
+    <a *ngFor="let number of pageNumberList" (click)="changePageByNumber(pagination.current_page != number ? number : -1)" class="page-no-link"><span  [class]="pagination.current_page == number ? 'pagination-number-active' : 'pagination-number-in-active'"><span class="number">{{number}}</span> </span></a>
+    
+
+    <a *ngIf="hasPrevPage" class="prev-text-active" (click)="prev()"><span>السابق</span></a>
+    <a *ngIf="!hasPrevPage" class="prev-text-in-active"><span>السابق</span></a>
+
+    <a *ngIf="hasPrevPage" class="active-arrow"  (click)="prev()"><span class="right-arrow-active"> <img src="/assets/images/right-arrow-active.svg" alt=""> </span> </a>
+    <a *ngIf="!hasPrevPage" class="in-active-arrow" ><span class="right-arrow-inactive"> <img src="/assets/images/right-arrow-inactive.svg" alt=""> </span> </a>
+</div>
