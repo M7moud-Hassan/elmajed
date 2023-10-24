@@ -86,3 +86,22 @@
     text-align: center;
     display: inline-block;
 }
+
+@media(0px <= width <= 767px) {
+    .card-description-title,.card-details-title{
+        font-size: 20px;
+        line-height: 23px;
+        margin-bottom: 20px;
+        margin-top: 10px;
+    }
+    .card-details-info{
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 18px;
+    }
+    .card-description-text{
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 32px;
+    }
+}

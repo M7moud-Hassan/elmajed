@@ -7,10 +7,11 @@ import { environment } from 'src/environments/environment.prod';
 @Injectable({
   providedIn: 'root'
 })
-export class ResearchService {
+export class ProjectService {
+
   constructor(private http:HttpClient) { }
   
-  getPagedResearch(pageNumer:number,pageSize:number):Observable<ResponseVM>{
-    return this.http.get<ResponseVM>(`${environment.baseUrl}/categories/research-and-letters?page=${pageNumer}&count=${pageSize}`);
+  getPagedProjects(pageNumer:number,pageSize:number):Observable<ResponseVM>{
+    return this.http.get<ResponseVM>(`${environment.baseUrl}/categories/projects?page=${pageNumer}&count=${pageSize}`);
   }
 }
