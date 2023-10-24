@@ -5,25 +5,17 @@ import { Component } from '@angular/core';
   templateUrl: './research-details.component.html',
   styleUrls: ['./research-details.component.css']
 })
-export class ResearchDetailsComponent {
-
-
-  /*
-   getSlug(){
-    this.slug = this.service.activatedRoute.snapshot.paramMap.get('slug')!;
-    this.getDetails();
+export class ResearchDetailsComponent{
+  detailsInfo:any;
+  constructor(){
+    this.detailsInfo = {
+      subTitle1:'ملخص البحـــث :',
+      subTitle2:'المزيد :',
+      details:'تفاصيل البحث',
+      duration:'مدة البحث',
+      date:'تاريخ إطلاق البحث',
+      author:'مؤلف البحث',
+      share:'مشاركة البحث',
+    };
   }
-  getDetails(){
-    this.service.sharedService.getDetails(this.slug).subscribe({
-      next:(response:ResponseDetailsVM)=>{
-        if(response.status == 200){
-          this.itemDetails = response.data.item  as ResponseDetailsItemDetailsVM; 
-        }
-      },
-      error:(error)=>{
-      }
-    });
-  }
-
-  */
 }

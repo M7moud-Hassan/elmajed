@@ -1,8 +1,6 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { items } from '../../core/models/responseVM';
-import { SharedService } from '../../core/services/shared.service';
 import { MainService } from '../../core/services/main.service';
-import { ResponseDetailsItemDetailsVM, ResponseDetailsItemVM, ResponseDetailsVM } from '../../core/models/response-details-vm';
 
 @Component({
   selector: 'app-project-card',
@@ -15,8 +13,6 @@ export class ProjectCardComponent implements OnChanges , OnInit {
   detailsPathVal:string='';
   item:items={} as items;
   slug:string = '';
-  itemDetails:ResponseDetailsItemDetailsVM = {} as ResponseDetailsItemDetailsVM;
-
   constructor(private service:MainService){}
 
   ngOnInit(): void {

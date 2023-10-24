@@ -1,6 +1,7 @@
 .main-layout-container{
     background-image: url('/assets/images/background.svg');
     background-color: #f2f2f2;
+    min-height: calc(92vh);
 }
 @media(0px <= width <= 767px) {
     .main-layout-container{

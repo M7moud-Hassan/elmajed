@@ -1,0 +1,88 @@
+.card-description{
+    background-color: white;
+    padding: 32px;
+    margin-bottom: 50px;
+}
+.card-description-title{
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 27px;
+    color: #171717;
+}
+.card-description-image{
+    margin-top: 30px;
+    height: 485px;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.card-description-sub-title{
+    margin: 30px 0px 35px 0px ;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    color: #1A201D;
+}
+.card-description-text{
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 32px;
+    color: #1A201D;
+}
+
+.card-details{
+    background-color: white;
+    padding: 32px;
+    margin-bottom: 20px;
+}
+.card-share{
+    background-color: white;
+    padding: 32px;
+    margin-bottom: 50px;
+}
+.card-details-title{
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    color: #171717;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+.card-details-info{
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 27px;
+    color: #000000;
+}
+.divider{
+    border: .5px solid #D9D9D9;
+    margin: 20px 30px;
+}
+
+.search-social-media-item{
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    border-radius: 50% 50%;
+    background-color: black;
+    margin-left: 15px;
+    text-align: center;
+}
+.search-social-media-item i{
+    color: white;
+    font-size: 25px;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    padding-top: 7px;
+}
+.link-a{
+    display: block;
+    text-decoration: none;
+}
+.search-social-media-item-container{
+    width: 20%;
+    text-align: center;
+    display: inline-block;
+}

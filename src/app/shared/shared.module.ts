@@ -6,6 +6,7 @@ import { PageHeaderComponent } from './components/page-header/page-header.compon
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { SharedRoutingModule } from './shared.routing.module';
+import { ProjectDetailsCardComponent } from './components/project-details-card/project-details-card.component';
 
 
 
@@ -13,7 +14,8 @@ import { SharedRoutingModule } from './shared.routing.module';
   declarations: [
     PaginationComponent,
     ProjectCardComponent,
-    PageHeaderComponent
+    PageHeaderComponent,
+    ProjectDetailsCardComponent
   ],
   imports: [
     CommonModule,
@@ -23,6 +25,7 @@ import { SharedRoutingModule } from './shared.routing.module';
     PaginationComponent,
     ProjectCardComponent,
     PageHeaderComponent,
+    ProjectDetailsCardComponent,
     FormsModule
   ]
 })
