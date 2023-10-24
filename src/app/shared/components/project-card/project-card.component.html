@@ -1,5 +1,5 @@
 <div class="research-card-container">
-    <a routerLink="#" class="link-a">
+    <a  [routerLink]="detailsPathVal" routerLinkActive="router-link-active"  class="link-a">
         <div class="research-image" style="background-image: url('{{item.image}}');"></div>
         <div class="research-inner-container">
             <div class="research-title truncate-1-lines">{{item.title}}</div>

@@ -10,6 +10,7 @@ import { PageHeaderVM } from 'src/app/shared/core/models/page-header-vm';
   styleUrls: ['./research-list.component.css']
 })
 export class ResearchListComponent implements OnInit {
+  detailsPath:string = "/research/details";
   items:items[] = [];
   pageNumber:number = 1;
   PageSize:number = 9;

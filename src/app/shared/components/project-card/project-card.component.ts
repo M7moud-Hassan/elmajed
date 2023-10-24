@@ -21,12 +21,12 @@ export class ProjectCardComponent implements OnChanges , OnInit {
 
   ngOnInit(): void {
     this.getSlug();
+    this.detailsPathVal = this.detailsPath;
   }
   ngOnChanges(changes: SimpleChanges): void {
     this.item = this.itemObj;
-    this.detailsPathVal = this.detailsPath;
+    
   }
-
   getItemLink(slug:string){
     return this.service.sharedService.getItemLink(this.detailsPathVal,slug);
   }
@@ -34,23 +34,9 @@ export class ProjectCardComponent implements OnChanges , OnInit {
     let url = `https://m.facebook.com/sharer/sharer.php?u=${this.getItemLink(slug)}`;
     return url;
   }
-  back(){
-    this.service.back;
-  }
   getSlug(){
     this.slug = this.service.activatedRoute.snapshot.paramMap.get('slug')!;
-    this.getDetails();
   }
-  getDetails(){
-    this.service.sharedService.getDetails(this.slug).subscribe({
-      next:(response:ResponseDetailsVM)=>{
-        if(response.status == 200){
-          this.itemDetails = response.data.item  as ResponseDetailsItemDetailsVM; 
-        }
-      },
-      error:(error)=>{
-      }
-    });
-  }
+  
 
 }

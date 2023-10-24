@@ -2,7 +2,7 @@
 
 <div class="row">
     <div *ngFor="let item of items" class="col-12 col-md-4">
-        <app-project-card [itemObj]="item" detailsPath="research/details"></app-project-card>
+        <app-project-card [itemObj]="item" detailsPath="{{detailsPath}}/{{item.slug}}"></app-project-card>
     </div>
 </div>
 
