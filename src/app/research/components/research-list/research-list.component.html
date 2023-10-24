@@ -1,22 +1,9 @@
-<div class="site-header">بحوث ومؤلفات</div> <div class="small-information">({{total}} بحث)</div>
+<app-page-header [pageHeaderInfo]="pageHeaderObj" ></app-page-header>
+
 <div class="row">
     <div *ngFor="let item of items" class="col-12 col-md-4">
-        <div class="research-card-container">
-            <a routerLink="#" class="link-a">
-            <div class="research-image" style="background-image: url('{{item.image}}');"></div>
-            <div class="research-inner-container">
-                <div class="research-title truncate-1-lines">{{item.title}}</div>
-                <div class="research-description truncate-4-lines" [innerHTML]="item.brief"></div>
-            </div>
-        </a>
-            <div class="research-icons research-inner-container">
-                <a routerLink="#"><span class="search-social-media-item"><i class="fa-brands fa-facebook-f"></i></span></a>
-                <a routerLink="#"><span class="search-social-media-item"><i class="fa-brands fa-x-twitter"></i></span></a>
-                <a routerLink="#"><span class="search-social-media-item"><i class="fa-regular fa-envelope"></i></span></a>
-                <a routerLink="#"><span class="search-social-media-item"><i class="fa-brands fa-whatsapp"></i></span></a>
-                <a routerLink="#"><span class="search-social-media-item"><i class="fa-solid fa-download"></i></span></a>
-            </div>
-        </div>
+        <app-project-card [itemObj]="item" detailsPath="research/details"></app-project-card>
     </div>
 </div>
+
 <app-pagination *ngIf="paginationObj.total > 0" (pageNumberClicked)="onPageNumberClicked($event)" [paginationInfo]="paginationObj"></app-pagination>

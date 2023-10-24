@@ -1,0 +1,18 @@
+<div class="research-card-container">
+    <a routerLink="#" class="link-a">
+        <div class="research-image" style="background-image: url('{{item.image}}');"></div>
+        <div class="research-inner-container">
+            <div class="research-title truncate-1-lines">{{item.title}}</div>
+            <div class="research-description truncate-4-lines" [innerHTML]="item.brief"></div>
+        </div>
+    </a>
+    <div class="research-icons research-inner-container">
+        <span hidden #itemTitle [innerHTML]="item.title" ></span>
+        <span hidden #facebook [innerHTML]="getItemLink(item.slug)" ></span>
+        <a href="{{getFacebookUrl(item.slug)}}" target="_blank"><span class="search-social-media-item"><i class="fa-brands fa-facebook-f"></i></span></a>
+        <a href="https://m.twitter.com/intent/tweet?text={{getItemLink(item.slug)}}" target="_blank" ><span class="search-social-media-item"><i class="fa-brands fa-x-twitter"></i></span></a>
+        <a href="mailto:?subject={{itemTitle.innerText}}&body={{getItemLink(item.slug)}}" target="_blank"><span class="search-social-media-item"><i class="fa-regular fa-envelope"></i></span></a>
+        <a href="https://wa.me/?text={{getItemLink(item.slug)}}" target="_blank"><span class="search-social-media-item"><i class="fa-brands fa-whatsapp"></i></span></a>
+        <a href="{{item.pdf_file}}" target="_blank"><span class="search-social-media-item"><i class="fa-solid fa-download"></i></span></a>
+    </div>
+</div>
