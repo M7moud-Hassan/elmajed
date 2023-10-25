@@ -18,15 +18,15 @@ export class BlogCardComponent implements OnChanges , OnInit, AfterViewInit {
   onWindowResize(event: Event) {
     this.windowWidth = window.innerWidth;
   }
+  ngAfterViewInit(): void {
+    this.windowWidth = window.innerWidth;
+  }
   ngOnInit(): void {
     this.getSlug();
     this.detailsPathVal = this.detailsPath;
   }
   ngOnChanges(changes: SimpleChanges): void {
     this.item = this.itemObj; 
-  }
-  ngAfterViewInit(): void {
-    this.windowWidth = window.innerWidth;
   }
   getItemLink(slug:string){
     return this.service.sharedService.getItemLink(this.detailsPathVal,slug);

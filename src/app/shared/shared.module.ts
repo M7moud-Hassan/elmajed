@@ -10,6 +10,7 @@ import { ProjectDetailsCardComponent } from './components/project-details-card/p
 import { BlogCardComponent } from './components/blog-card/blog-card.component';
 import { BlogDetailsCardComponent } from './components/blog-details-card/blog-details-card.component';
 import { QatufCardComponent } from './components/qatuf-card/qatuf-card.component';
+import { CvCardComponent } from './components/cv-card/cv-card.component';
 
 
 
@@ -21,7 +22,8 @@ import { QatufCardComponent } from './components/qatuf-card/qatuf-card.component
     ProjectDetailsCardComponent,
     BlogDetailsCardComponent,
     BlogCardComponent,
-    QatufCardComponent
+    QatufCardComponent,
+    CvCardComponent
   ],
   imports: [
     CommonModule,
@@ -35,6 +37,7 @@ import { QatufCardComponent } from './components/qatuf-card/qatuf-card.component
     BlogCardComponent,
     BlogDetailsCardComponent,
     QatufCardComponent,
+    CvCardComponent,
     FormsModule
   ]
 })
