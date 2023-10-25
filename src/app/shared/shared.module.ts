@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { SharedRoutingModule } from './shared.routing.module';
 import { ProjectDetailsCardComponent } from './components/project-details-card/project-details-card.component';
+import { BlogCardComponent } from './components/blog-card/blog-card.component';
 
 
 
@@ -15,7 +16,8 @@ import { ProjectDetailsCardComponent } from './components/project-details-card/p
     PaginationComponent,
     ProjectCardComponent,
     PageHeaderComponent,
-    ProjectDetailsCardComponent
+    ProjectDetailsCardComponent,
+    BlogCardComponent
   ],
   imports: [
     CommonModule,
@@ -26,6 +28,7 @@ import { ProjectDetailsCardComponent } from './components/project-details-card/p
     ProjectCardComponent,
     PageHeaderComponent,
     ProjectDetailsCardComponent,
+    BlogCardComponent,
     FormsModule
   ]
 })
