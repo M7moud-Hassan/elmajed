@@ -9,6 +9,7 @@ import { SharedRoutingModule } from './shared.routing.module';
 import { ProjectDetailsCardComponent } from './components/project-details-card/project-details-card.component';
 import { BlogCardComponent } from './components/blog-card/blog-card.component';
 import { BlogDetailsCardComponent } from './components/blog-details-card/blog-details-card.component';
+import { QatufCardComponent } from './components/qatuf-card/qatuf-card.component';
 
 
 
@@ -19,7 +20,8 @@ import { BlogDetailsCardComponent } from './components/blog-details-card/blog-de
     PageHeaderComponent,
     ProjectDetailsCardComponent,
     BlogDetailsCardComponent,
-    BlogCardComponent
+    BlogCardComponent,
+    QatufCardComponent
   ],
   imports: [
     CommonModule,
@@ -32,6 +34,7 @@ import { BlogDetailsCardComponent } from './components/blog-details-card/blog-de
     ProjectDetailsCardComponent,
     BlogCardComponent,
     BlogDetailsCardComponent,
+    QatufCardComponent,
     FormsModule
   ]
 })

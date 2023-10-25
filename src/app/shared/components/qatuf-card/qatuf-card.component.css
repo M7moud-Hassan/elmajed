@@ -1,0 +1,62 @@
+.qatuf-container{
+    padding: 24px;
+    background-color: white;
+    margin-bottom: 20px;
+    border: 1px solid gainsboro;
+}
+
+.qatuf-info{
+    padding: 20px;
+}
+.qatuf-title{
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 32px;
+    color: #1A201D;
+    margin-bottom: 17px;
+}
+.qatuf-brief{
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 32px;
+    color: #1A201D;
+    margin-bottom: 17px;
+    text-align: justify;
+}
+.qatuf-title-data{
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 32px;
+    color: black;
+    margin-bottom: 17px;
+}
+
+.research-icons{
+    padding-top: 10px;
+}
+.search-social-media-item{
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    border-radius: 50% 50%;
+    background-color: black;
+    margin-left: 15px;
+    text-align: center;
+}
+.search-social-media-item i{
+    color: white;
+    font-size: 25px;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    padding-top: 7px;
+}
+.link-a{
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media(0px <= width <= 767px) {
+    
+}
