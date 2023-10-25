@@ -9,7 +9,7 @@
             <div class="blog-info">
                 <a class="link-a" [routerLink]="detailsPath">
                     <div class="blog-title">{{item.title}}</div>
-                    <div class="blog-brief truncate-3-lines" [innerHTML]="item.brief"></div>
+                    <div class="blog-brief {{windowWidth>767?'truncate-3-lines':'truncate-7-lines'}}" [innerHTML]="item.brief"></div>
                 
                     <div class="row mt-3">
                         <div class="col-12 col-md-6">

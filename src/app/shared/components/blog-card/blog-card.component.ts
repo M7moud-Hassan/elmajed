@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { AfterViewInit, Component, HostListener, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { items } from '../../core/models/responseVM';
 import { MainService } from '../../core/services/main.service';
 @Component({
@@ -6,21 +6,27 @@ import { MainService } from '../../core/services/main.service';
   templateUrl: './blog-card.component.html',
   styleUrls: ['./blog-card.component.css']
 })
-export class BlogCardComponent implements OnChanges , OnInit {
+export class BlogCardComponent implements OnChanges , OnInit, AfterViewInit {
+  windowWidth:number = 0;
   @Input() itemObj:any;
   @Input() detailsPath:any;
   detailsPathVal:string='';
   item:items={} as items;
   slug:string = '';
   constructor(private service:MainService){}
-
+  @HostListener('window:resize', ['$event'])
+  onWindowResize(event: Event) {
+    this.windowWidth = window.innerWidth;
+  }
   ngOnInit(): void {
     this.getSlug();
     this.detailsPathVal = this.detailsPath;
   }
   ngOnChanges(changes: SimpleChanges): void {
-    this.item = this.itemObj;
-    
+    this.item = this.itemObj; 
+  }
+  ngAfterViewInit(): void {
+    this.windowWidth = window.innerWidth;
   }
   getItemLink(slug:string){
     return this.service.sharedService.getItemLink(this.detailsPathVal,slug);
