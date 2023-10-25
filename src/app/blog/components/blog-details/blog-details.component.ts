@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./blog-details.component.css']
 })
 export class BlogDetailsComponent {
-
+  detailsInfo:any;
+  constructor(){
+    this.detailsInfo = {
+      pageTitle:'تفاصيل التدوينة',
+      type:'blog'
+    };
+  }
 }

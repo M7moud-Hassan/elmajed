@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { SharedRoutingModule } from './shared.routing.module';
 import { ProjectDetailsCardComponent } from './components/project-details-card/project-details-card.component';
 import { BlogCardComponent } from './components/blog-card/blog-card.component';
+import { BlogDetailsCardComponent } from './components/blog-details-card/blog-details-card.component';
 
 
 
@@ -17,6 +18,7 @@ import { BlogCardComponent } from './components/blog-card/blog-card.component';
     ProjectCardComponent,
     PageHeaderComponent,
     ProjectDetailsCardComponent,
+    BlogDetailsCardComponent,
     BlogCardComponent
   ],
   imports: [
@@ -29,6 +31,7 @@ import { BlogCardComponent } from './components/blog-card/blog-card.component';
     PageHeaderComponent,
     ProjectDetailsCardComponent,
     BlogCardComponent,
+    BlogDetailsCardComponent,
     FormsModule
   ]
 })

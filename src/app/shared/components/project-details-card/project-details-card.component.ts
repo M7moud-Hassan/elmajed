@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MainService } from '../../core/services/main.service';
 import { ResponseDetailsItemDetailsVM, ResponseDetailsVM } from '../../core/models/response-details-vm';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
 @Component({
@@ -46,7 +46,6 @@ export class ProjectDetailsCardComponent implements OnInit {
 
   get getItemLink(){
     const fullPath = window.location.href;
-    console.log('Full URL path:', fullPath);
     return fullPath;
   }
   get getFacebookUrl(){
