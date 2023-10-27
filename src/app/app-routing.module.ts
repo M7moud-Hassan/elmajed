@@ -7,7 +7,7 @@ const routes: Routes = [
   {path:'',loadChildren:()=>import('./home/home.module').then(m=>m.HomeModule)},
   {path:'',component:MainLayoutComponent,children:[
     {path:'',component:NavbarComponent},
-    {path:'fatwa',loadChildren:()=>import('./fatwa/fatwa.module').then(m=>m.FatwaModule)},
+    {path:'fatawa',loadChildren:()=>import('./fatwa/fatwa.module').then(m=>m.FatwaModule)},
     {path:'project',loadChildren:()=>import('./project/project.module').then(m=>m.ProjectModule)},
     {path:'research',loadChildren:()=>import('./research/research.module').then(m=>m.ResearchModule)},
     {path:'video-audio',loadChildren:()=>import('./video-and-audio/video-and-audio.module').then(m=>m.VideoAndAudioModule)},
