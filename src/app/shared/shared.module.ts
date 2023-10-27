@@ -21,6 +21,8 @@ import { ItemCarousalHomeComponent } from './components/item-carousal-home/item-
 import { FatawaButtonCardComponent } from './components/FatawaCards/fatawa-button-card/fatawa-button-card.component';
 import { FatawaQuestionCardComponent } from './components/FatawaCards/fatawa-question-card/fatawa-question-card.component';
 import { FatawaPreferredCardComponent } from './components/FatawaCards/fatawa-preferred-card/fatawa-preferred-card.component';
+import { FatwaCardComponent } from './components/FatawaCards/fatwa-card/fatwa-card.component';
+import { FatwaAnswerCardComponent } from './components/FatawaCards/fatwa-answer-card/fatwa-answer-card.component';
 
 
 
@@ -45,6 +47,8 @@ import { FatawaPreferredCardComponent } from './components/FatawaCards/fatawa-pr
     FatawaButtonCardComponent,
     FatawaQuestionCardComponent,
     FatawaPreferredCardComponent,
+    FatwaCardComponent,
+    FatwaAnswerCardComponent
   ],
   imports: [
     CommonModule,
@@ -69,6 +73,8 @@ import { FatawaPreferredCardComponent } from './components/FatawaCards/fatawa-pr
     FatawaButtonCardComponent,
     FatawaQuestionCardComponent,
     FatawaPreferredCardComponent,
+    FatwaCardComponent,
+    FatwaAnswerCardComponent
   ]
 })
 export class SharedModule { }

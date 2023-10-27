@@ -1,9 +1,26 @@
 <app-page-header [pageHeaderInfo]="pageHeaderObj" ></app-page-header>
 <div class="row">
-    <div class="col-12 col-md-6">
+    <div class="col-12 col-md-6 ">
         <app-fatawa-button-card [data]="questionInfo"></app-fatawa-button-card>
     </div>
-    <div class="col-12 col-md-6">
+    <div class="col-12 col-md-6 ">
         <app-fatawa-button-card [data]="searchInfo"></app-fatawa-button-card>
+    </div>
+</div>
+<app-fatawa-question-card></app-fatawa-question-card>
+<div class="row">
+    <div class="col-12 col-md-8">
+        <app-page-header [pageHeaderInfo]="pageHeaderDailyFatwaObj" ></app-page-header>
+        <app-fatwa-card></app-fatwa-card>
+        <app-fatwa-answer-card [answer]="answer"></app-fatwa-answer-card>
+        <div class="sub-header">كلمات مفتاحية</div>
+        <div *ngFor="let item of [1,2,3,4,5,1,2,3,4,4,5,5]" class="keyword-item">الأعيان</div>
+        <div class="sub-header">مواضيع ذات صلة</div>
+        <div *ngFor="let item of [0,1,2,3]" >
+            <app-fatawa-preferred-card title="توسعة بيت الإمام بأخذ مساحة من مصلى النساء" label="فتاوي مختارة" link="#"></app-fatawa-preferred-card>
+        </div>
+    </div>
+    <div class="col-12 col-md-4">
+        <app-page-header [pageHeaderInfo]="pageHeaderSpeedSearchObj" ></app-page-header>
     </div>
 </div>

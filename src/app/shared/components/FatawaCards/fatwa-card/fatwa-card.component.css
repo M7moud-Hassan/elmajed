@@ -1,6 +1,6 @@
 .fatawa-question-card{
     background-color: #ffffff;
-    min-height: 270px;
+    min-height: 250px;
     margin-bottom: 15px;
 }
 .question-card-img-container{
@@ -11,7 +11,7 @@
     background-repeat: no-repeat;
     z-index: 1;
     background-color: #ffffff;
-    min-height: 270px;
+    min-height: 250px;
 }
 .images-verically{
     position: absolute;
@@ -54,15 +54,17 @@
     font-weight: 700;
     font-size: 16px;
     line-height: 32px;
-    margin-bottom: 15px;
+    margin-top: 15px;
     text-align: justify;
 }
-.fatwa-answer{
-    color: #1A201D;
-    font-weight: 300;
-    font-size: 16px;
+.fatwa-meta-data-label,.fatwa-meta-data-info{
+    font-size: 14px;
+    font-weight: 700;
     line-height: 32px;
-    text-align: justify;
+    color: #1A201D;
+}
+.fatwa-meta-data-info{
+    font-weight: 400;
 }
 @media(767px > width > 0px){
     .question-card-img-container{
