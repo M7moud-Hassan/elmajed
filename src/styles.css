@@ -95,3 +95,57 @@
   font-size: 20px;
   line-height: 23px;
 }
+
+
+.toggle-group .toggle-handle{
+  opacity: 1;
+}
+.toggle-group .toggle-handle, .toggle-group .btn {
+  /* background-color: black !important; */
+  background-color: white !important;
+  /* width: 10px; */
+  /* height: 10px; */
+  /* border-radius: 100%; */
+}
+.toggle-group .toggle-on,.toggle-group  .toggle-off{
+  background-color: black !important;
+  color: black !important;
+}
+.slick-arrow{
+  fill:#00A58C !important
+}
+.slick-disabled{
+  fill:#DEDEDE !important
+}
+.main-layout-container{
+  background-image: url('/assets/images/background.svg');
+  background-color: #f2f2f2;
+}
+@media(0px <= width <= 767px) {
+  .main-layout-container{
+      padding: 0px 16px;
+  }
+}
+@media(767px <= width <=5000px) {
+  .main-layout-container{
+      padding: 0px 86px;
+  }
+}
+
+.off  .toggle-handle,.off  .toggle-handle{
+  /* background-color:  black !important; */
+  /* left: 10px !important; */
+}
+.toggle {
+
+  border-radius: 25px !important;
+  transform: rotate(90deg);
+}
+
+.width-btn{
+  margin-top: 17px !important;
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 50% !important;
+  
+}

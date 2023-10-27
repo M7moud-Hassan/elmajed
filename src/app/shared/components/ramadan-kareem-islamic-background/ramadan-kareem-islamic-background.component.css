@@ -1,0 +1,23 @@
+.bg-background{
+    background-color: black;
+}
+.bg-background a{
+color: #FFF;
+text-align: right;
+font-family: Almarai;
+font-size: 20px;
+text-align: center;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+text-decoration: none;
+border-left: 2px #FFF solid;
+}
+.bg-background a.none-border{
+    border-left: none;
+}
+/* .div-image{
+transform: rotate(-1deg);
+flex-shrink: 0; 
+} */
+
