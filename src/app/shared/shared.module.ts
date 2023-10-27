@@ -18,6 +18,9 @@ import { FatwaSectionComponent } from './components/fatwa-section/fatwa-section.
 import { SelectFatwaComponent } from './components/select-fatwa/select-fatwa.component';
 import { OfficeProjectsComponent } from './components/office-projects/office-projects.component';
 import { ItemCarousalHomeComponent } from './components/item-carousal-home/item-carousal-home.component';
+import { FatawaButtonCardComponent } from './components/FatawaCards/fatawa-button-card/fatawa-button-card.component';
+import { FatawaQuestionCardComponent } from './components/FatawaCards/fatawa-question-card/fatawa-question-card.component';
+import { FatawaPreferredCardComponent } from './components/FatawaCards/fatawa-preferred-card/fatawa-preferred-card.component';
 
 
 
@@ -38,7 +41,10 @@ import { ItemCarousalHomeComponent } from './components/item-carousal-home/item-
     FatwaSectionComponent,
     SelectFatwaComponent,
     OfficeProjectsComponent,
-    ItemCarousalHomeComponent
+    ItemCarousalHomeComponent,
+    FatawaButtonCardComponent,
+    FatawaQuestionCardComponent,
+    FatawaPreferredCardComponent,
   ],
   imports: [
     CommonModule,
@@ -59,7 +65,10 @@ import { ItemCarousalHomeComponent } from './components/item-carousal-home/item-
     RamadanKareemIslamicBackgroundComponent,
     FatwaSectionComponent,
     SelectFatwaComponent,
-    OfficeProjectsComponent
+    OfficeProjectsComponent,
+    FatawaButtonCardComponent,
+    FatawaQuestionCardComponent,
+    FatawaPreferredCardComponent,
   ]
 })
 export class SharedModule { }

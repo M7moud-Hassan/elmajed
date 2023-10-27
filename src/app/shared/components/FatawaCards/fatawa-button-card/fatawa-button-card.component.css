@@ -1,0 +1,23 @@
+.button-info-card-container{
+    background-color: white;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    color: #00A58C;
+    padding: 40px;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    outline: none;
+    border: none;
+    border: 3px solid white;
+    transition: all .5s ease-in-out;
+    margin-bottom: 20px;
+}
+.button-info-card-container:hover{
+    border-color: #00A58C;
+}
+.button-label{
+    display: inline-block;
+    padding-right: 15px;
+}

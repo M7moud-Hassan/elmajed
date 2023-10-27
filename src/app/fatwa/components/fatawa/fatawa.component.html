@@ -1,1 +1,9 @@
-<p>fatawa works!</p>
+<app-page-header [pageHeaderInfo]="pageHeaderObj" ></app-page-header>
+<div class="row">
+    <div class="col-12 col-md-6">
+        <app-fatawa-button-card [data]="questionInfo"></app-fatawa-button-card>
+    </div>
+    <div class="col-12 col-md-6">
+        <app-fatawa-button-card [data]="searchInfo"></app-fatawa-button-card>
+    </div>
+</div>
