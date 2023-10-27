@@ -1,0 +1,136 @@
+<app-page-header [pageHeaderInfo]="pageHeaderObj"></app-page-header>
+<div class="vision-container">إذا كان لديك أي عمل مني أو أي نوع من أنواع التعليمات المتعلقة بالبرنامج التعليمي الخاص بي
+    ، فيمكنك إرسال رسالة إلي من هنا. إنه لمن دواعي سروري أن أساعدك.</div>
+<div class="row">
+    <div class="col-12 col-md-8">
+        <div class="form-container">
+            <div class="form-header">تفاصيل الرسالة</div>
+            <form [formGroup]="form" (ngSubmit)="submit()" >
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <div class="form-control-content {{windowWidth>767 ? 'container-padding-left':''}}">
+                        <label for="name" class="input-label">الإسم</label>
+                        <div class="controller-field-container">
+                            <img src="/assets/images/user.svg" class="controller-field-prefix-image" alt="">
+                            <input type="text" class="controller-field-input" name="name" id="name" formControlName="name" placeholder="ادخل اسمك">
+                        </div>
+                        <div *ngIf="name?.errors && name?.touched">
+                            <small *ngIf="name?.hasError('required')"  class="input-error">هذا الحقل مطلوب</small>
+                        </div> 
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-control-content  {{windowWidth>767 ? 'container-padding-right':''}}">
+                        <label for="email" class="input-label">البريد الإلكتروني</label>
+                        <div class="controller-field-container">
+                            <img src="/assets/images/email.svg" class="controller-field-prefix-image" alt="">
+                            <input type="text" class="controller-field-input" name="email" id="email" formControlName="email" placeholder="ادخل البريد الإلكتروني">
+                        </div>
+                        <div *ngIf="email?.errors && email?.touched">
+                            <small *ngIf="email?.hasError('required')"  class="input-error">هذا الحقل مطلوب</small>
+                            <small *ngIf="email?.hasError('email')"  class="input-error">ادخل البريد الإليكترونى بشكل صحيح</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <div class="form-control-content {{windowWidth>767 ? 'container-padding-left':''}}">
+                        <label for="mobile" class="input-label">الدولة</label>
+                        <div class="controller-field-container">
+                            <img src="/assets/images/location.svg" class="controller-field-prefix-image" alt="">
+                            <input type="text" class="controller-field-input" name="mobile" id="mobile" formControlName="mobile" placeholder="ادخل الدولة">
+                        </div>
+                        <div *ngIf="mobile?.errors && mobile?.touched">
+                            <small *ngIf="mobile?.hasError('required')"  class="input-error">هذا الحقل مطلوب</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-control-content  {{windowWidth>767 ? 'container-padding-right':''}}">
+                        <label for="subject" class="input-label">عنوان الرسالة</label>
+                        <div class="controller-field-container">
+                            <img src="/assets/images/message.svg" class="controller-field-prefix-image" alt="">
+                            <input type="text" class="controller-field-input" name="subject"  id="subject" formControlName="subject" placeholder="ادخل عنوان الرسالة">
+                        </div>
+                        <div *ngIf="subject?.errors && subject?.touched">
+                            <small *ngIf="subject?.hasError('required')"  class="input-error">هذا الحقل مطلوب</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-text-area-content">
+                        <label for="message" class="input-label">الرسالة</label>
+                        <textarea name="message" id="message" formControlName="message" class="text-area-field" rows="5" placeholder="محتوى الرسالة هنا"></textarea>
+                        <div *ngIf="message?.errors && message?.touched">
+                            <small *ngIf="message?.hasError('required')"  class="input-error">هذا الحقل مطلوب</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6"></div>
+                <div class="col-12 col-md-6">
+                    <button class="submit-btn"  type="submit">أرسل</button>
+                </div>
+            </div>
+        </form>
+        </div>
+    </div>
+    <div class="col-12 col-md-4 d-none d-md-block">
+        <div class="information-container d-flex align-items-center justify-content-start">
+            <div>
+                <div class="info-item">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="info-icon">
+                                <img src="/assets/images/whatsapp.svg" width="80%" alt="">
+                            </div>
+                        </div>
+                        <div class="col-md-8 d-flex align-items-center justify-content-start">
+                            <div class="info-item-container">
+                                <div class="info-item-header">الواتـــساب</div>
+                                <div class="info-item-data">+2001012139683</div>
+                                <div class="info-item-data">+2001142788054</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="info-icon">
+                                <img src="/assets/images/home-phone.svg" width="80%" alt="">
+                            </div>
+                        </div>
+                        <div class="col-md-8 d-flex align-items-center justify-content-start">
+                            <div class="info-item-container">
+                                <div class="info-item-header">الجــوال</div>
+                                <div class="info-item-data">+2001012139683</div>
+                                <div class="info-item-data">+2001142788054</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="info-icon">
+                                <img src="/assets/images/envelop.svg" width="80%" alt="">
+                            </div>
+                        </div>
+                        <div class="col-md-8 d-flex align-items-center justify-content-start">
+                            <div class="info-item-container">
+                                <div class="info-item-header">البريد الإليكترونى</div>
+                                <div class="info-item-data">m7moud@gmail.com</div>
+                                <div class="info-item-data">info.m7moud@gmail.com</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

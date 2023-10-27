@@ -95,3 +95,17 @@
   font-size: 20px;
   line-height: 23px;
 }
+.submit-btn{
+  display: inline-block;
+  text-align: center;
+  color: white;
+  background-color:#00A58C;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+  padding: 20px;
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 16px;
+}
