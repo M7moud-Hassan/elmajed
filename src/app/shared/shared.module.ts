@@ -12,6 +12,13 @@ import { BlogDetailsCardComponent } from './components/blog-details-card/blog-de
 import { QatufCardComponent } from './components/qatuf-card/qatuf-card.component';
 import { CvCardComponent } from './components/cv-card/cv-card.component';
 import { PopUpCardComponent } from './components/pop-up-card/pop-up-card.component';
+import { RamadanKareemIslamicBackgroundComponent } from './components/ramadan-kareem-islamic-background/ramadan-kareem-islamic-background.component';
+import { BookViewComponent } from './components/book-view/book-view.component';
+import { FatwaSectionComponent } from './components/fatwa-section/fatwa-section.component';
+import { SelectFatwaComponent } from './components/select-fatwa/select-fatwa.component';
+import { OfficeProjectsComponent } from './components/office-projects/office-projects.component';
+import { ItemCarousalHomeComponent } from './components/item-carousal-home/item-carousal-home.component';
+
 
 
 
@@ -25,7 +32,13 @@ import { PopUpCardComponent } from './components/pop-up-card/pop-up-card.compone
     BlogCardComponent,
     QatufCardComponent,
     CvCardComponent,
-    PopUpCardComponent
+    PopUpCardComponent,
+    RamadanKareemIslamicBackgroundComponent,
+    BookViewComponent,
+    FatwaSectionComponent,
+    SelectFatwaComponent,
+    OfficeProjectsComponent,
+    ItemCarousalHomeComponent
   ],
   imports: [
     CommonModule,
@@ -41,7 +54,12 @@ import { PopUpCardComponent } from './components/pop-up-card/pop-up-card.compone
     QatufCardComponent,
     CvCardComponent,
     PopUpCardComponent,
-    FormsModule
+    FormsModule,
+    BookViewComponent,
+    RamadanKareemIslamicBackgroundComponent,
+    FatwaSectionComponent,
+    SelectFatwaComponent,
+    OfficeProjectsComponent
   ]
 })
 export class SharedModule { }

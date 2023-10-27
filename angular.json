@@ -28,10 +28,14 @@
               "src/styles.css",
               "src/assets/styles/mobile-screen-style.css",
               "src/assets/styles/large-screen-style.css",
-              "node_modules/bootstrap/dist/css/bootstrap.rtl.min.css"
+              "node_modules/bootstrap/dist/css/bootstrap.rtl.min.css",
+              "node_modules/bootstrap5-toggle/css/bootstrap5-toggle.min.css",
+              "node_modules/slick-carousel/slick/slick.css",
+              "node_modules/slick-carousel/slick/slick-theme.css"
             ],
             "scripts": [
-              
+              "node_modules/bootstrap5-toggle/js/bootstrap5-toggle.ecmas.min.js",
+              "node_modules/slick-carousel/slick/slick.min.js"
             ]
           },
           "configurations": {
@@ -95,10 +99,13 @@
               "src/styles.css",
               "src/assets/styles/mobile-screen-style.css",
               "src/assets/styles/large-screen-style.css",
-              "node_modules/bootstrap/dist/css/bootstrap.rtl.min.css"
+              "node_modules/bootstrap/dist/css/bootstrap.rtl.min.css",
+              "node_modules/slick-carousel/slick/slick.css",
+              "node_modules/slick-carousel/slick/slick-theme.css"
             ],
             "scripts": [
-              
+              "node_modules/bootstrap5-toggle/js/bootstrap5-toggle.ecmas.min.js",
+              "node_modules/slick-carousel/slick/slick.min.js"
             ]
           }
         }

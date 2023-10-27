@@ -1,0 +1,34 @@
+.btn-contact{
+    width: 142px;
+    height: 124px;
+    background-color:  #00A88E;
+    color: white;
+}
+.nav-item{
+color: #000;
+text-align: right;
+font-family: Almarai;
+font-size: 20px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+.nav-item .active{
+color: #00A88E;
+text-align: right;
+font-family: Almarai;
+font-size: 20px;
+font-style: normal;
+font-weight: 800;
+line-height: normal;
+border-bottom: 3px solid #00A88E;
+}
+.text-contact{
+    color: #FFF;
+text-align: right;
+font-family: Almarai;
+font-size: 20px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}

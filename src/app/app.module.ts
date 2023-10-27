@@ -21,6 +21,9 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     HttpClientModule
   ],
+  exports:[
+    NavbarComponent
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
