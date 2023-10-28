@@ -17,7 +17,7 @@
         <app-fatwa-card></app-fatwa-card>
         <app-fatwa-answer-card [answer]="answer"></app-fatwa-answer-card>
         <div class="sub-header">كلمات مفتاحية</div>
-        <div *ngFor="let item of [1,2,3,4,5,1,2,3,4,4,5,5]" class="keyword-item">الأعيان</div>
+        <a *ngFor="let item of [1,2,3,4,5,1,2,3,4,4,5,5]" routerLink="#" class="keyword-item" >الأعيان</a>
         <div class="sub-header">مواضيع ذات صلة</div>
         <div *ngFor="let item of [0,1,2,3]" >
             <app-fatawa-preferred-card title="توسعة بيت الإمام بأخذ مساحة من مصلى النساء" label="فتاوي مختارة" link="#"></app-fatawa-preferred-card>
@@ -25,5 +25,14 @@
     </div>
     <div class="col-12 col-md-4">
         <app-page-header [pageHeaderInfo]="pageHeaderSpeedSearchObj" ></app-page-header>
+        <app-fatawa-quick-search-card></app-fatawa-quick-search-card>
+        <div class="sub-header">أقسام الفتاوى</div>
+        <a routerLink="#" class="keyword-item" >الحديث</a>
+        <a routerLink="#" class="keyword-item" >الإيمان</a>
+        <a routerLink="#" class="keyword-item" >الجهاد ومعاملة  الكفار</a>
+        <a routerLink="#" class="keyword-item" >الحج والعمرة</a>
+        <a routerLink="#" class="keyword-item" >الزكاة</a>
+        <a routerLink="#" class="keyword-item" >فقه الأسرة</a>
+        <a routerLink="#" class="keyword-item" >الحديث</a>
     </div>
 </div>

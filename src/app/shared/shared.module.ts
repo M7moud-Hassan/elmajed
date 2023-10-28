@@ -23,8 +23,7 @@ import { FatawaQuestionCardComponent } from './components/FatawaCards/fatawa-que
 import { FatawaPreferredCardComponent } from './components/FatawaCards/fatawa-preferred-card/fatawa-preferred-card.component';
 import { FatwaCardComponent } from './components/FatawaCards/fatwa-card/fatwa-card.component';
 import { FatwaAnswerCardComponent } from './components/FatawaCards/fatwa-answer-card/fatwa-answer-card.component';
-
-
+import { FatawaQuickSearchCardComponent } from './components/FatawaCards/fatawa-quick-search-card/fatawa-quick-search-card.component';
 
 
 @NgModule({
@@ -49,6 +48,7 @@ import { FatwaAnswerCardComponent } from './components/FatawaCards/fatwa-answer-
     FatawaPreferredCardComponent,
     FatwaCardComponent,
     FatwaAnswerCardComponent,
+    FatawaQuickSearchCardComponent
   ],
   imports: [
     CommonModule,
@@ -74,7 +74,8 @@ import { FatwaAnswerCardComponent } from './components/FatawaCards/fatwa-answer-
     FatawaQuestionCardComponent,
     FatawaPreferredCardComponent,
     FatwaCardComponent,
-    FatwaAnswerCardComponent
+    FatwaAnswerCardComponent,
+    FatawaQuickSearchCardComponent
   ]
 })
 export class SharedModule { }
