@@ -6,10 +6,13 @@
     <div class="col-12 col-md-6 ">
         <app-fatawa-button-card [data]="searchInfo"></app-fatawa-button-card>
     </div>
+    <div class="col-12 col-md-6 {{windowWidth > 767 ? 'd-none':''}}" (click)="scrollToTodaysFatwaSection()">
+        <app-fatawa-button-card [data]="todaysFatwaInfo"></app-fatawa-button-card>
+    </div>
 </div>
 <app-fatawa-question-card></app-fatawa-question-card>
 <div class="row">
-    <div class="col-12 col-md-8">
+    <div class="col-12 col-md-8" #todaysFatwaSection>
         <app-page-header [pageHeaderInfo]="pageHeaderDailyFatwaObj" ></app-page-header>
         <app-fatwa-card></app-fatwa-card>
         <app-fatwa-answer-card [answer]="answer"></app-fatwa-answer-card>

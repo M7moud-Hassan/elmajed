@@ -48,7 +48,7 @@ import { FatwaAnswerCardComponent } from './components/FatawaCards/fatwa-answer-
     FatawaQuestionCardComponent,
     FatawaPreferredCardComponent,
     FatwaCardComponent,
-    FatwaAnswerCardComponent
+    FatwaAnswerCardComponent,
   ],
   imports: [
     CommonModule,
