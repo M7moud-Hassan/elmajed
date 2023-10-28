@@ -1,0 +1,13 @@
+.select-input-field{
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    display: inline-block;
+    padding: 10px 20px;
+}
+.select-input-field:hover{
+    cursor: pointer;
+}
+.coko-text-color{
+    color:#C0C0C0;
+}

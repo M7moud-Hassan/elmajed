@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { retry,Observable } from 'rxjs';
+import { ResponseVM } from 'src/app/shared/core/models/responseVM';
 import { environment } from 'src/environments/environment.prod';
 
 @Injectable({
@@ -9,6 +10,11 @@ import { environment } from 'src/environments/environment.prod';
 export class FatawaService {
 
   constructor(private http:HttpClient) { }
+
+  sendFatwaByEmail(model:any):Observable<ResponseVM>{
+    const url = `${environment.baseUrl}/fatwa?cmd=email&ver=1`;
+    return this.http.post<ResponseVM>(url,model).pipe(retry(3));
+  }
   
 /*
   getFatwaDetails(fatwaId:number,ver:number=1):Observable<IFatwaResponseModel>{
@@ -72,10 +78,7 @@ export class FatawaService {
     const url = `${environment.baseUrl}/fatwa?cmd=search&ver=${ver}&start=${start}&count=${count}`;
     return this.http.get<IFatwaResponseModel>(url).pipe(retry(3));
   }
-  sendFatwaByEmail(model:ISendEmailQuestion):Observable<ISendQuestionResponse>{
-    const url = `${environment.baseUrl}/fatwa?cmd=email&ver=1`;
-    return this.http.post<ISendQuestionResponse>(url,model).pipe(retry(3));
-  }
+ 
   sendFatwaByPhone(model:ISendPhoneQuestion):Observable<ISendQuestionResponse>{
     const url = `${environment.baseUrl}/fatwa?cmd=mobile&ver=1`;
     return this.http.post<ISendQuestionResponse>(url,model).pipe(retry(3));
