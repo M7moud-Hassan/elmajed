@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./fatawa-search-result.component.css']
 })
 export class FatawaSearchResultComponent {
-
+  searchFor:string = 'الإبراء عن الأعيان';
+  pageHeaderSpeedSearchObj = {
+    title:'البحث السريع',
+    hasSubTitle : false,
+    subtitle:'',
+    total:0
+  };
 }
