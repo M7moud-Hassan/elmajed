@@ -1,0 +1,19 @@
+.search-for-section,.search-by-fatwa-number{
+    background-color: white;
+    padding: 30px 20px;
+    min-height: 640px;
+    margin-bottom: 50px;
+}
+.search-header{
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28px;
+    color: #171717;
+    padding-bottom: 30px;
+}
+.form-control-content {
+    height: 110px;
+}
+.input-label{
+    margin-bottom: 10px;
+}
