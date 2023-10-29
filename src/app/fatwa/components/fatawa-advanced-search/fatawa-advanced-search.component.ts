@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, HostListener, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-fatawa-advanced-search',
   templateUrl: './fatawa-advanced-search.component.html',
@@ -30,5 +31,6 @@ export class FatawaAdvancedSearchComponent implements AfterViewInit, OnInit {
   ngOnInit(): void {
     this.windowWidth = window.innerWidth;
   }
+  
 
 }

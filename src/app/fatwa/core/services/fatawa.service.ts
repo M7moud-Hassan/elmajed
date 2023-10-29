@@ -15,6 +15,11 @@ export class FatawaService {
     const url = `${environment.baseUrl}/fatwa?cmd=email&ver=1`;
     return this.http.post<ResponseVM>(url,model).pipe(retry(3));
   }
+  getAllFatwaCategories():Observable<ResponseVM>{
+    //https://salmajed.taiba-soft.com/api/fatwa?cmd=cats
+    const url = `${environment.baseUrl}/fatwa?cmd=cats`;
+    return this.http.get<ResponseVM>(url).pipe(retry(3));
+  }
   
 /*
   getFatwaDetails(fatwaId:number,ver:number=1):Observable<IFatwaResponseModel>{
@@ -23,11 +28,7 @@ export class FatawaService {
     return this.http.get<IFatwaResponseModel>(url).pipe(retry(3));
   }
 
-  getAllFatwaCategories(ver:number=1):Observable<IFatwaResponseModel>{
-    //https://salmajed.taiba-soft.com/api/fatwa?cmd=cats
-    const url = `${environment.baseUrl}/fatwa?cmd=cats&ver=${ver}`;
-    return this.http.get<IFatwaResponseModel>(url).pipe(retry(3));
-  }
+
   GETListFatwaByFatwaCategory(catId:number,start:number,count:number,ver:number=1):Observable<IFatwaResponseModel>{
     //https://salmajed.taiba-soft.com/api/fatwa?cmd=bycat&cat=19
     let url = "";

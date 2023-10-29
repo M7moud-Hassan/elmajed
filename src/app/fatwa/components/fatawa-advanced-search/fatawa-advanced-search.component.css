@@ -17,3 +17,8 @@
 .input-label{
     margin-bottom: 10px;
 }
+@media(0px <= width <= 767px) {
+    .search-by-fatwa-number{
+      min-height: 200px;
+    }
+  }
