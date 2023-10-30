@@ -26,6 +26,16 @@ import { FatwaAnswerCardComponent } from './components/FatawaCards/fatwa-answer-
 import { FatawaQuickSearchCardComponent } from './components/FatawaCards/fatawa-quick-search-card/fatawa-quick-search-card.component';
 import { ContactInformationSideCardComponent } from './components/contact-information-side-card/contact-information-side-card.component';
 import { FatawaSectionComponent } from './components/FatawaCards/fatawa-section/fatawa-section.component';
+import { LiteratureAndResearchComponent } from './components/literature-and-research/literature-and-research.component';
+import { ItemCarousalHome2Component } from './components/item-carousal-home2/item-carousal-home2.component';
+import { AudioAndVideoComponent } from './components/audio-and-video/audio-and-video.component';
+import { ItemSectionComponent } from './components/item-section/item-section.component';
+import { TvBroadcastProgrammesComponent } from './components/tv-broadcast-programmes/tv-broadcast-programmes.component';
+import { ShareCardVideoComponent } from './components/share-card-video/share-card-video.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+
+
 
 
 @NgModule({
@@ -52,11 +62,21 @@ import { FatawaSectionComponent } from './components/FatawaCards/fatawa-section/
     FatwaAnswerCardComponent,
     FatawaQuickSearchCardComponent,
     ContactInformationSideCardComponent,
-    FatawaSectionComponent
+    FatawaSectionComponent,
+    LiteratureAndResearchComponent,
+    ItemCarousalHome2Component,
+    AudioAndVideoComponent,
+    ItemSectionComponent,
+    TvBroadcastProgrammesComponent,
+    ShareCardVideoComponent,
+    FooterComponent,
+    NavbarComponent
   ],
   imports: [
     CommonModule,
-    SharedRoutingModule
+    RouterModule,
+    SharedRoutingModule,
+    // LiteratureAndResearchComponent,
   ],
   exports:[
     PaginationComponent,
@@ -81,7 +101,13 @@ import { FatawaSectionComponent } from './components/FatawaCards/fatawa-section/
     FatwaAnswerCardComponent,
     FatawaQuickSearchCardComponent,
     ContactInformationSideCardComponent,
-    FatawaSectionComponent
+    FatawaSectionComponent,
+    LiteratureAndResearchComponent,
+    AudioAndVideoComponent,
+    TvBroadcastProgrammesComponent,
+    FooterComponent,
+    NavbarComponent
+    
   ]
 })
 export class SharedModule { }

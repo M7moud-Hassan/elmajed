@@ -1,0 +1,57 @@
+.pp{
+    color: #171717;
+text-align: right;
+font-family: Almarai;
+font-size: 32px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+.footer{
+    background-color: black;
+}
+.alink{
+color: #FFF;
+text-align: right;
+font-family: Almarai;
+font-size: 16px;
+font-style: normal;
+font-weight: 700;
+line-height: 44px;
+text-decoration: none;
+}
+.border-left-div{
+    border-left: 2px solid white;
+}
+.pppp{
+    color: #FFF;
+text-align: right;
+font-family: Almarai;
+font-size: 16px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+
+.pd-pp{
+    color: #FFF;
+text-align: right;
+font-family: Almarai;
+font-size: 16px;
+font-style: normal;
+font-weight: 300;
+line-height: 24px; /* 150% */
+}
+.d-link{
+    color: #FFF;
+text-align: right;
+font-family: Almarai;
+font-size: 20px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+.card-d{
+    position: relative;
+    top: -150px;
+}

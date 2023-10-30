@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MainLayoutComponent } from './layout/main-layout/main-layout.component';
-import { NavbarComponent } from './layout/navbar/navbar.component';
+import { NavbarComponent } from './shared/components/navbar/navbar.component';
 
 const routes: Routes = [
   {path:'',loadChildren:()=>import('./home/home.module').then(m=>m.HomeModule)},

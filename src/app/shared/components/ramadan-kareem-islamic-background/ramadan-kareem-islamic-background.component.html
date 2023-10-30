@@ -1,18 +1,24 @@
 <div class="row bg-background p-0 m-0">
-    <div class="col-6 row">
+    <div *ngIf="show" class="p-0 m-0" style="margin-top: 100px;">
+    <div class="bg-image-background"></div>
+    <div class="overlay"></div>
+    </div>
+    <div class="col-6  row">
         <div class="col-12 h-50">
         </div>
         <div class="col-12 ms-4">
-            <div class="row mx-auto">
-                <a href="" class="col-3">فتاوي الشيخ</a>
-                <a href="" class="col-3">البدع العملية</a>
-                <a href="" class=" col-5 none-border">تخريج الأصول على  الفروع</a>
+            <div class="d-flex justify-content-between bg-bg-bg">
+                <a href="" class="" style="z-index: 100;">فتاوي الشيخ</a>
+                <div class="border-right"></div>
+                <a href="" class="" style="z-index: 100;">البدع العملية</a>
+                <div class="border-right"></div>
+                <a href="" class=" none-border" style="z-index: 100;">تخريج الأصول على  الفروع</a>
             </div>
             <div style="height: 50%;"></div>
            <div class="row">
             <div class="col-10"></div>
             <div class="col-2">
-                <input type="checkbox" checked data-toggle="toggle" data-onstyle="light">
+                <input type="checkbox" checked data-toggle="toggle" (change)="change($event)" data-onstyle="light">
             </div>
            </div>
         </div>

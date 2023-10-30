@@ -8,6 +8,7 @@ import { AfterViewInit, Component, ElementRef, OnInit, Renderer2 } from '@angula
 export class RamadanKareemIslamicBackgroundComponent implements OnInit,AfterViewInit  {
   height=window.innerHeight;
   width=window.innerWidth/2;
+  show:boolean=false
 
   constructor(private renderer: Renderer2, private el: ElementRef) {
  
@@ -26,6 +27,10 @@ export class RamadanKareemIslamicBackgroundComponent implements OnInit,AfterView
     if (toggleHandle) {      
       this.renderer.addClass(toggleHandle, 'width-btn');
     }
+  }
+  change(event:any){
+    this.show=!this.show
+    
   }
 
 }
