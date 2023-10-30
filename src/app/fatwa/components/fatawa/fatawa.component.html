@@ -14,13 +14,13 @@
 <div class="row" style="padding-bottom: 50px;">
     <div class="col-12 col-md-8" #todaysFatwaSection>
         <app-page-header [pageHeaderInfo]="pageHeaderDailyFatwaObj" ></app-page-header>
-        <app-fatwa-card></app-fatwa-card>
+        <app-fatwa-card [Question]="questionDetails" ></app-fatwa-card>
         <app-fatwa-answer-card [answer]="answer"></app-fatwa-answer-card>
         <div class="sub-header">كلمات مفتاحية</div>
-        <a *ngFor="let item of [1,2,3,4,5,1,2,3,4,4,5,5]" routerLink="#" class="keyword-item" >الأعيان</a>
+        <a *ngFor="let item of keywords" routerLink="/fatawa/details/{{item.id}}" class="keyword-item" >{{item.kword}}</a>
         <div class="sub-header">مواضيع ذات صلة</div>
-        <div *ngFor="let item of [0,1,2,3]" >
-            <app-fatawa-preferred-card title="توسعة بيت الإمام بأخذ مساحة من مصلى النساء" label="فتاوي مختارة" link="#"></app-fatawa-preferred-card>
+        <div *ngFor="let item of relatedTopics" >
+            <app-fatawa-preferred-card title="{{item.cat}}" label="فتاوي مختارة" link="/fatawa/details/{{item.id}}"></app-fatawa-preferred-card>
         </div>
     </div>
     <div class="col-12 col-md-4">

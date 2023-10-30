@@ -8,9 +8,8 @@ import { environment } from 'src/environments/environment.prod';
   styleUrls: ['./fatawa-question-card.component.css']
 })
 export class FatawaQuestionCardComponent  implements OnInit {
-  daily:any;
+
   preferred:any;
-  fatawyList :any[]= [];
   preferredList :any[]= [];
   noFatwaToday:boolean = false;
   imgApiUrl:string = '';
@@ -25,26 +24,9 @@ export class FatawaQuestionCardComponent  implements OnInit {
   }
 
   ngOnInit(): void {
-     this.getDailyFatwa();
      this.getPreferredFatawy();
   }
-  getDailyFatwa(){
-    this.service.getDailyFatwa().subscribe({
-      next : (res:any)=>{
-        if(res.status==200 && res.success==true && res.data.data.length>0){
-          this.fatawyList = res.data.data;
-          let fatwaId = this.fatawyList[0].id;
-          this.service.getFatwaDetails(fatwaId).subscribe({
-            next:(response:any)=>{
-              this.daily = response.data.data[0];
-            }
-          }); 
-        }
-      },
-      error:(error)=>{
-      }
-    });
-  }
+ 
   getPreferredFatawy(){
     this.service.getPreferredFatwa().subscribe({
       next : (res:any)=>{
