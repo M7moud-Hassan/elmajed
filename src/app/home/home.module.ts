@@ -5,7 +5,7 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './components/home/home.component';
 import { BookViewComponent } from '../shared/components/book-view/book-view.component';
 import { SharedModule } from '../shared/shared.module';
-import { NavbarComponent } from '../layout/navbar/navbar.component';
+import { NavbarComponent } from '../shared/components/navbar/navbar.component';
 // import { FatwaSectionComponent } from './components/fatwa-section/fatwa-section.component';
 
 @NgModule({

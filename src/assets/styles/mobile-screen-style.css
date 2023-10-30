@@ -6,4 +6,29 @@
         color: var(--black-color);
         line-height: 23px;
       }
+      .btn-contact{
+        margin-top: 100px;
+        width: 100% !important;
+        margin-bottom: 40px;
+      }
+      .nav-item{
+        padding-top: 10px;
+      }
+      .bg-bg-bg{
+        position: absolute !important;
+    }
+    .border-right{
+      border: none !important;
+      padding-right: 10px !important;
+      padding-left: 10px !important;
+    }
+    .bg-background a{
+      font-size: 14px !important;
+    }
+    .bg-image{
+      height: 350px !important;
+    }
+    .video_youtube{
+      height: 350px;
+    }
 }

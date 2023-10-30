@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainLayoutComponent } from './layout/main-layout/main-layout.component';
-import { NavbarComponent } from './layout/navbar/navbar.component';
+// import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -13,7 +13,6 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     AppComponent,
     MainLayoutComponent,
-    NavbarComponent,
     FooterComponent
   ],
   imports: [
@@ -22,7 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule
   ],
   exports:[
-    NavbarComponent
+
   ],
   providers: [],
   bootstrap: [AppComponent]

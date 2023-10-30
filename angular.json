@@ -35,6 +35,7 @@
             ],
             "scripts": [
               "node_modules/bootstrap5-toggle/js/bootstrap5-toggle.ecmas.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.js",
               "node_modules/slick-carousel/slick/slick.min.js"
             ]
           },
@@ -105,6 +106,7 @@
             ],
             "scripts": [
               "node_modules/bootstrap5-toggle/js/bootstrap5-toggle.ecmas.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.js",
               "node_modules/slick-carousel/slick/slick.min.js"
             ]
           }

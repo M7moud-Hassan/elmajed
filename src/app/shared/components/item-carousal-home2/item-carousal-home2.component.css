@@ -1,0 +1,36 @@
+.item-carousal2{
+    background-image: url('/assets/test-images/book.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 461px !important;
+}
+.item-carousal2-all{
+    /* background-color: aquamarine; */
+    background-image: url('/assets/test-images/ضابط البدعة.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 461px !important;  
+}
+.pd-bg{
+    color: #FFF;
+text-align: right;
+font-family: Almarai;
+font-size: 20px;
+font-style: normal;
+font-weight: 700;
+line-height: 32px;
+}
+.pd-pp{
+    color: #FFF;
+text-align: right;
+font-family: Almarai;
+font-size: 14px;
+font-style: normal;
+font-weight: 700;
+line-height: 24px;
+}
+.bg-bg{
+background-color: rgba(0, 0, 0, .2)
+}

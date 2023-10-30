@@ -1,0 +1,35 @@
+.head2{
+color: #171717;
+text-align: right;
+font-family: Almarai;
+font-size: 42px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+.bg-image-{
+    background-image: url('/assets/images/bg_section.png');
+}
+.center-head{
+color: #FFF;
+text-align: right;
+font-family: Almarai;
+font-size: 42px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+
+}
+.text-btn{
+color: #FFF;
+text-align: right;
+font-family: Almarai;
+font-size: 24px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+.btn-active{
+    border-radius: 25px;
+    background: #00A58C;
+}
