@@ -4,25 +4,25 @@
             <div class="row">
                 <div class="col-12 col-md-4  ">
                     <div class="question-card-img-container"
-                        style="background-image: url('/assets/test-images/bg-image.png');">
-                        <div class="label-header">فتاوى مختارة</div>
+                        style="background-image: url('https://www.salmajed.com/fatwa/{{preferred.img}}');">
+                        <div class="label-header">فتاوي مختارة</div>
                         <div class="images-verically"
                             style="background-image: url('/assets/images/design-fatwa-image.svg');"></div>
                     </div>
                 </div>
                 <div class="col-12 col-md-8  ">
                     <div class="question-card-question-details-container">
-                        <div class="fatwa-header">الإبراء عن الأعيان</div>
-                        <div class="fatwa-question truncate-2-lines">س: شيخنا الفاضل .. هل يصح الإبراء عن الأعيان؟ وبالتالي هل يملك المبرأ عنه العين - أي المبرأ منه-؟ جزاكم الله خيرا في الدنيا والآخرة.</div>
-                        <div class="fatwa-answer truncate-3-lines">ج: الحمد لله أما بعد .. فإن مسألة الإبراء عن الأعيان في صحتها وثبوتها وعدم ذلك نزاع مشهور بين أهل العلم، وقد اختلفت الأقوال في ذلك، وإن كان أكثرهم يرى بأنه لا يصح الإبراء من الأعيان؛ لأن الملك ثابت، ….</div>
+                        <div class="fatwa-header">{{preferred.title}}</div>
+                        <div class="fatwa-question truncate-2-lines">{{preferred.ques}}</div>
+                        <div class="fatwa-answer truncate-3-lines">{{preferred.answer}}</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="col-md-5">
-        <div *ngFor="let item of [0,1,2,3]" >
-            <app-fatawa-preferred-card title="هل تجديد الوضوء مشروع" label="فتاوي مختارة" link="#"></app-fatawa-preferred-card>
+        <div *ngFor="let item of preferredList.slice(0,4)" >
+            <app-fatawa-preferred-card [title]="item.title" label="فتاوي مختارة" link="/fatwa/fatwaDetails/{{item.id}}"></app-fatawa-preferred-card>
         </div>
     </div>
 </div>

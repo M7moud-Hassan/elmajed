@@ -20,13 +20,23 @@ export class FatawaService {
     const url = `${environment.baseUrl}/fatwa?cmd=cats`;
     return this.http.get<ResponseVM>(url).pipe(retry(3));
   }
-  
-/*
-  getFatwaDetails(fatwaId:number,ver:number=1):Observable<IFatwaResponseModel>{
-    //https://salmajed.taiba-soft.com/api/fatwa?cmd=fatwa&arno=10729
-    const url = `${environment.baseUrl}/fatwa?cmd=fatwa&ver=${ver}&arno=${fatwaId}`;
-    return this.http.get<IFatwaResponseModel>(url).pipe(retry(3));
+  getPreferredFatwa():Observable<ResponseVM>{
+    //https://salmajed.taiba-soft.com/api/fatwa?cmd=pref
+    const url = `${environment.baseUrl}/fatwa?cmd=pref`;
+    return this.http.get<ResponseVM>(url).pipe(retry(3));
   }
+  getDailyFatwa():Observable<ResponseVM>{
+    //https://salmajed.taiba-soft.com/api/fatwa?cmd=day
+    const url = `${environment.baseUrl}/fatwa?cmd=day`;
+    return this.http.get<ResponseVM>(url).pipe(retry(3));
+  }
+  getFatwaDetails(fatwaId:number):Observable<ResponseVM>{
+    //https://salmajed.taiba-soft.com/api/fatwa?cmd=fatwa&arno=10729
+    const url = `${environment.baseUrl}/fatwa?cmd=fatwa&arno=${fatwaId}`;
+    return this.http.get<ResponseVM>(url).pipe(retry(3));
+  }
+/*
+
 
 
   GETListFatwaByFatwaCategory(catId:number,start:number,count:number,ver:number=1):Observable<IFatwaResponseModel>{
@@ -48,11 +58,7 @@ export class FatawaService {
     return this.http.get<IFatwaResponseModel>(url).pipe(retry(3));
   }
   
-  getPreferredFatwa(ver:number=1):Observable<IFatwaResponseModel>{
-    //https://salmajed.taiba-soft.com/api/fatwa?cmd=pref
-    const url = `${environment.baseUrl}/fatwa?cmd=pref&ver=${ver}`;
-    return this.http.get<IFatwaResponseModel>(url).pipe(retry(3));
-  }
+
 
   getLast30Fatwas(ver:number=1):Observable<IFatwaResponseModel>{
     //https://salmajed.taiba-soft.com/api/fatwa?cmd=last30
@@ -60,11 +66,7 @@ export class FatawaService {
     const url = `${environment.baseUrl}/fatwa?cmd=last30&ver=${ver}`;
     return this.http.get<IFatwaResponseModel>(url).pipe(retry(3));
   }
-  getDailyFatwa(ver:number=1):Observable<IFatwaResponseModel>{
-    //https://salmajed.taiba-soft.com/api/fatwa?cmd=day
-    const url = `${environment.baseUrl}/fatwa?cmd=day&ver=${ver}`;
-    return this.http.get<IFatwaResponseModel>(url).pipe(retry(3));
-  }
+  
 
   // getFatwaFreeSearch(title:string,ques:string,ans:string,syn1:string,syn2:string,syn3:string,flt:string,start:number,count:number,ver:number=1):Observable<IGETFatwaFreeSearchResponse>{
   getFatwaFreeSearch(model:ISearchFatwaModel,start:number,count:number,ver:number=1):Observable<IFatwaResponseModel>{
