@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FatawaService } from 'src/app/fatwa/core/services/fatawa.service';
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-fatawa-question-card',
@@ -12,7 +13,16 @@ export class FatawaQuestionCardComponent  implements OnInit {
   fatawyList :any[]= [];
   preferredList :any[]= [];
   noFatwaToday:boolean = false;
-  constructor(private service:FatawaService) {}
+  imgApiUrl:string = '';
+  constructor(private service:FatawaService) {
+    this.imgApiUrl = environment.imgApiUrl;
+    this.preferred = {
+      img:'',
+      title:'',
+      ques:'',
+      answer:''
+    };
+  }
 
   ngOnInit(): void {
      this.getDailyFatwa();
