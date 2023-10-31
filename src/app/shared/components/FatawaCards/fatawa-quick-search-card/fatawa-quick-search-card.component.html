@@ -32,22 +32,22 @@
                 <label for="email" class="input-label">ابحث برقم الفتوى</label>
                 <div class="controller-field-container">
                     <img src="/assets/images/magnifier.svg" class="controller-field-prefix-image" alt="">
-                    <input type="text" class="controller-field-input" name="fatwaNumber" id="fatwaNumber" placeholder="ابحث برقم الفتوى">
+                    <input type="text" class="controller-field-input" #FatwaNumber (keypress)="onKeyPress($event)"   name="fatwaNumber" id="fatwaNumber" placeholder="ابحث برقم الفتوى">
                 </div>
             </div>
         </div>
         <div class="col-12">
             <div class="row py-3">
                 <div class="col-7">
-                    <button routerLink="#" class="submit-btn">ابحث</button>
+                    <button class="submit-btn" (click)="getFatawySearch(FatwaNumber.value)">ابحث</button>
                 </div>
                 <div class="col-5">
-                    <button routerLink="#" class="botton-link" style="color: #A7A7A7;">مسح</button>
+                    <button class="botton-link" (click)="FatwaNumber.value = ''" style="color: #A7A7A7;">مسح</button>
                 </div>
             </div>
         </div>
         <div class="col-12">
-            <button routerLink="#" class="botton-link" style="color: #00A58C;">انتقل إلى  البحث المتقدم</button>
+            <button routerLink="/fatawa/search" class="botton-link" style="color: #00A58C;">انتقل إلى  البحث المتقدم</button>
         </div>
     </div>
 </div>

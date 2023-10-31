@@ -13,4 +13,11 @@ export class FatawaSearchResultComponent {
     subtitle:'',
     total:0
   };
+questionDetails = {
+    img:'www.salmajed.com/fatwa/fimage/24073',
+    title:'الإبراء عن الأعيان',
+    date:'2023-05-24 19:12:51',
+    id:'362854',
+    ques:'س: شيخنا الفاضل .. هل يصح الإبراء عن الأعيان؟ وبالتالي هل يملك المبرأ عنه العين - أي المبرأ منه-؟ جزاكم الله خيرا في الدنيا والآخرة.'
+  };
 }

@@ -35,6 +35,12 @@ export class FatawaService {
     const url = `${environment.baseUrl}/fatwa?cmd=fatwa&arno=${fatwaId}`;
     return this.http.get<ResponseVM>(url).pipe(retry(3));
   }
+  getFatwaFreeSearch(model:any,start:number,count:number,ver:number=1):Observable<ResponseVM>{
+    // const url = `${environment.baseUrl}/fatwa?cmd=search&ver=${ver}&title=${model.title}&ques=${model.ques}&ans=${model.ans}&syn1=${model.syn1}&syn2=${model.syn2}&syn3=${model.syn3}&flt=${model.flt}&start=${start}&count=${count}`;
+    //https://salmajed.taiba-soft.com/api/fatwa?cmd=search&count=10
+    const url = `${environment.baseUrl}/fatwa?cmd=search&ver=${ver}&title=${model.title}&ques=${model.ques}&ans=${model.ans}&syn1=${model.syn1}&syn2=${model.syn2}&syn3=${model.syn3}&flt=${model.flt}&start=${start}&count=${count}`;
+    return this.http.get<ResponseVM>(url).pipe(retry(3));
+  }
 /*
 
 
@@ -69,12 +75,7 @@ export class FatawaService {
   
 
   // getFatwaFreeSearch(title:string,ques:string,ans:string,syn1:string,syn2:string,syn3:string,flt:string,start:number,count:number,ver:number=1):Observable<IGETFatwaFreeSearchResponse>{
-  getFatwaFreeSearch(model:ISearchFatwaModel,start:number,count:number,ver:number=1):Observable<IFatwaResponseModel>{
-    // const url = `${environment.baseUrl}/fatwa?cmd=search&ver=${ver}&title=${model.title}&ques=${model.ques}&ans=${model.ans}&syn1=${model.syn1}&syn2=${model.syn2}&syn3=${model.syn3}&flt=${model.flt}&start=${start}&count=${count}`;
-    //https://salmajed.taiba-soft.com/api/fatwa?cmd=search&count=10
-    const url = `${environment.baseUrl}/fatwa?cmd=search&ver=${ver}&title=${model.title}&ques=${model.ques}&ans=${model.ans}&syn1=${model.syn1}&syn2=${model.syn2}&syn3=${model.syn3}&flt=${model.flt}&start=${start}&count=${count}`;
-    return this.http.get<IFatwaResponseModel>(url).pipe(retry(3));
-  }
+  
   getFatwaFreeSearchWithoutData(start:number,count:number,ver:number=1):Observable<IFatwaResponseModel>{
     // const url = `${environment.baseUrl}/fatwa?cmd=search&ver=${ver}&title=${model.title}&ques=${model.ques}&ans=${model.ans}&syn1=${model.syn1}&syn2=${model.syn2}&syn3=${model.syn3}&flt=${model.flt}&start=${start}&count=${count}`;
     //https://salmajed.taiba-soft.com/api/fatwa?cmd=search&count=10
