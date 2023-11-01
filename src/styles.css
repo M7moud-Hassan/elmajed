@@ -276,7 +276,7 @@
   padding-left: 20px;
   border-radius: 20px;
   background-color: #F5F5F5;
-
+  color: #00A58C;
 }
 .controller-field-input::placeholder{
   color:#C0C0C0;
@@ -315,6 +315,7 @@
   overflow: hidden;
   padding: 20px;
   resize: none;
+  color: #00A58C;
 }
 
 .info-icon{
