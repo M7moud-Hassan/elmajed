@@ -13,5 +13,4 @@ export class ResearchService {
   getPagedResearch(pageNumer:number,pageSize:number):Observable<ResponseVM>{
     return this.http.get<ResponseVM>(`${environment.baseUrl}/categories/research-and-letters?page=${pageNumer}&count=${pageSize}`);
   }
-
 }

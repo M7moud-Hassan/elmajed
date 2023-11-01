@@ -1,0 +1,90 @@
+<app-page-header [pageHeaderInfo]="pageHeaderObj"></app-page-header>
+<div class="vision-container">إذا كان لديك أي عمل مني أو أي نوع من أنواع التعليمات المتعلقة بالبرنامج التعليمي الخاص بي
+    ، فيمكنك إرسال رسالة إلي من هنا. إنه لمن دواعي سروري أن أساعدك.</div>
+<div class="row">
+    <div class="col-12 col-md-8">
+        <div class="form-container">
+            <div class="form-header">تفاصيل السؤال</div>
+            <form [formGroup]="form" (ngSubmit)="submit()" >
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <div class="form-control-content {{windowWidth>767 ? 'container-padding-left':''}}">
+                        <label for="senderName" class="input-label">الإسم</label>
+                        <div class="controller-field-container">
+                            <img src="/assets/images/user.svg" class="controller-field-prefix-image" alt="">
+                            <input type="text" class="controller-field-input" name="senderName" id="senderName" formControlName="senderName" placeholder="ادخل اسمك">
+                        </div>
+                        <div *ngIf="senderName?.errors && senderName?.touched">
+                            <small *ngIf="senderName?.hasError('required')"  class="input-error">هذا الحقل مطلوب</small>
+                        </div> 
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-control-content  {{windowWidth>767 ? 'container-padding-right':''}}">
+                        <label for="email" class="input-label">البريد الإلكتروني</label>
+                        <div class="controller-field-container">
+                            <img src="/assets/images/email.svg" class="controller-field-prefix-image" alt="">
+                            <input type="text" class="controller-field-input" name="email" id="email" formControlName="email" placeholder="ادخل البريد الإلكتروني">
+                        </div>
+                        <div *ngIf="email?.errors && email?.touched">
+                            <small *ngIf="email?.hasError('required')"  class="input-error">هذا الحقل مطلوب</small>
+                            <small *ngIf="email?.hasError('email')"  class="input-error">ادخل البريد الإليكترونى بشكل صحيح</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <div class="form-control-content {{windowWidth>767 ? 'container-padding-left':''}}">
+                        <label for="country" class="input-label">الدولة</label>
+                        <div class="controller-field-container">
+                            <img src="/assets/images/location.svg" class="controller-field-prefix-image" alt="">
+                            <input type="text" class="controller-field-input" name="country" id="country" formControlName="country" placeholder="ادخل الدولة">
+                        </div>
+                        <div *ngIf="country?.errors && country?.touched">
+                            <small *ngIf="country?.hasError('required')"  class="input-error">هذا الحقل مطلوب</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-control-content  {{windowWidth>767 ? 'container-padding-right':''}}">
+                        <label for="age" class="input-label">الفئة العمرية</label>
+                        <div class="controller-field-container">
+                            
+                            <img src="/assets/images/group.svg" class="controller-field-prefix-image" alt="">
+                            <img style="cursor: pointer;" src="/assets/images/down.svg" class="controller-field-suffix-image" alt="">
+                            <select (change)="selectAgeError = false" class="controller-field-input select-input-field {{age!.value=='0'?'coko-text-color':''}} " name="age"  id="age" formControlName="age" >
+                                <option [selected]="true" [disabled]="true" value="0">اختر الفئة  العمرية </option>
+                                <option *ngFor="let ageItem of ageList" [value]="ageItem" style="font-family: Arial, Helvetica, sans-serif;">{{ageItem}}</option>
+                            </select>
+                        </div>
+                        <div *ngIf="selectAgeError">
+                            <small  class="input-error">هذا الحقل مطلوب</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-text-area-content">
+                        <label for="ques" class="input-label">السؤال</label>
+                        <textarea name="ques" id="ques" formControlName="ques" class="text-area-field" rows="5" placeholder="السؤال"></textarea>
+                        <div *ngIf="ques?.errors && ques?.touched">
+                            <small *ngIf="ques?.hasError('required')"  class="input-error">هذا الحقل مطلوب</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6"></div>
+                <div class="col-12 col-md-6">
+                    <button class="submit-btn"  type="submit">أرسل</button>
+                </div>
+            </div>
+        </form>
+        </div>
+    </div>
+    <div class="col-12 col-md-4 ">
+        <app-contact-information-side-card></app-contact-information-side-card>
+    </div>
+</div>

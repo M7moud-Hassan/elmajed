@@ -1,0 +1,17 @@
+.answe-card-container{
+    background-color: white;
+    min-height: 120px;
+}
+.answer{
+    padding: 25px;
+    text-align: justify;
+}
+.label-card-answer{
+    padding: 10px 25px;
+    background-color: #00A58C;
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    display: inline-block;
+}

@@ -1,0 +1,39 @@
+<div class="blog-container">
+    <div class="row">
+        <div class="col-12 col-md-3">
+            <a class="link-a" [routerLink]="detailsPath">
+                <div class="blog-image" style="background-image: url('{{item.image}}');"></div>
+            </a>
+        </div>
+        <div class="col-12 col-md-9">
+            <div class="blog-info">
+                <a class="link-a" [routerLink]="detailsPath">
+                    <div class="blog-title">{{item.title}}</div>
+                    <div class="blog-brief {{windowWidth>767?'truncate-3-lines':'truncate-7-lines'}}" [innerHTML]="item.brief"></div>
+                
+                    <div class="row mt-3">
+                        <div class="col-12 col-md-6">
+                            <div class="blog-title d-inline-block">الكاتب : </div> <span class="blog-title-data"> {{item.writer}}</span>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="blog-title d-inline-block">تاريخ النشر : </div> <span class="blog-title-data">
+                                {{item.launch_date}}</span>
+                        </div>
+                    </div>
+                </a>
+                <div class="research-icons research-inner-container">
+                    <span hidden #itemTitle [innerHTML]="item.title" ></span>
+                    <span hidden #facebook [innerHTML]="getItemLink(item.slug)" ></span>
+                    <a href="{{getFacebookUrl(item.slug)}}" target="_blank"><span class="search-social-media-item"><i class="fa-brands fa-facebook-f"></i></span></a>
+                    <a href="https://m.twitter.com/intent/tweet?text={{getItemLink(item.slug)}}" target="_blank" ><span class="search-social-media-item"><i class="fa-brands fa-x-twitter"></i></span></a>
+                    <a href="mailto:?subject={{itemTitle.innerText}}&body={{getItemLink(item.slug)}}" target="_blank"><span class="search-social-media-item"><i class="fa-regular fa-envelope"></i></span></a>
+                    <a href="https://wa.me/?text={{getItemLink(item.slug)}}" target="_blank"><span class="search-social-media-item"><i class="fa-brands fa-whatsapp"></i></span></a>
+                    <a href="{{item.pdf_file}}" target="_blank"><span class="search-social-media-item"><i class="fa-solid fa-download"></i></span></a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+

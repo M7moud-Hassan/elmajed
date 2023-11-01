@@ -1,0 +1,32 @@
+.preferred-card-item{
+    background-color: white;
+    border-width: 5px;
+    border-right: 5px solid #00A58C;
+    height: 60px;
+    margin-bottom: 10px;
+    transition: all .09s ease-in-out;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.preferred-card-item-label{
+    color: #00A58C;
+    font-weight: 700;
+    font-size: 16px;
+    text-align: center;
+    width: 130px;
+    display: inline-block;
+    border-left: 2px solid #00A58C;
+}
+.preferred-card-item-info{
+    color: #1A201D;
+    font-weight: 700;
+    font-size: 16px;
+    display: inline-block;
+    width: calc(100% - 130px);
+    padding-right: 20px;
+}
+
+.link-a{
+    text-decoration: none;
+}

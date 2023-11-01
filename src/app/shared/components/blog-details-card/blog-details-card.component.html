@@ -1,0 +1,34 @@
+<app-page-header [pageHeaderInfo]="pageHeaderObj"></app-page-header>
+<div class="blog-container">
+    <div class="row">
+        <div class="col-12 col-md-3">
+                <div class="blog-image" style="background-image: url('{{itemDetails.image}}');"></div>
+        </div>
+        <div class="col-12 col-md-9">
+            <div class="blog-info">
+                    <div class="blog-title">{{itemDetails.title}}</div>
+                    <div class="blog-brief" [innerHTML]="itemDetails.brief"></div>
+                
+                    <div class="row mt-5">
+                        <div class="col-12 col-md-6">
+                            <div class="blog-title d-inline-block">الكاتب : </div> <span class="blog-title-data"> {{itemDetails.writer}}</span>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="blog-title d-inline-block">تاريخ النشر : </div> <span class="blog-title-data">
+                                {{itemDetails.launch_date}}</span>
+                        </div>
+                    </div>
+                <div class="research-icons research-inner-container">
+                    <span hidden #itemTitle [innerHTML]="itemDetails.title" ></span>
+                    <span hidden #facebook [innerHTML]="getItemLink" ></span>
+                    <a href="{{getFacebookUrl}}" target="_blank"><span class="search-social-media-item"><i class="fa-brands fa-facebook-f"></i></span></a>
+                    <a href="https://m.twitter.com/intent/tweet?text={{getItemLink}}" target="_blank" ><span class="search-social-media-item"><i class="fa-brands fa-x-twitter"></i></span></a>
+                    <a href="mailto:?subject={{itemTitle.innerText}}&body={{getItemLink}}" target="_blank"><span class="search-social-media-item"><i class="fa-regular fa-envelope"></i></span></a>
+                    <a href="https://wa.me/?text={{getItemLink}}" target="_blank"><span class="search-social-media-item"><i class="fa-brands fa-whatsapp"></i></span></a>
+                    <a href="{{itemDetails.pdf_file}}" target="_blank"><span class="search-social-media-item"><i class="fa-solid fa-download"></i></span></a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+<div class="row pb-5">
+    <div class="col-12 col-md-8">
+        <div class="site-header">نتائج البحث</div> <div class="small-information">عن “{{searchFor}}”</div>
+        <div *ngFor="let item of [1,2,3]">
+           <app-fatwa-card [Question]="questionDetails"></app-fatwa-card>
+        </div>
+    </div>
+    <div class="col-12 col-md-4">
+        <app-page-header [pageHeaderInfo]="pageHeaderSpeedSearchObj" ></app-page-header>
+        <app-fatawa-quick-search-card></app-fatawa-quick-search-card>
+    </div>
+</div>

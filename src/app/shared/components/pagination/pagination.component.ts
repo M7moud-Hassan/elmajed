@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { PaginationVM } from '../../core/models/pagination-vm';
 
 @Component({
@@ -6,7 +6,7 @@ import { PaginationVM } from '../../core/models/pagination-vm';
   templateUrl: './pagination.component.html',
   styleUrls: ['./pagination.component.css']
 })
-export class PaginationComponent implements OnInit {
+export class PaginationComponent implements OnInit, OnChanges {
   pageNumberList:number[]=[];
   pagination:PaginationVM = {
     total:175,
@@ -16,9 +16,7 @@ export class PaginationComponent implements OnInit {
     total_pages:7,
   };
   constructor(){}
-  @Output() pageNumberClicked = new EventEmitter<number>();
-  @Input() paginationInfo:any;
-  ngOnInit(): void {
+  ngOnChanges(changes: SimpleChanges): void {
     this.pagination = {
       count : this.paginationInfo.count,
       current_page : this.paginationInfo.current_page,
@@ -26,6 +24,11 @@ export class PaginationComponent implements OnInit {
       total : this.paginationInfo.total,
       total_pages : this.paginationInfo.total_pages,
     };
+  }
+  @Output() pageNumberClicked = new EventEmitter<number>();
+  @Input() paginationInfo:any;
+  ngOnInit(): void {
+    
     this.intializePageNumberList();
   }
 

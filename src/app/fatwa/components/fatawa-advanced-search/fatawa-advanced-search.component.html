@@ -1,0 +1,111 @@
+<app-page-header [pageHeaderInfo]="pageHeaderObj"></app-page-header>
+<div class="vision-container">يمكنك البحث هنا عن كلمات مفتاحية او اسم  الفتوى</div>
+<div class="row">
+    <div class="col-12 col-md-8">
+        <div class="search-for-section">
+            <div class="search-header">ابحث عن</div>
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <div class="form-control-content {{windowWidth>767 ? 'container-padding-left':''}}">
+                        <label for="title" class="input-label">العنوان يحوي على</label>
+                        <div class="controller-field-container">
+                            <img src="/assets/images/magnifier.svg" class="controller-field-prefix-image" alt="">
+                            <input type="text" class="controller-field-input" name="title" id="title"  [(ngModel)]="searchModel.title" placeholder="محتوى العنوان">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-control-content {{windowWidth>767 ? 'container-padding-right':''}}">
+                        <label for="ques" class="input-label">السؤال يحوي على</label>
+                        <div class="controller-field-container">
+                            <img src="/assets/images/magnifier.svg" class="controller-field-prefix-image" alt="">
+                            <input type="text" class="controller-field-input" name="ques" id="ques" [(ngModel)]="searchModel.ques" placeholder="محتوى السؤال">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <div class="form-control-content {{windowWidth>767 ? 'container-padding-left':''}} ">
+                        <label for="ans" class="input-label">الجواب يحوي على</label>
+                        <div class="controller-field-container">
+                            <img src="/assets/images/magnifier.svg" class="controller-field-prefix-image" alt="">
+                            <input type="text" class="controller-field-input" name="ans" id="ans"  [(ngModel)]="searchModel.ans" placeholder="محتوى الجواب">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6"></div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-12 col-md-12">
+                    <div class="form-control-content " style="height: auto;">
+                        <label for="ans" class="input-label">الكلمات المفتاحية</label>
+                        <div class="row">
+                            <div class="col-12 col-md-4 mb-2">
+                                <div class="controller-field-container">
+                                    <input type="text" class="controller-field-input" style="width: calc(100% - 20px);" name="syn1" id="syn1" [(ngModel)]="searchModel.syn1" placeholder="الكلمة المفتاحية رقم 1">
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-4 mb-2">
+                                <div class="controller-field-container">
+                                    <input type="text" class="controller-field-input" style="width: calc(100% - 20px);" name="syn2" id="syn2" [(ngModel)]="searchModel.syn2" placeholder="الكلمة المفتاحية رقم 2">
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-4 mb-2">
+                                <div class="controller-field-container">
+                                    <input type="text" class="controller-field-input" style="width: calc(100% - 20px);" name="syn3" id="syn3" [(ngModel)]="searchModel.syn3" placeholder="الكلمة المفتاحية رقم 3">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="input-label">نوع الربط فى البحث</div>
+                        </div>
+                        <div class="col-12 py-1 d-flex align-items-center justify-content-between">
+                            <div class="d-inline-block"><span> <input  type="checkbox" [(ngModel)]="checkbox1" (change)="onCheckboxChange(1)" name="keywork1" class="check-box-input"> </span><span class="quick-serch-text ps-3">أو</span></div>
+                            <div class="d-inline-block"><span> <input  type="checkbox" [(ngModel)]="checkbox2" (change)="onCheckboxChange(2)" name="keywork2" class="check-box-input"> </span><span class="quick-serch-text ps-3">و</span></div>
+                            <div class="d-inline-block"><span> <input  type="checkbox" [(ngModel)]="checkbox3" (change)="onCheckboxChange(3)" name="keywork3" class="check-box-input"> </span><span class="quick-serch-text ps-3">بدون كلمات مفتاحية</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6"></div>
+            </div>
+            <div class="row pt-5 pb-3">
+                <div class="col-12 col-md-8">
+                    <button class="submit-btn" (click)="search()">ابحث</button>
+                </div>
+                <div class="col-12 col-md-4"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-md-4">
+        <div class="search-by-fatwa-number">
+            <div class="search-header">او ابحث برقم الفتوى</div>
+            <div class="row">
+                <div class="col-12 col-md-12">
+                    <div class="form-control-content">
+                        <label for="title" class="input-label">رقم الفتوى</label>
+                        <div class="controller-field-container">
+                            <img src="/assets/images/magnifier.svg" class="controller-field-prefix-image" alt="">
+                            <input type="text" class="controller-field-input" #FatwaNumber (keypress)="onKeyPress($event)" name="title" id="title" placeholder="ادخل رقم الفتوى">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row py-3">
+                <div class="col-12 col-md-12">
+                    <button class="submit-btn" (click)="getFatawySearch(FatwaNumber.value)">ابحث</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-page-header [pageHeaderInfo]="sectionHeaderObj"></app-page-header>
+<div style="padding-bottom: 40px;">
+    <app-fatawa-section></app-fatawa-section>
+</div>

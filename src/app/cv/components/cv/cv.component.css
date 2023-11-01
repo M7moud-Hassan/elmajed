@@ -1,0 +1,35 @@
+.cv-first-card-container{
+    background-color: white;
+    padding: 50px 20px 20px 20px;
+    margin-bottom: 30px;
+}
+.card-image{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    min-height: 380px;
+}
+.card-container{
+    position: relative;
+    min-height: 200px;
+    width: 100%;
+}
+.card-label{
+    position: absolute;
+    top: -30px;
+    right: -20px;
+    background-color: #00A58C;
+    color: white;
+    font-size: 20px;
+    line-height: 22px;
+    font-weight: 700px;
+    padding: 15px 20px;
+}
+.card-content{
+    margin-top: 60px;
+    color: black;
+    font-size: 16px;
+    line-height: 40px;
+    font-weight: 400px;
+}

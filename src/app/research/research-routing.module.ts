@@ -5,7 +5,7 @@ import { ResearchDetailsComponent } from './components/research-details/research
 
 const routes: Routes = [
   {path:'',component:ResearchListComponent},
-  {path:'details/:id',component:ResearchDetailsComponent},
+  {path:'details/:slug',component:ResearchDetailsComponent},
 ];
 
 @NgModule({

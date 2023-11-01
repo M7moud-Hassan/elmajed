@@ -1,0 +1,10 @@
+<app-page-header [pageHeaderInfo]="pageHeaderObj" ></app-page-header>
+
+<div class="row">
+    <div *ngFor="let item of items" class="col-12 col-md-4">
+        <app-project-card [itemObj]="item" detailsPath="{{detailsPath}}/{{item.slug}}"></app-project-card>
+    </div>
+</div>
+
+<app-pagination *ngIf="paginationObj.total > 0" (pageNumberClicked)="onPageNumberClicked($event)" [paginationInfo]="paginationObj"></app-pagination>
+

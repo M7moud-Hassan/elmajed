@@ -1,0 +1,11 @@
+.quick-search-item{
+    background-color: white;
+    min-height: 400px;
+    padding: 25px 10px;
+}
+.quick-serch-text{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    color: black;
+}

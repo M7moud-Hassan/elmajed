@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ResponseVM, items } from 'src/app/shared/core/models/responseVM';
 import { ResearchService } from '../../core/services/research.service';
 import { PaginationVM } from 'src/app/shared/core/models/pagination-vm';
+import { PageHeaderVM } from 'src/app/shared/core/models/page-header-vm';
 
 @Component({
   selector: 'app-research-list',
@@ -9,9 +10,10 @@ import { PaginationVM } from 'src/app/shared/core/models/pagination-vm';
   styleUrls: ['./research-list.component.css']
 })
 export class ResearchListComponent implements OnInit {
+  detailsPath:string = "/research/details";
   items:items[] = [];
   pageNumber:number = 1;
-  PageSize:number = 1;
+  PageSize:number = 9;
   total:number = 0;
   paginationObj: PaginationVM = {
     count: 0,
@@ -20,6 +22,7 @@ export class ResearchListComponent implements OnInit {
     per_page: 0,
     total_pages: 0,
   };
+  pageHeaderObj:PageHeaderVM = {} as PageHeaderVM; 
   constructor(private service:ResearchService){}
   ngOnInit(): void {
     this.getPaged();
@@ -36,6 +39,12 @@ export class ResearchListComponent implements OnInit {
             per_page:response.data.per_page,
             total:response.data.total,
             total_pages:response.data.total_pages,
+          };
+          this.pageHeaderObj = {
+            title:'بحوث ومؤلفات',
+            hasSubTitle : true,
+            subtitle:'بحث',
+            total:this.total
           };
         }
       },
