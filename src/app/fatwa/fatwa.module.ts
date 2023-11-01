@@ -8,6 +8,7 @@ import { FatawaAdvancedSearchComponent } from './components/fatawa-advanced-sear
 import { FatawaSearchResultComponent } from './components/fatawa-search-result/fatawa-search-result.component';
 import { SendQuestionComponent } from './components/send-question/send-question.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FatwaDetailsComponent } from './components/fatwa-details/fatwa-details.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FatawaComponent,
     FatawaAdvancedSearchComponent,
     FatawaSearchResultComponent,
-    SendQuestionComponent
+    SendQuestionComponent,
+    FatwaDetailsComponent
   ],
   imports: [
     CommonModule,
