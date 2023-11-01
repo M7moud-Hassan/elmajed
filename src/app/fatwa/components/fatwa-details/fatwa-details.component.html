@@ -1,1 +1,15 @@
 <app-page-header [pageHeaderInfo]="pageHeaderObj" ></app-page-header>
+
+<div class="row pb-5">
+    <div class="col-12 col-md-8">
+        <app-fatwa-card [Question]="questionDetails" ></app-fatwa-card>
+        <app-fatwa-answer-card [answer]="answer"></app-fatwa-answer-card>
+        <div class="sub-header">كلمات مفتاحية</div>
+        <a *ngFor="let item of keywords" routerLink="/fatawa/details/{{item.id}}" class="keyword-item" >{{item.kword}}</a>
+        <div class="sub-header">مواضيع ذات صلة</div>
+        <div *ngFor="let item of relatedTopics" >
+            <app-fatawa-preferred-card title="{{item.cat}}" label="فتاوي مختارة" link="/fatawa/details/{{item.id}}"></app-fatawa-preferred-card>
+        </div>
+    </div>
+    <div class="col-12 col-md-4"></div>
+</div>

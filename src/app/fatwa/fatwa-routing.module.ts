@@ -11,7 +11,7 @@ const routes: Routes = [
   {path:'search',component:FatawaAdvancedSearchComponent},
   {path:'send-question',component:SendQuestionComponent},
   {path:'search-result',component:FatawaSearchResultComponent},
-  {path:'details',component:FatwaDetailsComponent},
+  {path:'details/:data',component:FatwaDetailsComponent},
 ];
 
 @NgModule({

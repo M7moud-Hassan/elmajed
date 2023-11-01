@@ -1,5 +1,7 @@
 import { AfterViewInit, Component, HostListener, OnInit } from '@angular/core';
 import { FatawaService } from '../../core/services/fatawa.service';
+import { NavigationExtras, NavigationStart, Router  } from '@angular/router';
+import { filter } from 'rxjs';
 
 
 @Component({
@@ -10,7 +12,7 @@ import { FatawaService } from '../../core/services/fatawa.service';
 export class FatawaAdvancedSearchComponent implements AfterViewInit, OnInit {
   result :any[]= [];
   searchModel:any = {
-      flt: "or",
+      flt: "",
       title: "",
       ques: "",
       ans: "",
@@ -35,7 +37,7 @@ export class FatawaAdvancedSearchComponent implements AfterViewInit, OnInit {
   checkbox2: boolean = false;
   checkbox3: boolean = false;
 
-  constructor(private service:FatawaService){}
+  constructor(private service:FatawaService,private router:Router){}
   @HostListener('window:resize', ['$event'])
   onWindowResize(event: Event) {
     this.windowWidth = window.innerWidth;
@@ -79,30 +81,34 @@ export class FatawaAdvancedSearchComponent implements AfterViewInit, OnInit {
      if(!this.isModelHasData()){
       return;
      }
+     this.searchModel.flt = this.getFilterSign();
+     console.log(this.searchModel);
     this.service.getFatwaFreeSearch(this.searchModel,0,1000).subscribe({
       next : (res:any)=>{
         if(res.status==200 && res.success==true){
           if(res.data.data.length > 0){
             this.result = res.data.data;
             console.log(this.result);
+          }else{
+            alert("Not found result in free search")
           }
         }
       }
     });
   }
+  detailsData:any;
   getFatawySearch(key:any){
     key = parseInt(key);
     this.service.getFatwaDetails(key).subscribe({
       next : (res:any)=>{
         if(res.status==200 && res.success==true){
           if(res.data.data[0].id != null){
-            // alert(res.data.data[0].id != null);
-            // this.router.navigate(["/fatwa/fatwaDetails",key]);
+            console.log(res.data.data[0]);
+            this.detailsData=res.data.data[0];
+            this.navigateToRouteWithData();
           }else{
-            // this.resultCount = this.result.length;
+            alert("Not found")
           }
-          // this.result = res.data.data as IShortFatwaRecord[];
-          // this.resultCount = this.result.length;
         }
       }
     })
@@ -117,5 +123,16 @@ export class FatawaAdvancedSearchComponent implements AfterViewInit, OnInit {
   if (!pattern.test(inputChar)) {
     event.preventDefault();
   }
+}
+navigateToRouteWithData() {
+  const data = this.detailsData;
+  // Convert the data object to a query string
+  const dataString = encodeURIComponent(JSON.stringify(data));
+
+  // Construct the URL with the data parameter
+  const url = `/fatawa/details/${dataString}`;
+
+  // Navigate to the route with the data
+  this.router.navigateByUrl(url);
 }
 }
