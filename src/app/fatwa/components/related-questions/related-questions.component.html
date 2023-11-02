@@ -1,7 +1,7 @@
 <app-page-header [pageHeaderInfo]="pageHeaderObj" ></app-page-header>
 <div class="row pb-5">
     <div class="col-12 col-md-8">
-        <a *ngFor="let item of selectedItems" routerLink="#" class="related-items">{{item.title}}</a>
+        <a *ngFor="let item of selectedItems" (click)="getFatawaDetails(item.id)" class="related-items">{{item.title}}</a>
         <app-pagination *ngIf="paginationObj.total > 0" (pageNumberClicked)="onPageNumberClicked($event)" [paginationInfo]="paginationObj"></app-pagination>
     </div>
     <div class="col-12 col-md-4"></div>

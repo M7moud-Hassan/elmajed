@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FatawaService } from '../../core/services/fatawa.service';
 import { PaginationVM } from 'src/app/shared/core/models/pagination-vm';
 import { PageHeaderVM } from 'src/app/shared/core/models/page-header-vm';
@@ -10,6 +10,7 @@ import { PageHeaderVM } from 'src/app/shared/core/models/page-header-vm';
   styleUrls: ['./related-questions.component.css']
 })
 export class RelatedQuestionsComponent implements OnInit {
+  detailsData:any;
   id:any;
   detailsPath:string = "/project/details";
   items:any[] = [];
@@ -25,7 +26,7 @@ export class RelatedQuestionsComponent implements OnInit {
     total_pages: 0,
   };
   pageHeaderObj:PageHeaderVM = {} as PageHeaderVM; 
-  constructor(private service:FatawaService,private activatedRoute: ActivatedRoute) { }
+  constructor(private service:FatawaService,private activatedRoute: ActivatedRoute,private router:Router) { }
   ngOnInit(): void {
    this.activatedRoute.paramMap.subscribe(param=>{
       this.id= param.get("id")??"";
@@ -55,7 +56,7 @@ export class RelatedQuestionsComponent implements OnInit {
   }
   onPageNumberClicked(pageNumber: number) {
     this.pageNumber = pageNumber;
-    this.getElementsByPageSize(pageNumber,15);
+    this.getElementsByPageSize(pageNumber,10);
   }
   
     getElementsByPageSize(currentPage:number,pageSize: number ){
@@ -72,5 +73,28 @@ export class RelatedQuestionsComponent implements OnInit {
         current_page: currentPage,
         total_pages: pageCount
       };
+    }
+
+
+    getFatawaDetails(key:any){
+      this.service.getFatwaDetails(key).subscribe({
+        next : (res:any)=>{
+          if(res.status==200 && res.success==true){
+            if(res.data!.data[0].id != null){
+              console.log(res.data.data[0]);
+              this.detailsData=res.data.data[0];
+              this.navigateToRouteWithData();
+            }else{
+              alert("Not found")
+            }
+          }
+        }
+      })
+    }
+    navigateToRouteWithData() {
+      const data = this.detailsData;
+      const dataString = encodeURIComponent(JSON.stringify(data));
+      const url = `/fatawa/details/${dataString}`;
+      this.router.navigateByUrl(url);
     }
 }
