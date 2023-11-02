@@ -1,1 +1,81 @@
-<p>video-audio works!</p>
+<div class="d-flex justify-content-between mt-4 pt-4 align-items-center">
+    <p class="po">دروس ودورات <span class="po_h">(30 درس ودورة)</span></p>
+    <div class="bg-light p-1 rounded  d-sm-block d-md-none " style="cursor: pointer;" (click)="w3_open()">
+        <img src="/assets/images/magnifier.svg" width="30" height="30">
+        <span class="text-mobile">البحث</span>
+    </div>
+</div>
+<div class="row">
+    <div class="col-4 bg-light pb-4  d-none d-sm-block">
+            <div class="form-control-content mt-4">
+                <label for="email" class="input-label">ابحث بإسم المادة</label>
+                <div class="controller-field-container">
+                    <img src="/assets/images/magnifier.svg" class="controller-field-prefix-image" alt="">
+                    <input type="text" class="controller-field-input" name="email" id="email" formControlName="email" placeholder="ادخل البريد الإلكتروني">
+                </div>
+    
+            </div>
+        
+        <p class="label-p ms-2">
+            نوع المادة
+        </p>
+       <div class="ps-2">
+        <div class="d-inline-block d-block"><span> <input  type="checkbox"   name="keywork1" class="check-box-input"> </span><span class="quick-serch-text ps-3">درس</span></div>
+        <div class="d-inline-block mt-2"><span> <input  type="checkbox"  name="keywork1" class="check-box-input"> </span><span class="quick-serch-text ps-3">دورة</span></div>
+       </div>
+        <p class="label-p ms-2 mt-4">
+            نوع المادة
+        </p>
+       <div class="ps-2 ">
+        <div class="d-inline-block d-block"><span> <input  type="checkbox"   name="keywork1" class="check-box-input"> </span><span class="quick-serch-text ps-3">درس</span></div>
+        <div class="d-inline-block mt-2 d-block"><span> <input  type="checkbox"  name="keywork1" class="check-box-input"> </span><span class="quick-serch-text ps-3">دورة</span></div>
+        <div class="d-inline-block d-block mt-2"><span> <input  type="checkbox"   name="keywork1" class="check-box-input"> </span><span class="quick-serch-text ps-3">درس</span></div>
+        <div class="d-inline-block mt-2"><span> <input  type="checkbox"  name="keywork1" class="check-box-input"> </span><span class="quick-serch-text ps-3">دورة</span></div>
+       </div>
+       <div class="row align-items-center mt-4">
+        <button class="submit-btn col-8">ابحث</button>
+        <span class="delete col-4 text-center">مسح</span>
+       </div>
+     
+    </div>
+    <div class="col-12 col-md-8">
+        <app-audio-card></app-audio-card>
+    </div>
+
+</div>
+<app-pagination></app-pagination>
+<div class="w3-overlay" (click)="w3_close()" style="cursor:pointer" [style.display]="sidebarDisplay"></div>
+<div class="" style="z-index:100"   [style.display]="sidebarDisplay">
+    <div class="bg-light p-3  d-block d-sm-none" style="position: absolute; width: 100%; right: 0; left: 0; bottom: 0; z-index: 10000000;" >
+        <div class="form-control-content mt-4">
+            <label for="email" class="input-label">ابحث بإسم المادة</label>
+            <div class="controller-field-container">
+                <img src="/assets/images/magnifier.svg" class="controller-field-prefix-image" alt="">
+                <input type="text" class="controller-field-input" name="email" id="email" formControlName="email" placeholder="ادخل البريد الإلكتروني">
+            </div>
+
+        </div>
+    
+    <p class="label-p ms-2">
+        نوع المادة
+    </p>
+   <div class="ps-2">
+    <div class="d-inline-block d-block"><span> <input  type="checkbox"   name="keywork1" class="check-box-input"> </span><span class="quick-serch-text ps-3">درس</span></div>
+    <div class="d-inline-block mt-2"><span> <input  type="checkbox"  name="keywork1" class="check-box-input"> </span><span class="quick-serch-text ps-3">دورة</span></div>
+   </div>
+    <p class="label-p ms-2 mt-4">
+        نوع المادة
+    </p>
+   <div class="ps-2 ">
+    <div class="d-inline-block d-block"><span> <input  type="checkbox"   name="keywork1" class="check-box-input"> </span><span class="quick-serch-text ps-3">درس</span></div>
+    <div class="d-inline-block mt-2 d-block"><span> <input  type="checkbox"  name="keywork1" class="check-box-input"> </span><span class="quick-serch-text ps-3">دورة</span></div>
+    <div class="d-inline-block d-block mt-2"><span> <input  type="checkbox"   name="keywork1" class="check-box-input"> </span><span class="quick-serch-text ps-3">درس</span></div>
+    <div class="d-inline-block mt-2"><span> <input  type="checkbox"  name="keywork1" class="check-box-input"> </span><span class="quick-serch-text ps-3">دورة</span></div>
+   </div>
+   <div class="row align-items-center mt-4">
+    <button class="submit-btn col-8">ابحث</button>
+    <span class="delete col-4 text-center">مسح</span>
+   </div>
+ 
+</div>
+  </div>

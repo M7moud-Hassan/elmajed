@@ -5,13 +5,15 @@ import { FatawaAdvancedSearchComponent } from './components/fatawa-advanced-sear
 import { SendQuestionComponent } from './components/send-question/send-question.component';
 import { FatawaSearchResultComponent } from './components/fatawa-search-result/fatawa-search-result.component';
 import { FatwaDetailsComponent } from './components/fatwa-details/fatwa-details.component';
+import { RelatedQuestionsComponent } from './components/related-questions/related-questions.component';
 
 const routes: Routes = [
   {path:'',component:FatawaComponent},
   {path:'search',component:FatawaAdvancedSearchComponent},
   {path:'send-question',component:SendQuestionComponent},
   {path:'search-result',component:FatawaSearchResultComponent},
-  {path:'details',component:FatwaDetailsComponent},
+  {path:'details/:data',component:FatwaDetailsComponent},
+  {path:'related-questions/:id',component:RelatedQuestionsComponent},
 ];
 
 @NgModule({

@@ -5,7 +5,7 @@
                 <label for="email" class="input-label">ابحث بإسم الفتوى</label>
                 <div class="controller-field-container">
                     <img src="/assets/images/magnifier.svg" class="controller-field-prefix-image" alt="">
-                    <input type="text" class="controller-field-input" name="fatwaName" id="fatwaName" placeholder="ابحث بإسم الفتوى">
+                    <input type="text" #FatwaName class="controller-field-input" name="fatwaName" id="fatwaName" placeholder="ابحث بإسم الفتوى">
                 </div>
             </div>
         </div>
@@ -23,7 +23,7 @@
                     <button routerLink="#" class="submit-btn">ابحث</button>
                 </div>
                 <div class="col-5">
-                    <button routerLink="#" class="botton-link" style="background-color: white; color: #A7A7A7;">مسح</button>
+                    <button routerLink="#" class="botton-link"  (click)="clearFatwaNameValue()"  style="background-color: white; color: #A7A7A7;">مسح</button>
                 </div>
             </div>
         </div>
@@ -42,7 +42,7 @@
                     <button class="submit-btn" (click)="getFatawySearch(FatwaNumber.value)">ابحث</button>
                 </div>
                 <div class="col-5">
-                    <button class="botton-link" (click)="FatwaNumber.value = ''" style="color: #A7A7A7;">مسح</button>
+                    <button class="botton-link" (click)="clearInputValue()" style="color: #A7A7A7;">مسح</button>
                 </div>
             </div>
         </div>
