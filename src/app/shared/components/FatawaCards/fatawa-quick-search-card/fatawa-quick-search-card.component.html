@@ -5,7 +5,7 @@
                 <label for="email" class="input-label">ابحث بإسم الفتوى</label>
                 <div class="controller-field-container">
                     <img src="/assets/images/magnifier.svg" class="controller-field-prefix-image" alt="">
-                    <input type="text" #FatwaName class="controller-field-input" name="fatwaName" id="fatwaName" placeholder="ابحث بإسم الفتوى">
+                    <input type="text" #FatwaName class="controller-field-input"  name="fatwaName" id="fatwaName" placeholder="ابحث بإسم الفتوى">
                 </div>
             </div>
         </div>
@@ -20,7 +20,7 @@
         <div class="col-12">
             <div class="row py-3">
                 <div class="col-7">
-                    <button routerLink="#" class="submit-btn">ابحث</button>
+                    <button (click)="search(FatwaName.value)" class="submit-btn">ابحث</button>
                 </div>
                 <div class="col-5">
                     <button routerLink="#" class="botton-link"  (click)="clearFatwaNameValue()"  style="background-color: white; color: #A7A7A7;">مسح</button>

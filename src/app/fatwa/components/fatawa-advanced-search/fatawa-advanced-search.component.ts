@@ -81,19 +81,22 @@ export class FatawaAdvancedSearchComponent implements AfterViewInit, OnInit {
       return;
      }
      this.searchModel.flt = this.getFilterSign();
-     console.log(this.searchModel);
-    this.service.getFatwaFreeSearch(this.searchModel,0,1000).subscribe({
-      next : (res:any)=>{
-        if(res.status==200 && res.success==true){
-          if(res.data.data.length > 0){
-            this.result = res.data.data;
-            console.log(this.result);
-          }else{
-            alert("Not found result in free search")
-          }
-        }
-      }
-    });
+     this.navigateToRouteWithData();
+    //  return;
+    //  console.log(this.searchModel);
+    // this.service.getFatwaFreeSearch(this.searchModel,0,1000).subscribe({
+    //   next : (res:any)=>{
+    //     if(res.status==200 && res.success==true){
+    //       if(res.data.data.length > 0){
+    //         this.result = res.data.data;
+    //         this.navigateToRouteWithData();
+    //         console.log(this.result);
+    //       }else{
+    //         alert("Not found result in free search")
+    //       }
+    //     }
+    //   }
+    // });
   }
   detailsData:any;
   getFatawySearch(key:any){
@@ -104,7 +107,7 @@ export class FatawaAdvancedSearchComponent implements AfterViewInit, OnInit {
           if(res.data.data[0].id != null){
             console.log(res.data.data[0]);
             this.detailsData=res.data.data[0];
-            this.navigateToRouteWithData();
+            this.navigateToRouteWithDetails();
           }else{
             alert("Not found")
           }
@@ -124,9 +127,42 @@ export class FatawaAdvancedSearchComponent implements AfterViewInit, OnInit {
   }
 }
 navigateToRouteWithData() {
+  // const data = this.detailsData;
+  const data = this.searchModel;
+  const dataString = encodeURIComponent(JSON.stringify(data));
+  const url = `/fatawa/related-questions-by-free-search/${dataString}`;
+  this.router.navigateByUrl(url);
+}
+navigateToRouteWithDetails() {
   const data = this.detailsData;
   const dataString = encodeURIComponent(JSON.stringify(data));
   const url = `/fatawa/details/${dataString}`;
   this.router.navigateByUrl(url);
+  // const dataString = encodeURIComponent(JSON.stringify(data));
+  // const url = `/fatawa/related-questions-by-free-search/${dataString}`;
+  // this.router.navigateByUrl(url);
 }
+
+
+// getFatawySearch(key:any){
+//   this.service.getFatwaDetails(key).subscribe({
+//     next : (res:any)=>{
+//       if(res.status==200 && res.success==true){
+//         if(res.data!.data[0].id != null){
+//           console.log(res.data.data[0]);
+//           this.detailsData=res.data.data[0];
+//           this.navigateToRouteWithData();
+//         }else{
+//           alert("Not found")
+//         }
+//       }
+//     }
+//   })
+// }
+// navigateToRouteWithData() {
+//   const data = this.detailsData;
+//   const dataString = encodeURIComponent(JSON.stringify(data));
+//   const url = `/fatawa/details/${dataString}`;
+//   this.router.navigateByUrl(url);
+// }
 }

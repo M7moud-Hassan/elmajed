@@ -8,7 +8,16 @@ import { FatawaService } from 'src/app/fatwa/core/services/fatawa.service';
   styleUrls: ['./fatawa-quick-search-card.component.css']
 })
 export class FatawaQuickSearchCardComponent  {
- 
+  fatwaTitle:string = "";
+  searchModel:any = {
+    flt: "",
+    title: "",
+    ques: "",
+    ans: "",
+    syn1: "",
+    syn2: "",
+    syn3: "",
+  }
   constructor(private service:FatawaService,private router:Router){}
 
   @ViewChild('FatwaNumber') fatwaNumber: any;
@@ -50,6 +59,27 @@ export class FatawaQuickSearchCardComponent  {
     const data = this.detailsData;
     const dataString = encodeURIComponent(JSON.stringify(data));
     const url = `/fatawa/details/${dataString}`;
+    this.router.navigateByUrl(url);
+  }
+  search(title:any){
+    if(title == null || title == ""){
+     return;
+    }
+    this.searchModel = {
+      flt: "",
+      title: title,
+      ques: "",
+      ans: "",
+      syn1: "",
+      syn2: "",
+      syn3: "",
+    }
+    this.navigateToRouteWithDeTails();
+  }
+  navigateToRouteWithDeTails(){
+    const data = this.searchModel;
+    const dataString = encodeURIComponent(JSON.stringify(data));
+    const url = `/fatawa/related-questions-by-free-search/${dataString}`;
     this.router.navigateByUrl(url);
   }
 }
