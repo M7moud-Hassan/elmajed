@@ -10,17 +10,17 @@ import { FatawaService } from 'src/app/fatwa/core/services/fatawa.service';
 export class FatawaPreferredCardComponent implements OnChanges {
   @Input() title:any;
   @Input() label:any;
-  @Input() id:any;
+  @Input() link:any;
   title_info:any;
   label_info:any;
-  id_info:any;
+  link_info:any;
 
   constructor(private service:FatawaService,private router:Router){}
 
   ngOnChanges(changes: SimpleChanges): void {
     this.title_info = this.title;
     this.label_info = this.label;
-    this.id_info = this.id;
+    this.link_info = this.link;
   }
   
   detailsData:any;

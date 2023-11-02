@@ -37,6 +37,8 @@ export class FatawaQuickSearchCardComponent  {
             console.log(res.data.data[0]);
             this.detailsData=res.data.data[0];
             this.navigateToRouteWithData();
+            this.clearFatwaNameValue();
+            this.clearInputValue();
           }else{
             alert("Not found")
           }
