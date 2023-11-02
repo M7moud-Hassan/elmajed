@@ -31,4 +31,13 @@
     .video_youtube{
       height: 350px;
     }
+    .po{
+      font-size: 17px !important;
+    }
+    .po_h{
+      font-size: 15px !important;
+    }
+    .mt--{
+      margin-top: 10px !important;
+    }
 }

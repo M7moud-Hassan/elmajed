@@ -1,0 +1,33 @@
+.circle{
+    background-color: #00A88E;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+}
+.p-text-audio{
+    color: #000;
+text-align: right;
+font-family: Almarai;
+font-size: 16px;
+font-style: normal;
+font-weight: 700;
+line-height: 32px; /* 200% */
+}
+.p-hint{
+    color: var(--Gray, #C0C0C0);
+text-align: right;
+font-family: Almarai;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+.pp-hint{
+    color: #000;
+text-align: right;
+font-family: Almarai;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
