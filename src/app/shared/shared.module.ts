@@ -34,6 +34,10 @@ import { TvBroadcastProgrammesComponent } from './components/tv-broadcast-progra
 import { ShareCardVideoComponent } from './components/share-card-video/share-card-video.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { AudioCardComponent } from './components/audio-card/audio-card.component';
+import { AudioComponent } from './components/audio/audio.component';
+import { DialogVideoImageComponent } from './components/dialog-video-image/dialog-video-image.component';
+import { CardLectureComponent } from './components/card-lecture/card-lecture.component';
 
 
 
@@ -70,7 +74,11 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     TvBroadcastProgrammesComponent,
     ShareCardVideoComponent,
     FooterComponent,
-    NavbarComponent
+    NavbarComponent,
+    AudioCardComponent,
+    AudioComponent,
+    DialogVideoImageComponent,
+    CardLectureComponent
   ],
   imports: [
     CommonModule,
@@ -106,7 +114,11 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     AudioAndVideoComponent,
     TvBroadcastProgrammesComponent,
     FooterComponent,
-    NavbarComponent
+    NavbarComponent,
+    AudioCardComponent,
+    AudioComponent,
+    DialogVideoImageComponent,
+    CardLectureComponent
     
   ]
 })
