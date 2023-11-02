@@ -22,7 +22,7 @@
     </div>
     <div class="col-md-5">
         <div *ngFor="let item of preferredList.slice(0,4)" >
-            <app-fatawa-preferred-card [title]="item.title" label="فتاوي مختارة" link="/fatwa/fatwaDetails/{{item.id}}"></app-fatawa-preferred-card>
+            <app-fatawa-preferred-card [title]="item.title" label="فتاوي مختارة" id="{{item.id}}"></app-fatawa-preferred-card>
         </div>
     </div>
 </div>

@@ -27,6 +27,7 @@ export class FatawaComponent implements AfterViewInit, OnInit {
   }
   ngOnInit(): void {
     this.getDailyFatwa();
+    this.windowWidth = window.innerWidth;
  }
   @HostListener('window:resize', ['$event'])
   onWindowResize(event: Event) {

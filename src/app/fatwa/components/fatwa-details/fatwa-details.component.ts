@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 
 @Component({
@@ -6,7 +6,7 @@ import { ActivatedRoute, Route, Router } from '@angular/router';
   templateUrl: './fatwa-details.component.html',
   styleUrls: ['./fatwa-details.component.css']
 })
-export class FatwaDetailsComponent implements OnInit {
+export class FatwaDetailsComponent implements OnInit,OnChanges {
   questionDetails = {
     img:'',
     title:'',
@@ -18,6 +18,20 @@ export class FatwaDetailsComponent implements OnInit {
   keywords:any[]=[];
   relatedTopics:any[]=[];
   constructor(private route: ActivatedRoute) { }
+  ngOnChanges(changes: SimpleChanges): void {
+    const dataString = this.route.snapshot.paramMap.get('data');
+    const data = JSON.parse(decodeURIComponent(dataString!));
+    this.answer = data.answer;
+    this.keywords = data.kwords;
+    this.relatedTopics = data.cats;
+    this.questionDetails = {
+      img:data.img??'',
+      title:data.title,
+      date:data.date,
+      id:data.id,
+      ques:data.ques
+    };
+  }
 
   ngOnInit(): void {
   const dataString = this.route.snapshot.paramMap.get('data');

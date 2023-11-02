@@ -1,7 +1,6 @@
 import { AfterViewInit, Component, HostListener, OnInit } from '@angular/core';
 import { FatawaService } from '../../core/services/fatawa.service';
-import { NavigationExtras, NavigationStart, Router  } from '@angular/router';
-import { filter } from 'rxjs';
+import {  Router  } from '@angular/router';
 
 
 @Component({
@@ -126,13 +125,8 @@ export class FatawaAdvancedSearchComponent implements AfterViewInit, OnInit {
 }
 navigateToRouteWithData() {
   const data = this.detailsData;
-  // Convert the data object to a query string
   const dataString = encodeURIComponent(JSON.stringify(data));
-
-  // Construct the URL with the data parameter
   const url = `/fatawa/details/${dataString}`;
-
-  // Navigate to the route with the data
   this.router.navigateByUrl(url);
 }
 }
