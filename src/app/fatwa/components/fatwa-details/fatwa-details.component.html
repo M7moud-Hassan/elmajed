@@ -5,7 +5,7 @@
         <app-fatwa-card [Question]="questionDetails" ></app-fatwa-card>
         <app-fatwa-answer-card [answer]="answer"></app-fatwa-answer-card>
         <div class="sub-header">كلمات مفتاحية</div>
-        <a *ngFor="let item of keywords" routerLink="/fatawa/details/{{item.id}}" class="keyword-item" >{{item.kword}}</a>
+        <a *ngFor="let item of keywords" routerLink="/fatawa/related-questions-keywords/{{item.id}}" class="keyword-item" >{{item.kword}}</a>
         <div class="sub-header">مواضيع ذات صلة</div>
         <div *ngFor="let item of relatedTopics" >
             <app-fatawa-preferred-card title="{{item.cat}}" label="فتاوي مختارة" id="{{item.id}}"></app-fatawa-preferred-card>

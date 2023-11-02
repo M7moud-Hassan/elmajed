@@ -11,7 +11,8 @@ import { PageHeaderVM } from 'src/app/shared/core/models/page-header-vm';
 })
 export class RelatedQuestionsComponent implements OnInit {
   detailsData:any;
-  id:any;
+  id:any = "";
+  keyword:any = "";
   detailsPath:string = "/project/details";
   items:any[] = [];
   pageNumber:number = 1;
@@ -29,13 +30,38 @@ export class RelatedQuestionsComponent implements OnInit {
   constructor(private service:FatawaService,private activatedRoute: ActivatedRoute,private router:Router) { }
   ngOnInit(): void {
    this.activatedRoute.paramMap.subscribe(param=>{
-      this.id= param.get("id")??"";
-      this.getAllItems();
+      this.id= param.get("id") ?? "";
+      this.keyword= param.get("keyword") ?? "";
+      if(this.id != ""){
+        this.getAllItems();
+      }else if(this.keyword != ""){
+        this.getAllItemsByKeyword();
+      }
    });
   }
 
   getAllItems(){
     this.service.GETListFatwaByFatwaCategory(this.id,this.pageNumber,this.PageSize).subscribe({
+      next:(response:any)=>{
+        if(response.status == 200){
+          this.items = response.data.data;
+          this.total = this.items.length;
+          this.onPageNumberClicked(1);
+          this.pageHeaderObj = {
+            title:'الفتاوى المتعلقة',
+            hasSubTitle : false,
+            subtitle:'',
+            total:this.total
+          };
+        }
+      },
+      error:(error)=>{
+        console.log("Error : ===> ==> "+error.description);
+      }
+    });
+  }
+  getAllItemsByKeyword(){
+    this.service.GETListFatwaByKeyword(this.keyword,this.pageNumber,this.PageSize).subscribe({
       next:(response:any)=>{
         if(response.status == 200){
           this.items = response.data.data;
