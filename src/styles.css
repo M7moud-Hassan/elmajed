@@ -114,6 +114,10 @@
 
 .toggle-group .toggle-handle{
   opacity: 1;
+  margin-top: 17px !important;
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 50% !important;
 }
 .toggle-group .toggle-handle, .toggle-group .btn {
   /* background-color: black !important; */

@@ -11,15 +11,16 @@ export class RamadanKareemIslamicBackgroundComponent implements OnInit,AfterView
   show:boolean=false
 
   constructor(private renderer: Renderer2, private el: ElementRef) {
- 
+
   }
   ngAfterViewInit(): void {
-  setTimeout(() => {
-    this.modifyToggleHandle()
-  }, 100);
+   setTimeout(() => {
+     this.modifyToggleHandle()
+   }, 10);
   }
+
   ngOnInit(): void {
-   
+    //  this.modifyToggleHandle()
   }
 
   modifyToggleHandle() {

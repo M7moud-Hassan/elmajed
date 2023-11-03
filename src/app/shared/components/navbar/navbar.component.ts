@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-  navLinks=['/','/','no','not','not','not','not','not','not']
+  constructor(private rooter:Router) {
+    
+    
+  }
+  navLinks=['/home','/home','/project','/fatawa','/research','/video-audio','/lectures','/cv','/contact-us']
+  navHome(){
+    this.rooter.navigate(['/home'])
+  }
 }
+
