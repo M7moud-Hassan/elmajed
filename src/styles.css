@@ -367,4 +367,8 @@ select option:hover{
   background-color: #00A58C;
   color:white;
 }
+a{
+  cursor: pointer;
+  user-select: none;
+}
 /* -----------------------------forms and inputs styles-------------------------------------- */
