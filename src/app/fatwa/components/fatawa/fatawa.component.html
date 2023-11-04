@@ -1,4 +1,4 @@
-<app-page-header [pageHeaderInfo]="pageHeaderObj" ></app-page-header>
+<app-page-header [pageHeaderInfo]="pageHeaderObj"></app-page-header>
 <div class="row">
     <div class="col-12 col-md-6 ">
         <app-fatawa-button-card [data]="questionInfo"></app-fatawa-button-card>
@@ -13,26 +13,35 @@
 <app-fatawa-question-card></app-fatawa-question-card>
 <div class="row" style="padding-bottom: 50px;">
     <div class="col-12 col-md-8" #todaysFatwaSection>
-        <app-page-header [pageHeaderInfo]="pageHeaderDailyFatwaObj" ></app-page-header>
-        <app-fatwa-card [Question]="questionDetails" ></app-fatwa-card>
+        <app-page-header [pageHeaderInfo]="pageHeaderDailyFatwaObj"></app-page-header>
+        <app-fatwa-card [Question]="questionDetails"></app-fatwa-card>
         <app-fatwa-answer-card [answer]="answer"></app-fatwa-answer-card>
         <div class="sub-header">كلمات مفتاحية</div>
-        <a *ngFor="let item of keywords" routerLink="/fatawa/related-questions-keywords/{{item.id}}" class="keyword-item" >{{item.kword}}</a>
+        <a *ngFor="let item of keywords" routerLink="/fatawa/related-questions-keywords/{{item.id}}"
+            class="keyword-item">{{item.kword}}</a>
         <div class="sub-header">مواضيع ذات صلة</div>
-        <div *ngFor="let item of relatedTopics" >
-            <app-fatawa-preferred-card title="{{item.cat}}" label="فتاوي مختارة" flag="true" id="{{item.id}}"></app-fatawa-preferred-card>
+        <div *ngFor="let item of relatedTopics">
+            <app-fatawa-preferred-card title="{{item.cat}}" label="فتاوي مختارة" flag="true"
+                id="{{item.id}}"></app-fatawa-preferred-card>
         </div>
     </div>
     <div class="col-12 col-md-4">
-        <app-page-header [pageHeaderInfo]="pageHeaderSpeedSearchObj" ></app-page-header>
+        <app-page-header [pageHeaderInfo]="pageHeaderSpeedSearchObj"></app-page-header>
         <app-fatawa-quick-search-card></app-fatawa-quick-search-card>
         <div class="sub-header">أقسام الفتاوى</div>
-        <a routerLink="#" class="keyword-item" >الحديث</a>
-        <a routerLink="#" class="keyword-item" >الإيمان</a>
-        <a routerLink="#" class="keyword-item" >الجهاد ومعاملة  الكفار</a>
-        <a routerLink="#" class="keyword-item" >الحج والعمرة</a>
-        <a routerLink="#" class="keyword-item" >الزكاة</a>
-        <a routerLink="#" class="keyword-item" >فقه الأسرة</a>
-        <a routerLink="#" class="keyword-item" >الحديث</a>
+
+        <div *ngFor="let item of categories; let i = index;">
+            <ng-container *ngIf="(i + 1) % 6 === 0">
+                     <a routerLink="#"></a>
+                    <a *ngIf="categories[i]" routerLink="#" class="fatawaSectionItem" style="width: calc(30% - 5px);margin-left: 5px;">{{categories[i].cat}}</a>
+                    <a *ngIf="categories[i+1]" routerLink="#" class="fatawaSectionItem" style="width: calc(30% - 5px);margin-left: 5px;">{{categories[i+1].cat}}</a>
+                    <a *ngIf="categories[i+2]" routerLink="#" class="fatawaSectionItem" style="width: calc(40% - 0px);margin-left: 0px;">{{categories[i+2].cat}}</a>
+               
+                    <a *ngIf="categories[i+3]" routerLink="#" class="fatawaSectionItem" style="width: calc(40% - 5px);margin-left: 5px;">{{categories[i+3].cat}}</a>
+                    <a *ngIf="categories[i+4]" routerLink="#" class="fatawaSectionItem" style="width: calc(30% - 5px);margin-left: 5px;">{{categories[i+4].cat}}</a>
+                    <a *ngIf="categories[i+5]" routerLink="#" class="fatawaSectionItem" style="width: calc(30% - 0px);margin-left: 0px;">{{categories[i+5].cat}}</a>
+               
+            </ng-container>
+        </div>
     </div>
 </div>
