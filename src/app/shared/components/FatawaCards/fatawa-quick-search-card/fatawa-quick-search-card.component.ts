@@ -1,6 +1,8 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { FatawaService } from 'src/app/fatwa/core/services/fatawa.service';
+import { MatDialog } from '@angular/material/dialog';
+import { PopUpCardComponent } from '../../pop-up-card/pop-up-card.component';
 
 @Component({
   selector: 'app-fatawa-quick-search-card',
@@ -18,7 +20,7 @@ export class FatawaQuickSearchCardComponent  {
     syn2: "",
     syn3: "",
   }
-  constructor(private service:FatawaService,private router:Router){}
+  constructor(private service:FatawaService,private router:Router, private dialog: MatDialog){}
 
   @ViewChild('FatwaNumber') fatwaNumber: any;
   @ViewChild('FatwaName') fatwaName: any;
@@ -49,12 +51,13 @@ export class FatawaQuickSearchCardComponent  {
             this.clearFatwaNameValue();
             this.clearInputValue();
           }else{
-            alert("Not found")
+            this.openDialog();
           }
         }
       }
     })
   }
+
   navigateToRouteWithData() {
     const data = this.detailsData;
     const dataString = encodeURIComponent(JSON.stringify(data));
@@ -81,5 +84,18 @@ export class FatawaQuickSearchCardComponent  {
     const dataString = encodeURIComponent(JSON.stringify(data));
     const url = `/fatawa/related-questions-by-free-search/${dataString}`;
     this.router.navigateByUrl(url);
+  }
+  openDialog() {
+    const dialogRef = this.dialog.open(PopUpCardComponent, {
+      width: '400px',
+      data: {
+        title: 'Dialog Title',
+        message: 'This is a sample dialog message.'
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('Dialog closed');
+    });
   }
 }

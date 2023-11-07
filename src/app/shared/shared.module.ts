@@ -39,6 +39,7 @@ import { AudioComponent } from './components/audio/audio.component';
 import { DialogVideoImageComponent } from './components/dialog-video-image/dialog-video-image.component';
 import { CardLectureComponent } from './components/card-lecture/card-lecture.component';
 import { FatawaCategoriesSectionComponent } from './components/FatawaCards/fatawa-categories-section/fatawa-categories-section.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 
@@ -86,6 +87,7 @@ import { FatawaCategoriesSectionComponent } from './components/FatawaCards/fataw
     CommonModule,
     RouterModule,
     SharedRoutingModule,
+    MatDialogModule
   ],
   exports:[
     PaginationComponent,
