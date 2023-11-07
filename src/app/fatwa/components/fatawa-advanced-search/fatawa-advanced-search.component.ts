@@ -134,6 +134,7 @@ openNotFoundDialog() {
     width: `${this.windowWidth>676?'55%':'100%'}`,
     disableClose: true,
     data: {
+      reason:'notFound',
       title: 'عفوا لم نجد نتيجه تطابق بحثك ',
       message: 'يمكنك اعادة البحث مره أخرى بكلمات اكثر دقه',
       image:'/assets/images/popUp_3.svg',

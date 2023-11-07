@@ -13,7 +13,14 @@ export class PopUpCardComponent {
 
   closeDialog() {
     this.dialogRef.close();
-    const url = `/fatawa/search`;
+    let url='';
+    if(this.data.reason == 'sendQuestion'){
+      url = `/fatawa/send-question`;
+    }else if(this.data.reason == 'notFound'){
+      url = `/fatawa/search`;
+    }else if(this.data.reason == 'contactUs'){
+      url = `/contact-us`;
+    }
     this.router.navigateByUrl(url);
   }
   submit() {
