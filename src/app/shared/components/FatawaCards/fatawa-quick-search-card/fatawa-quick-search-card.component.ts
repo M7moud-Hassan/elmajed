@@ -58,7 +58,7 @@ export class FatawaQuickSearchCardComponent  {
             this.clearFatwaNameValue();
             this.clearInputValue();
           }else{
-            this.openDialog();
+            this.openNotFoundDialog();
           }
         }
       }
@@ -92,9 +92,10 @@ export class FatawaQuickSearchCardComponent  {
     const url = `/fatawa/related-questions-by-free-search/${dataString}`;
     this.router.navigateByUrl(url);
   }
-  openDialog() {
+  openNotFoundDialog() {
     const dialogRef = this.dialog.open(PopUpCardComponent, {
       width: `${this.windowWidth>676?'55%':'100%'}`,
+      disableClose: true,
       data: {
         title: 'عفوا لم نجد نتيجه تطابق بحثك ',
         message: 'يمكنك اعادة البحث مره أخرى بكلمات اكثر دقه',
@@ -106,9 +107,8 @@ export class FatawaQuickSearchCardComponent  {
         }
       }
     });
-
     dialogRef.afterClosed().subscribe(result => {
-      console.log('Dialog closed');
+      //
     });
   }
 }

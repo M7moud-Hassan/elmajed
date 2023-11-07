@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FatawaService } from '../../core/services/fatawa.service';
 import { PaginationVM } from 'src/app/shared/core/models/pagination-vm';
 import { PageHeaderVM } from 'src/app/shared/core/models/page-header-vm';
+import { MatDialog } from '@angular/material/dialog';
+import { PopUpCardComponent } from 'src/app/shared/components/pop-up-card/pop-up-card.component';
 
 @Component({
   selector: 'app-related-questions',
@@ -10,6 +12,7 @@ import { PageHeaderVM } from 'src/app/shared/core/models/page-header-vm';
   styleUrls: ['./related-questions.component.css']
 })
 export class RelatedQuestionsComponent implements OnInit {
+  windowWidth:number = 0;
   detailsData:any;
   id:any = "";
   keyword:any = "";
@@ -28,7 +31,14 @@ export class RelatedQuestionsComponent implements OnInit {
     total_pages: 0,
   };
   pageHeaderObj:PageHeaderVM = {} as PageHeaderVM; 
-  constructor(private service:FatawaService,private activatedRoute: ActivatedRoute,private router:Router) { }
+  constructor(private service:FatawaService,private activatedRoute: ActivatedRoute,private router:Router,private dialog: MatDialog) { }
+  @HostListener('window:resize', ['$event'])
+  onWindowResize(event: Event) {
+    this.windowWidth = window.innerWidth;
+  }
+  ngAfterViewInit(): void {
+    this.windowWidth = window.innerWidth;
+  }
   ngOnInit(): void {
    this.activatedRoute.paramMap.subscribe(param=>{
       this.id= param.get("id") ?? "";
@@ -69,6 +79,9 @@ export class RelatedQuestionsComponent implements OnInit {
             subtitle:'',
             total:this.total
           };
+          if(this.total == 0){
+            this.openNotFoundDialog();
+          }
         }
       },
       error:(error)=>{
@@ -89,6 +102,9 @@ export class RelatedQuestionsComponent implements OnInit {
             subtitle:'',
             total:this.total
           };
+          if(this.total == 0){
+            this.openNotFoundDialog();
+          }
         }
       },
       error:(error)=>{
@@ -109,6 +125,9 @@ export class RelatedQuestionsComponent implements OnInit {
             subtitle:'',
             total:this.total
           };
+          if(this.total == 0){
+            this.openNotFoundDialog();
+          }
         }
       },
       error:(error)=>{
@@ -158,5 +177,25 @@ export class RelatedQuestionsComponent implements OnInit {
     const dataString = encodeURIComponent(JSON.stringify(data));
     const url = `/fatawa/details/${dataString}`;
     this.router.navigateByUrl(url);
+  }
+
+  openNotFoundDialog() {
+    const dialogRef = this.dialog.open(PopUpCardComponent, {
+      width: `${this.windowWidth>676?'55%':'100%'}`,
+      disableClose: true,
+      data: {
+        title: 'عفوا لم نجد نتيجه تطابق بحثك ',
+        message: 'يمكنك اعادة البحث مره أخرى بكلمات اكثر دقه',
+        image:'/assets/images/popUp_3.svg',
+        label:'أعد البحث',
+        submit:()=>{
+          const url = `/fatawa/search`;
+          this.router.navigateByUrl(url);
+        }
+      }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      //
+    });
   }
 }
