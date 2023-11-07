@@ -14,7 +14,8 @@ export class OfficeProjectsComponent implements AfterViewInit {
   }
  
   ngAfterViewInit(): void {
-   var slick_= $('.slick-carousel').slick(
+  setTimeout(()=>{
+    var slick_= $('.slick-carousel').slick(
       {
         infinite: false,
         slidesToShow: 3,
@@ -70,6 +71,7 @@ export class OfficeProjectsComponent implements AfterViewInit {
         $('#prev-btn').css({'color':'grey'})
       }
   });
+  },1000)
   
     
   }
