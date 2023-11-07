@@ -1,5 +1,5 @@
 <div class="mx-2 bg-light pb-2">
-    <img src="assets/test-images/carousal.png" width="100%" height="auto">
-    <p class="item-head p-3 pb-0">تخريج الفروع على الأصول</p>
-    <p class="item-des p-3 pt-0 text-justify pb-4">إن مشروع "تخريج الفروع على الأصول" وربطها بها بإحكام ينمي الملكة الفقهية لدى طالب العلم، فيتعرف من خلال التطبيقات العملية على الطريقة التي بها العلماء ونصوا عليه وأصلوه، ..</p>
+    <img [src]="item.image" width="100%" height="auto">
+    <p class="item-head p-3 pb-0">{{item.title}}</p>
+    <p class="item-des p-3 pt-0 text-justify pb-4">{{item.des}}</p>
 </div>
