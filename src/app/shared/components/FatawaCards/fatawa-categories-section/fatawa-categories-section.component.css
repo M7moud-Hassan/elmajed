@@ -1,0 +1,112 @@
+/* 
+.fatawaSectionItem{
+    color: black;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    padding: 5px 5px;
+    background-color: white;
+    display: inline-block;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    text-align: center;
+    height: 65px;
+    display: inline-block;
+}
+
+.fatawaSectionInnerItem{
+    padding: 0px;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+}
+.itemStyle{
+    color: black;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    text-align: center;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+}
+
+.category-line-container{
+    min-height: 40px;
+    padding: 10px 0px;
+    border: 1px solid grey; 
+}
+.category-item{
+    min-height: 40px;
+    border: 1px solid red;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    align-content: baseline;
+}
+.category-link{
+    display: inline-block;
+    background-color: white;
+    color: black;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px;
+    text-decoration: none;
+    min-height: 40px;
+}
+.inner-category-item{
+    text-align: center;
+    border: 1px solid brown;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    align-content: baseline;
+    height: 100%;
+} */
+
+
+.outer-container {
+display: flex;
+}
+
+.box {
+flex: 1;
+display: flex;
+align-items: center;
+justify-content: center;
+transition: height 0.3s;
+border: 1px solid red;
+background-color: white;
+/* color: black;
+font-size: 16px;
+font-weight: 700;
+line-height: 18px; */
+padding: 5px;
+margin-left: 7px;
+margin-top: 7px;
+}
+
+.content {
+text-align: center;
+color: black;
+font-size: 16px;
+font-weight: 700;
+line-height: 18px;
+}
+
+.box-one{
+    flex: 6;
+}
+.box-two{
+    flex: 6;
+}
+.box-three{
+    flex: 8;
+}
+.box-three-right{
+    flex: 8;
+}
+/* #box1.expanded {
+height: 200px;
+} */

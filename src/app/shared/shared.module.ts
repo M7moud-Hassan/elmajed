@@ -38,6 +38,7 @@ import { AudioCardComponent } from './components/audio-card/audio-card.component
 import { AudioComponent } from './components/audio/audio.component';
 import { DialogVideoImageComponent } from './components/dialog-video-image/dialog-video-image.component';
 import { CardLectureComponent } from './components/card-lecture/card-lecture.component';
+import { FatawaCategoriesSectionComponent } from './components/FatawaCards/fatawa-categories-section/fatawa-categories-section.component';
 
 
 
@@ -78,13 +79,13 @@ import { CardLectureComponent } from './components/card-lecture/card-lecture.com
     AudioCardComponent,
     AudioComponent,
     DialogVideoImageComponent,
-    CardLectureComponent
+    CardLectureComponent,
+    FatawaCategoriesSectionComponent
   ],
   imports: [
     CommonModule,
     RouterModule,
     SharedRoutingModule,
-    // LiteratureAndResearchComponent,
   ],
   exports:[
     PaginationComponent,
@@ -118,7 +119,8 @@ import { CardLectureComponent } from './components/card-lecture/card-lecture.com
     AudioCardComponent,
     AudioComponent,
     DialogVideoImageComponent,
-    CardLectureComponent
+    CardLectureComponent,
+    FatawaCategoriesSectionComponent
     
   ]
 })

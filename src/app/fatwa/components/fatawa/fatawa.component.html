@@ -28,20 +28,6 @@
     <div class="col-12 col-md-4">
         <app-page-header [pageHeaderInfo]="pageHeaderSpeedSearchObj"></app-page-header>
         <app-fatawa-quick-search-card></app-fatawa-quick-search-card>
-        <div class="sub-header">أقسام الفتاوى</div>
-
-        <div *ngFor="let item of categories; let i = index;">
-            <ng-container *ngIf="(i + 1) % 6 === 0">
-                     <a routerLink="#"></a>
-                    <a *ngIf="categories[i]" routerLink="#" class="fatawaSectionItem" style="width: calc(30% - 5px);margin-left: 5px;">{{categories[i].cat}}</a>
-                    <a *ngIf="categories[i+1]" routerLink="#" class="fatawaSectionItem" style="width: calc(30% - 5px);margin-left: 5px;">{{categories[i+1].cat}}</a>
-                    <a *ngIf="categories[i+2]" routerLink="#" class="fatawaSectionItem" style="width: calc(40% - 0px);margin-left: 0px;">{{categories[i+2].cat}}</a>
-               
-                    <a *ngIf="categories[i+3]" routerLink="#" class="fatawaSectionItem" style="width: calc(40% - 5px);margin-left: 5px;">{{categories[i+3].cat}}</a>
-                    <a *ngIf="categories[i+4]" routerLink="#" class="fatawaSectionItem" style="width: calc(30% - 5px);margin-left: 5px;">{{categories[i+4].cat}}</a>
-                    <a *ngIf="categories[i+5]" routerLink="#" class="fatawaSectionItem" style="width: calc(30% - 0px);margin-left: 0px;">{{categories[i+5].cat}}</a>
-               
-            </ng-container>
-        </div>
+        <app-fatawa-categories-section></app-fatawa-categories-section>
     </div>
 </div>

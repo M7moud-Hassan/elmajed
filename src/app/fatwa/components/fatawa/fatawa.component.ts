@@ -8,10 +8,9 @@ import { FatawaService } from '../../core/services/fatawa.service';
 })
 export class FatawaComponent implements AfterViewInit, OnInit {
   windowWidth:number = 0;
-
   daily:any;
   fatawyList :any[]= [];
-  categories :any[]= [];
+  
   questionDetails:any;
   hasNoTodayFatwa:boolean = false;
   answer:string="";
@@ -29,7 +28,6 @@ export class FatawaComponent implements AfterViewInit, OnInit {
   ngOnInit(): void {
     this.getDailyFatwa();
     this.windowWidth = window.innerWidth;
-    this.getFatawyCategories();
  }
   @HostListener('window:resize', ['$event'])
   onWindowResize(event: Event) {
@@ -118,16 +116,5 @@ export class FatawaComponent implements AfterViewInit, OnInit {
     });
   }
 
-  getFatawyCategories(){
-    this.service.getAllFatwaCategories().subscribe({
-      next:(res:any)=>{
-        if(res.status==200 && res.success==true){
-          console.log(res);
-          this.categories=res.data.data;
-        }
-      },
-      error:(error)=>{
-      }
-    })
-  }
+ 
 }
