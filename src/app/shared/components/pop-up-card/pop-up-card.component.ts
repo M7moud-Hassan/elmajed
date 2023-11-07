@@ -6,13 +6,15 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
   templateUrl: './pop-up-card.component.html',
   styleUrls: ['./pop-up-card.component.css']
 })
-export class PopUpCardComponent  {
-  constructor(
-    public dialogRef: MatDialogRef<PopUpCardComponent>,@Inject(MAT_DIALOG_DATA) public data: DialogData) {}
-}
+export class PopUpCardComponent {
+  
+  constructor(public dialogRef: MatDialogRef<PopUpCardComponent>, @Inject(MAT_DIALOG_DATA) public data: any) { }
 
-interface DialogData {
-  title: string;
-  message: string;
-
+  closeDialog() {
+    this.dialogRef.close();
+  }
+  submit() {
+    this.dialogRef.close();
+    this.data.submit()
+  }
 }

@@ -1,1 +1,13 @@
-<p>pop-up-card works!</p>
+<div class="pop-up-outer-container">
+    <a (click)="closeDialog()" class="close-dialog-image"> <img src="/assets/images/close.svg" alt=""> </a>
+    <div class="text-center"> <img src="{{data.image}}" alt=""> </div>
+    <div class="text-header">{{data.title}}</div>
+    <div class="text-hint">{{data.message}}</div>
+    <div class="row">
+        <div class="col-12 col-md-3"></div>
+        <div class="col-12 col-md-6">
+            <button role="button" type="submit" (click)="submit()" class="submit-btn">{{data.label}}</button>
+        </div>
+        <div class="col-12 col-md-3"></div>
+    </div>
+</div>
