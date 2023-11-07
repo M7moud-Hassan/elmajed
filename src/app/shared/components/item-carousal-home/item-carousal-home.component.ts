@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-item-carousal-home',
@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./item-carousal-home.component.css']
 })
 export class ItemCarousalHomeComponent {
+  @Input() item:any
 
 }

@@ -1,22 +1,49 @@
 <div class=" main-layout-container pt-4">
     <p class="head2 pt-4">قسم الفتاوى</p>
     <div class="d-flex flex-column flex-sm-row  p-0 m-0 mt-4 pt-4">
-        <div class="p-4 text-center bg-light w-100 my-sm-0 my-2 me-4 ">
+        <a routerLink="/fatawa/send-question" class="text-decoration-none p-4 text-center bg-light w-100 my-sm-0 my-2 me-4 ">
             <img src="assets/images/question.svg" alt="question.svg">
             <span class="head2-title ms-4">لدي سؤال</span>
           
-        </div>
-        <div class="p-4 text-center bg-light w-100 my-sm-0 my-2 me-4">
+        </a>
+        <a  routerLink="/fatawa/search" class="text-decoration-none p-4 text-center bg-light w-100 my-sm-0 my-2 me-4">
             <img src="assets/images/magnifier.svg" alt="magnifier.svg">
             <span class="head2-title ms-4">ابحث في الفتاوى</span>
-        </div>
-        <div class="p-4 text-center bg-light my-sm-0 my-2 w-100">
+        </a>
+        <a routerLink="/fatawa" class="text-decoration-none p-4 text-center bg-light my-sm-0 my-2 w-100">
             <img src="assets/images/questions.svg" alt="questions.svg">
             <span class="head2-title ms-4">الفتاوى اليومية</span>
-        </div>
+        </a>
     </div>
+
     
     <div class="pt-4">
         <app-fatawa-question-card></app-fatawa-question-card>
-    </div>
+    <!-- <div class="mt-4 row">
+        <div class="col-12 col-md-8 row">
+            <div class="col-12 col-md-4 bg-image ps-0">
+                <span class="bg-bidget p-3">
+                    فتاوي مختارة
+                </span>
+            </div>
+            <div class="col-12 col-md-8 bg-light pt-4 pe-3">
+                <p class="header-question">الإبراء عن الأعيان</p>
+                <p class="question"> 
+                    س: شيخنا الفاضل .. هل يصح الإبراء عن الأعيان؟ وبالتالي هل يملك المبرأ عنه العين - أي المبرأ منه-؟ جزاكم الله خيرا في الدنيا والآخرة.
+                </p>
+                <p class="answer">
+                    ج: الحمد لله أما بعد .. فإن مسألة الإبراء عن الأعيان في صحتها وثبوتها وعدم ذلك نزاع مشهور بين أهل العلم، وقد اختلفت الأقوال في ذلك، وإن كان أكثرهم يرى بأنه لا يصح الإبراء من الأعيان؛ لأن الملك ثابت، ….
+                </p>
+            </div>
+        </div>
+        <div class="col-12 col-md-4 ms-md-3 row p-0 m-0">
+            <app-select-fatwa></app-select-fatwa>
+            <div class="mt-2"></div>
+            <app-select-fatwa></app-select-fatwa>
+            <div class="mt-2"></div>
+            <app-select-fatwa></app-select-fatwa>
+            <div class="mt-2"></div>
+            <app-select-fatwa></app-select-fatwa>
+        </div>
+    </div> -->
 </div>

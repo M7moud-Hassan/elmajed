@@ -15,5 +15,10 @@ font-size: 16px;
 font-style: normal;
 font-weight: 800;
 line-height: normal;
+user-select: none;
+cursor: pointer;
 }
 
+.outerNext,.outerPrev{
+    cursor: pointer;
+}
