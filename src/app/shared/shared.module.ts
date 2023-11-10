@@ -40,6 +40,8 @@ import { DialogVideoImageComponent } from './components/dialog-video-image/dialo
 import { CardLectureComponent } from './components/card-lecture/card-lecture.component';
 import { FatawaCategoriesSectionComponent } from './components/FatawaCards/fatawa-categories-section/fatawa-categories-section.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { ReadMorePageItemsComponent } from './components/read-more-page-items/read-more-page-items.component';
+import { ReadMoreCarouselCardComponent } from './components/read-more-carousel-card/read-more-carousel-card.component';
 
 
 
@@ -81,7 +83,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     AudioComponent,
     DialogVideoImageComponent,
     CardLectureComponent,
-    FatawaCategoriesSectionComponent
+    FatawaCategoriesSectionComponent,
+    ReadMorePageItemsComponent,
+    ReadMoreCarouselCardComponent
   ],
   imports: [
     CommonModule,
@@ -122,8 +126,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     AudioComponent,
     DialogVideoImageComponent,
     CardLectureComponent,
-    FatawaCategoriesSectionComponent
-    
+    FatawaCategoriesSectionComponent,
+    ReadMorePageItemsComponent,
+    ReadMoreCarouselCardComponent
   ]
 })
 export class SharedModule { }
