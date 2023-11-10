@@ -29,7 +29,9 @@
 .caousel-link-container{
     display: block;
     text-decoration: none;
-
+}
+.header-and-question{
+    height: 180px;
 }
 
 /* --------------------------------------------------------------- */

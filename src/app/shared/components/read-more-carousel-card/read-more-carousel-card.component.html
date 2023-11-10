@@ -2,8 +2,10 @@
     <div class="carousel-container">
         <a routerLink="{{detailsPath}}/{{item.slug}}" class="caousel-link-container">
         <div class="carousel-image"> <img [src]="item.image" width="100%" height="100%" style="object-fit: cover;" alt=""> </div>
-        <div class="carousel-header truncate-2-lines" [innerHTML]="item.title"></div>
-        <div class="carousel-question truncate-3-lines" [innerHTML]="item.question"></div>
+        <div class="header-and-question">
+            <div class="carousel-header truncate-2-lines" [innerHTML]="item.title"></div>
+            <div class="carousel-question truncate-3-lines" [innerHTML]="item.question"></div>
+        </div>
     </a>
         <div class="research-icons research-inner-container">
             <span hidden #itemTitle [innerHTML]="item.title" ></span>
