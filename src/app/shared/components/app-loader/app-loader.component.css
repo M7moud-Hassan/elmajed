@@ -1,3 +1,13 @@
+.spinnerContainer{
+  position: fixed;
+  width: 100%;
+  height: calc(100vh);
+  background-color: #00A58C;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
 .loader {
     transform: rotateZ(45deg);
     perspective: 1000px;
