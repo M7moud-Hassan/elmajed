@@ -40,11 +40,11 @@
      
     </div>
     <div class="col-12 col-md-8">
-        <app-audio-card *ngFor="let item of items" [item]="item"></app-audio-card>
+        <app-audio-card *ngFor="let item of selectedItems" [item]="item"></app-audio-card>
     </div>
 
 </div>
-<app-pagination></app-pagination>
+<app-pagination *ngIf="paginationObj.total > 0" (pageNumberClicked)="onPageNumberClicked($event)" [paginationInfo]="paginationObj"></app-pagination>
 <div class="w3-overlay" (click)="w3_close()" style="cursor:pointer" [style.display]="sidebarDisplay"></div>
 <div class="" style="z-index:100"   [style.display]="sidebarDisplay">
     <div class="bg-light p-3  d-block d-sm-none" style="position: absolute; width: 100%; right: 0; left: 0; bottom: 0; z-index: 10000000;" >

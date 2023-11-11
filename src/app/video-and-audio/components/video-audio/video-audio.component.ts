@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HomeService } from 'src/app/home/core/services/home.service';
+import { PaginationVM } from 'src/app/shared/core/models/pagination-vm';
 
 @Component({
   selector: 'app-video-audio',
@@ -7,10 +8,20 @@ import { HomeService } from 'src/app/home/core/services/home.service';
   styleUrls: ['./video-audio.component.css']
 })
 export class VideoAudioComponent implements OnInit{
-
+  pageNumber:number = 1;
+  PageSize:number = 1000;
+  total:number = 0;
+  selectedItems:any[]=[];
+  items:any[]=[];
+  paginationObj: PaginationVM = {
+    count: 0,
+    total: 0,
+    current_page: 0,
+    per_page: 0,
+    total_pages: 0,
+  };
   constructor(private service:HomeService) {
   }
-  items:any[]=[]
   ngOnInit(): void {
     this.getData()
   }
@@ -23,6 +34,8 @@ export class VideoAudioComponent implements OnInit{
         console.log(res2.data.items);
         
         this.items = this.interleaveArrays(items1, items2);
+        this.total = this.items.length;
+        this.onPageNumberClicked(1);
       });
     });
   }
@@ -52,5 +65,26 @@ export class VideoAudioComponent implements OnInit{
   w3_close() {
     this.sidebarDisplay = 'none';
     this.overlayDisplay = 'none';
+  }
+
+  onPageNumberClicked(pageNumber: number) {
+    this.pageNumber = pageNumber;
+    this.getElementsByPageSize(pageNumber,10);
+  }
+
+  getElementsByPageSize(currentPage:number,pageSize: number ){
+    let length = this.items.length;
+    const pageCount = Math.ceil(length / pageSize);
+    const startIndex = (currentPage - 1) * pageSize;
+    const endIndex = Math.min(startIndex + pageSize, length);
+    const elements = this.items.slice(startIndex, endIndex);
+    this.selectedItems = elements;
+    this.paginationObj = {
+      total: length ,
+      count: elements.length,
+      per_page: pageSize,
+      current_page: currentPage,
+      total_pages: pageCount
+    };
   }
 }
