@@ -114,6 +114,10 @@
 
 .toggle-group .toggle-handle{
   opacity: 1;
+  margin-top: 17px !important;
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 50% !important;
 }
 .toggle-group .toggle-handle, .toggle-group .btn {
   /* background-color: black !important; */
@@ -147,10 +151,6 @@
   }
 }
 
-.off  .toggle-handle,.off  .toggle-handle{
-  /* background-color:  black !important; */
-  /* left: 10px !important; */
-}
 .toggle {
 
   border-radius: 25px !important;
@@ -363,4 +363,10 @@ select option:hover{
   background-color: #00A58C;
   color:white;
 }
+a{
+  cursor: pointer;
+  user-select: none;
+}
 /* -----------------------------forms and inputs styles-------------------------------------- */
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

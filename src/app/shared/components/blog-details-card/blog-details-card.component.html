@@ -1,5 +1,5 @@
 <app-page-header [pageHeaderInfo]="pageHeaderObj"></app-page-header>
-<div class="blog-container">
+<div class="blog-container" #pageTop>
     <div class="row">
         <div class="col-12 col-md-3">
                 <div class="blog-image" style="background-image: url('{{itemDetails.image}}');"></div>
@@ -31,4 +31,8 @@
             </div>
         </div>
     </div>
+
+</div>
+<div class="row">
+    <app-read-more-page-items [items]="readMoreList" [type]="detailsLabel.type"></app-read-more-page-items>
 </div>

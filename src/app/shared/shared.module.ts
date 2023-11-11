@@ -38,6 +38,13 @@ import { AudioCardComponent } from './components/audio-card/audio-card.component
 import { AudioComponent } from './components/audio/audio.component';
 import { DialogVideoImageComponent } from './components/dialog-video-image/dialog-video-image.component';
 import { CardLectureComponent } from './components/card-lecture/card-lecture.component';
+import { FatawaCategoriesSectionComponent } from './components/FatawaCards/fatawa-categories-section/fatawa-categories-section.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ReadMorePageItemsComponent } from './components/read-more-page-items/read-more-page-items.component';
+import { ReadMoreCarouselCardComponent } from './components/read-more-carousel-card/read-more-carousel-card.component';
+import { AppLoaderComponent } from './components/app-loader/app-loader.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AppLoaderInterceptor } from './core/interceptors/app-loader.interceptor';
 
 
 
@@ -78,13 +85,17 @@ import { CardLectureComponent } from './components/card-lecture/card-lecture.com
     AudioCardComponent,
     AudioComponent,
     DialogVideoImageComponent,
-    CardLectureComponent
+    CardLectureComponent,
+    FatawaCategoriesSectionComponent,
+    ReadMorePageItemsComponent,
+    ReadMoreCarouselCardComponent,
+    AppLoaderComponent
   ],
   imports: [
     CommonModule,
     RouterModule,
     SharedRoutingModule,
-    // LiteratureAndResearchComponent,
+    MatDialogModule
   ],
   exports:[
     PaginationComponent,
@@ -118,8 +129,18 @@ import { CardLectureComponent } from './components/card-lecture/card-lecture.com
     AudioCardComponent,
     AudioComponent,
     DialogVideoImageComponent,
-    CardLectureComponent
-    
-  ]
+    CardLectureComponent,
+    FatawaCategoriesSectionComponent,
+    ReadMorePageItemsComponent,
+    ReadMoreCarouselCardComponent,
+    AppLoaderComponent
+  ],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AppLoaderInterceptor,
+      multi: true
+    }
+  ],
 })
 export class SharedModule { }

@@ -1,10 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { MainService } from '../../core/services/main.service';
 import { ResponseDetailsItemDetailsVM, ResponseDetailsVM } from '../../core/models/response-details-vm';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { BlogService } from 'src/app/blog/core/services/blog.service';
 import { ResponseVM } from '../../core/models/responseVM';
+import { ElmowjazService } from 'src/app/al-mawjaz-al-fiqhi/core/services/elmowjaz.service';
 
 
 @Component({
@@ -20,7 +21,7 @@ export class BlogDetailsCardComponent implements OnInit {
   readMoreList:any[]=[];
   total:number = 0;
   @Input() detailsInfo:any;
-  constructor(private service: MainService,private activatedRoute: ActivatedRoute,private location:Location,private blogService:BlogService) { }
+  constructor(private service: MainService,private elmowjazService:ElmowjazService,private activatedRoute: ActivatedRoute,private location:Location,private blogService:BlogService) { }
   ngOnInit(): void {
     this.getSlug();
     this.detailsLabel = this.detailsInfo;
@@ -32,11 +33,18 @@ export class BlogDetailsCardComponent implements OnInit {
     };
     this.getReadList();
   }
+  @ViewChild('pageTop') pageTop: any ;
+
+  scrollToTodaysFatwaSection() {
+    this.pageTop.nativeElement.scrollIntoView({ behavior: 'smooth' });
+  }
   getSlug() {
     this.activatedRoute.paramMap.subscribe(param=>{
       this.slug = param.get("slug")??"";
+      // alert(this.slug)
+      this.getDetails();
+      this.scrollToTodaysFatwaSection();
     });
-    this.getDetails();
   }
   getDetails() {
     this.service.sharedService.getDetails(this.slug).subscribe({
@@ -84,7 +92,20 @@ export class BlogDetailsCardComponent implements OnInit {
     });
   }
   getReadMoreElmowjazItems(){
-
+    this.elmowjazService.getPagedElmowjaz(1,25).subscribe({
+      next:(response:ResponseVM)=>{
+        if(response.status == 200){
+          const listItems = response.data.items;
+          this.total = response.data.total;
+          console.log(listItems);
+          this.readMoreList = this.shuffleList(listItems);
+          console.log(this.readMoreList);
+        }
+      },
+      error:(error)=>{
+        console.log("Error : ===> ==> "+error.description);
+      }
+    });
   }
   shuffleList<T>(list: T[]): T[] {
     const newList = [...list]; // Create a new array to avoid modifying the original list

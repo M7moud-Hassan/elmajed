@@ -1,0 +1,28 @@
+<div class="sub-header">أقسام الفتاوى</div>
+<div class="outer-container">
+    <div *ngIf="categories[0]" class="box box-one"><a style="text-decoration: none;" routerLink="/fatawa/related-questions/{{categories[0].id}}"> <div class="content">{{categories[0].cat}}</div> </a></div>
+    <div *ngIf="categories[1]" class="box box-two"><a style="text-decoration: none;" routerLink="/fatawa/related-questions/{{categories[1].id}}"> <div class="content">{{categories[1].cat}}</div> </a></div>
+    <div *ngIf="categories[2]" class="box box-three" style="margin-left: 0;"><a style="text-decoration: none;"  routerLink="/fatawa/related-questions/{{categories[2].id}}"> <div class="content">{{categories[2].cat}}</div> </a></div>
+</div>
+<div class="outer-container">
+    <div *ngIf="categories[3]" class="box box-three-right"><a style="text-decoration: none;" routerLink="/fatawa/related-questions/{{categories[3].id}}"> <div class="content">{{categories[3].cat}}</div> </a></div>
+    <div *ngIf="categories[4]" class="box box-one"><a style="text-decoration: none;" routerLink="/fatawa/related-questions/{{categories[4].id}}"> <div class="content">{{categories[4].cat}}</div> </a></div>
+    <div *ngIf="categories[categories.length-1]" class="box box-two" style="margin-left: 0;"><a style="text-decoration: none;" routerLink="/fatawa/related-questions/{{categories[categories.length-1].id}}"> <div class="content">{{categories[categories.length-1].cat}}</div> </a></div>
+</div>
+<div *ngFor="let item of categories; let i = index;">
+    <ng-container *ngIf="(i + 1) % 6 === 0">
+            <div class="outer-container">
+                <div *ngIf="categories[i+0]" class="box box-one"><a style="text-decoration: none;" routerLink="/fatawa/related-questions/{{categories[i+0].id}}"> <div class="content">{{categories[i+0].cat}}</div> </a></div>
+                <div *ngIf="categories[i+1]" class="box box-two"><a style="text-decoration: none;" routerLink="/fatawa/related-questions/{{categories[i+1].id}}"> <div class="content">{{categories[i+1].cat}}</div> </a></div>
+                <div *ngIf="categories[i+2]" class="box box-three" style="margin-left: 0;"><a style="text-decoration: none;"  routerLink="/fatawa/related-questions/{{categories[i+2].id}}"> <div class="content">{{categories[i+2].cat}}</div> </a></div>
+            </div>
+            <div class="outer-container">
+                <div *ngIf="categories[i+3]"  class="box box-three-right"><a style="text-decoration: none;" routerLink="/fatawa/related-questions/{{categories[i+3].id}}"> <div class="content">{{categories[i+3].cat}}</div> </a></div>
+                <div *ngIf="categories[i+4]"  class="box box-one"><a style="text-decoration: none;"  routerLink="/fatawa/related-questions/{{categories[i+4].id}}"> <div class="content">{{categories[i+4].cat}}</div> </a></div>
+                <div *ngIf="categories[i+5]"  class="box box-two" style="margin-left: 0;"><a style="text-decoration: none;" routerLink="/fatawa/related-questions/{{categories[i+5].id}}"> <div class="content">{{categories[i+5].cat}}</div> </a></div>
+            </div>     
+        </ng-container>
+</div>
+
+
+<!-- ========================================================================================================== -->

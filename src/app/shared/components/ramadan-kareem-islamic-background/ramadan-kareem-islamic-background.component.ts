@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
+import { HomeService } from 'src/app/home/core/services/home.service';
 
 @Component({
   selector: 'app-ramadan-kareem-islamic-background',
@@ -10,16 +11,18 @@ export class RamadanKareemIslamicBackgroundComponent implements OnInit,AfterView
   width=window.innerWidth/2;
   show:boolean=false
 
-  constructor(private renderer: Renderer2, private el: ElementRef) {
- 
+  constructor(private renderer: Renderer2, private el: ElementRef,
+    private service:HomeService) {
+
   }
   ngAfterViewInit(): void {
-  setTimeout(() => {
-    this.modifyToggleHandle()
-  }, 100);
+   setTimeout(() => {
+     this.modifyToggleHandle()
+   }, 10);
   }
+
   ngOnInit(): void {
-   
+    //  this.modifyToggleHandle()
   }
 
   modifyToggleHandle() {

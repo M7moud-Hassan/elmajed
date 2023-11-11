@@ -14,6 +14,8 @@ const routes: Routes = [
   {path:'search-result',component:FatawaSearchResultComponent},
   {path:'details/:data',component:FatwaDetailsComponent},
   {path:'related-questions/:id',component:RelatedQuestionsComponent},
+  {path:'related-questions-keywords/:keyword',component:RelatedQuestionsComponent},
+  {path:'related-questions-by-free-search/:search',component:RelatedQuestionsComponent},
 ];
 
 @NgModule({

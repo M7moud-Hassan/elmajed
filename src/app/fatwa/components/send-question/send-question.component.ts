@@ -1,6 +1,9 @@
 import { AfterViewInit, Component, HostListener } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { FatawaService } from '../../core/services/fatawa.service';
+import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { PopUpCardComponent } from 'src/app/shared/components/pop-up-card/pop-up-card.component';
 
 @Component({
   selector: 'app-send-question',
@@ -26,7 +29,7 @@ export class SendQuestionComponent implements AfterViewInit {
   }
 
   form:FormGroup = new FormGroup({});
-  constructor(private fb:FormBuilder,private service:FatawaService) {}
+  constructor(private fb:FormBuilder,private service:FatawaService,private router:Router,private dialog: MatDialog) {}
 
 
   ngOnInit(): void {
@@ -79,8 +82,7 @@ export class SendQuestionComponent implements AfterViewInit {
       next:(res)=>{
         if(res.status == 200 && res.success == true){
           this.form.reset();
-          //TODO : make alert message .
-          alert("تم ارسال سؤالك بنجاح");
+          this.opensendQuestionDialog();
         }
       },
       error:(error)=>{
@@ -121,6 +123,26 @@ export class SendQuestionComponent implements AfterViewInit {
   }
   get age(){
     return this.form.get("age");
+  }
+  opensendQuestionDialog() {
+    const dialogRef = this.dialog.open(PopUpCardComponent, {
+      width: `${this.windowWidth>676?'55%':'100%'}`,
+      disableClose: true,
+      data: {
+        reason:'sendQuestion',
+        title: 'تم إرسال الرسالة بنجاح',
+        message: 'سيتم  الرد عليك قريبا وارسال رسالة  تأكيد',
+        image:'/assets/images/popUp_1.svg',
+        label:'حسنا',
+        submit:()=>{
+          const url = `/fatawa/send-question`;
+          this.router.navigateByUrl(url);
+        }
+      }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      //
+    });
   }
 }
 
