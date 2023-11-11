@@ -1,12 +1,15 @@
-<div class="row p-0 m-0 sm-mt-2 bg-light">
+<div class="row p-0 m-0 sm-mt-2 mb-3 bg-light">
     <div class="col-12 col-md-4 p-0 m-0" style="position: relative;">
-        <img src="assets/test-images/card-aidio.png"  class="p-2" width="100%" height="100%" alt="">
-        <span class="p-light p-3">
+        <img [src]="item.image"  class="p-2" width="100%" height="100%" alt="">
+        <span class="p-light p-3" *ngIf="item.type=='course'">
             دورة
+        </span>
+        <span class="p-light p-3" *ngIf="item.type=='lession'" style="background-color: #8F3A38;">
+            درس
         </span>
     </div>
     <div class="col-12 col-md-8">
-        <p class="col-p">تخريج الفروع على الأصول من كتاب منهج السالكين</p>
+        <p class="col-p">{{item.title}}</p>
         <div class="row">
             <div class="col">
                 <p class="p1">التخصص</p>
@@ -16,7 +19,7 @@
                     عدد الدروس :
                 </span>
                 <span class="p3">
-                    6 دروس
+                    {{item.no_archives}} دروس
                 </span>
             </div>
             <div class="col">
@@ -24,10 +27,10 @@
                     مدة المادة :
                 </span>
                 <span class="p3">
-                    03:50 دقيقة
+                    {{item.duration}} دقيقة
                 </span>
             </div>
         </div>
-        <p class="pppp mt-2">سلسلة دروس علمية لفضيلة الشيخ سليمان بن عبدالله الماجد في (تخريج الفروع على الأصول من كتاب منهج السالكين) للعلامة ابن السعدي رحمه الله</p>
+        <p class="pppp mt-2">{{item.question}}</p>
     </div>
 </div>

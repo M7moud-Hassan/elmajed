@@ -4,26 +4,37 @@
         <div class="row pb-4 mb-4">
             <div class="col-md-4 col-1"></div>
             <div class="col-md-4 col-10 d-flex justify-content-between">
-            <div class="text-btn px-3 py-2 pb-3 btn-active">
+            <div [class]="index==0?'text-btn px-3 py-2 pb-3 btn-active':'text-btn px-3 py-2 pb-3' "(click)="onSelect(0)"  style="cursor: pointer;">
                 دروس
             </div>
-            <div class="text-btn px-3 py-2 pb-3">
+            <div [class]="index==1?'text-btn px-3 py-2 pb-3 btn-active':'text-btn px-3 py-2 pb-3' " (click)="onSelect(1)" style="cursor: pointer;">
                 محاضرات
             </div>
-            <div class="text-btn px-3 py-2 pb-3">
+            <div [class]="index==2?'text-btn px-3 py-2 pb-3 btn-active':'text-btn px-3 py-2 pb-3' " (click)="onSelect(2)" style="cursor: pointer;">
                 دورات
             </div>
             </div>
             <div class="col-md-4 col-1"></div>
         </div>
-        <div class="slick-carousel-3" style="position: relative; bottom: -70px;">
-                <app-item-section>
-                </app-item-section>
-                <app-item-section>
-                </app-item-section>
-                <app-item-section>
+       
+        <div  id="slick-carousel-3" style="position: relative; bottom: -70px;">
+                <app-item-section *ngFor="let item of lectures" [item]="item" class="asd0">
                 </app-item-section>
            
+                <app-item-section *ngFor="let item of courses" [item]="item" class="asd1" >
+                </app-item-section>
+
+                <app-item-section *ngFor="let item of lessons" [item]="item" class="asd2">
+                </app-item-section>
         </div>
+        <!-- <div  id="slick-carousel-32" style="position: relative; bottom: -70px;">
+               
+               
+           
+        </div>
+        <div id="slick-carousel-30" style="position: relative; bottom: -70px;">
+          
+       
+    </div> -->
     </div>
 </div>

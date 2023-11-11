@@ -3,15 +3,11 @@
     <p class="head text-center pt-4 mt-4">البرامج التلفزيونية</p>
     <div class="row">
         <div class="col-md-7  col-12">
-            <iframe width="100%" class="video_youtube" height="100%" src="https://www.youtube.com/embed/i-N30g8vYVo?si=t6JAhHcSaYAHWPMp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe width="100%"   class="video_youtube" height="100%"  id="video" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         <div class="col-md-5 col-12">
-            <app-share-card-video></app-share-card-video>
-            <app-share-card-video></app-share-card-video>
-            <app-share-card-video></app-share-card-video>
-            <app-share-card-video></app-share-card-video>
+            <app-share-card-video style="cursor: pointer;" *ngFor="let item of getSlicedVideos(youtubeVideos); let index=index;" [item]="item" [details]="allVideosDetails[index]" [select]="item.select" (click)="selectItem(item.id)" ></app-share-card-video>
         </div>
-        <p class="app-link text-end pt-2">عرض الكل</p>
-    </div>
-  
+        <p class="app-link text-end pt-2" *ngIf="youtubeVideos.length>4">عرض الكل</p>
+    </div> 
 </div>

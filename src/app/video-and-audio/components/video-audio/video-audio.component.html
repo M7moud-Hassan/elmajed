@@ -40,7 +40,7 @@
      
     </div>
     <div class="col-12 col-md-8">
-        <app-audio-card></app-audio-card>
+        <app-audio-card *ngFor="let item of items" [item]="item"></app-audio-card>
     </div>
 
 </div>
