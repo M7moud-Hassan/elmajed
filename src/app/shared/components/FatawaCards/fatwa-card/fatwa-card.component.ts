@@ -22,6 +22,11 @@ export class FatwaCardComponent implements OnChanges {
     };
   }
   ngOnChanges(changes: SimpleChanges): void {
+    if(this.Question.img == ''){
+      this.Question.img = '/assets/test-images/bg-image.png';
+    }else{
+      this.Question.img = `${this.imgApiUrl}/${this.Question.img}`;
+    }
     this.questionDetails = this.Question;
   }
 }

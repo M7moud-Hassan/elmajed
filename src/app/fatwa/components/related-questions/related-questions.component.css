@@ -1,0 +1,13 @@
+.related-items{
+    border-right: 5px solid #00A58C;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 32px;
+    color: #1A201D;
+    padding: 10px 20px;
+    background-color: white;
+    margin-bottom: 7px;
+    cursor: pointer;
+    display: block;
+    text-decoration: none;
+}

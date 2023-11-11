@@ -1,0 +1,51 @@
+.pop-up-outer-container{
+    background-color: white;
+    padding: 30px;
+    position: relative;
+}
+.close-dialog-image{
+    position: absolute;
+    left: 30px;
+    top: 30px;
+}
+.text-header{
+    color: #171717;
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 47px;
+    text-align: center;
+    padding: 30px 0px;
+}
+.text-hint{
+    color: #1A201D;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 32px;
+    text-align: center;
+}
+.submit-btn{
+    margin: 30px 0px 10px 0px;
+}
+@media(0px < width < 767px){
+    .pop-up-outer-container{
+        padding: 20px;
+    }
+    .close-dialog-image{
+        left: 20px;
+        top: 20px;
+    }
+    .text-header{
+        color: #171717;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 27px;
+        padding: 25x 0px;
+    }
+    .text-hint{
+        font-size: 16px;
+    }
+    .submit-btn{
+        margin: 20px 0px 10px 0px;
+    }
+
+}

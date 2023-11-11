@@ -10,7 +10,7 @@ export class BlogDetailsComponent {
   constructor(){
     this.detailsInfo = {
       pageTitle:'تفاصيل التدوينة',
-      type:'blog'
+      type:'blog', 
     };
   }
 }

@@ -71,3 +71,26 @@
     user-select: none;
     cursor: pointer;
 }
+@media(0px <= width <= 767px) {
+    .pagination-number-active,.pagination-number-in-active{
+        width: 35px;
+        height: 35px;
+    }
+    .number{
+        width: 35px;
+        height: 35px;
+    }
+    .active-arrow,.in-active-arrow{
+        width: 25px;
+        width: 25px;
+    }
+    .active-arrow span img,.in-active-arrow span img{
+        width: 25px;
+        height: 25px;
+    }
+    .next-text-active,.prev-text-active, .next-text-in-active,.prev-text-in-active{
+        font-weight: 600;
+        font-size: 13px;
+        line-height: 16px;
+    }
+}

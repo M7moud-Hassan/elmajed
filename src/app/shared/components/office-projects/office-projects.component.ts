@@ -32,8 +32,10 @@ export class OfficeProjectsComponent implements AfterViewInit {
         infinite: false,
         slidesToShow: 3,
         slidesToScroll: 1,
-        nextArrow:document.getElementById('next'),
-        prevArrow:document.getElementById('prev'),
+        nextArrow:document.getElementsByClassName('outerNext'),
+        // nextArrow:document.getElementById('next'),
+        // prevArrow:document.getElementById('prev'),
+        prevArrow:document.getElementsByClassName('outerPrev'),
         centerPadding:'0',
         responsive: [
           {

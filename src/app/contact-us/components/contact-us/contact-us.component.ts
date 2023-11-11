@@ -1,6 +1,9 @@
 import { AfterViewInit, Component, HostListener } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ContactUsService } from '../../core/services/contact-us.service';
+import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { PopUpCardComponent } from 'src/app/shared/components/pop-up-card/pop-up-card.component';
 
 @Component({
   selector: 'app-contact-us',
@@ -24,7 +27,7 @@ export class ContactUsComponent implements AfterViewInit {
   }
 
   form:FormGroup = new FormGroup({});
-  constructor(private fb:FormBuilder,private contactUsService:ContactUsService) {}
+  constructor(private fb:FormBuilder,private contactUsService:ContactUsService,private router:Router,private dialog: MatDialog) {}
 
 
   ngOnInit(): void {
@@ -92,5 +95,26 @@ export class ContactUsComponent implements AfterViewInit {
   }
   get subject(){
     return this.form.get('subject');
+  }
+
+  opensendQuestionDialog() {
+    const dialogRef = this.dialog.open(PopUpCardComponent, {
+      width: `${this.windowWidth>676?'55%':'100%'}`,
+      disableClose: true,
+      data: {
+        reason:'contactUs',
+        title: 'تم إرسال الرسالة بنجاح',
+        message: 'سيتم  الرد عليك قريبا ',
+        image:'/assets/images/popUp_2.svg',
+        label:'حسنا',
+        submit:()=>{
+          const url = `/contact-us`;
+          this.router.navigateByUrl(url);
+        }
+      }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      //
+    });
   }
 }

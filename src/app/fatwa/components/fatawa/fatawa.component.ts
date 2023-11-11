@@ -8,9 +8,9 @@ import { FatawaService } from '../../core/services/fatawa.service';
 })
 export class FatawaComponent implements AfterViewInit, OnInit {
   windowWidth:number = 0;
-
   daily:any;
   fatawyList :any[]= [];
+  
   questionDetails:any;
   hasNoTodayFatwa:boolean = false;
   answer:string="";
@@ -27,6 +27,7 @@ export class FatawaComponent implements AfterViewInit, OnInit {
   }
   ngOnInit(): void {
     this.getDailyFatwa();
+    this.windowWidth = window.innerWidth;
  }
   @HostListener('window:resize', ['$event'])
   onWindowResize(event: Event) {
@@ -114,4 +115,6 @@ export class FatawaComponent implements AfterViewInit, OnInit {
       }
     });
   }
+
+ 
 }

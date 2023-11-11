@@ -39,6 +39,7 @@ export class FatawaSectionComponent implements OnInit {
     this.fatwaService.getAllFatwaCategories().subscribe({
       next:(res:any)=>{
         if(res.status==200 && res.success==true){
+          console.log(res);
           this.categories=res.data.data;
           this.categories.forEach(() => this.divStates.push('closed'));
         }
