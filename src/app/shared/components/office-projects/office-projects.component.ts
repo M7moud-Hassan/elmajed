@@ -7,14 +7,26 @@ declare var $: any;
   styleUrls: ['./office-projects.component.css']
 })
 export class OfficeProjectsComponent implements AfterViewInit {
-  @Input() items:any[]=[]
-  @Input() title:string='مشروعات المكتب'
-  constructor() {
+ items:any[]=[]
+ title:string='مشروعات المكتب'
+  constructor(private service:HomeService) {
     
   }
  
+  getData(){
+    this.service.getProjects(1,10).subscribe(res=>{
+      this.items=res.data.items
+      setTimeout(()=>{
+        this.setUpCarousal()
+      },100)
+      
+    })
+  }
   ngAfterViewInit(): void {
-  setTimeout(()=>{
+    this.getData()
+  }
+
+  setUpCarousal(){
     var slick_= $('.slick-carousel').slick(
       {
         infinite: false,
@@ -71,9 +83,6 @@ export class OfficeProjectsComponent implements AfterViewInit {
         $('#prev-btn').css({'color':'grey'})
       }
   });
-  },1000)
-  
-    
   }
 
   

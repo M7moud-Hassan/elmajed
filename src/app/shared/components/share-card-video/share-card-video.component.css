@@ -16,3 +16,6 @@ font-style: normal;
 font-weight: 700;
 line-height: normal;
 }
+.border2-right{
+    border-right: 5px solid #00A58C;
+}

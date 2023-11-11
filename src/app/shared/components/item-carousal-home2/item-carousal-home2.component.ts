@@ -8,5 +8,6 @@ import { Component, Input } from '@angular/core';
 export class ItemCarousalHome2Component {
   @Input() width:string ='100%'
   @Input() show:boolean=false
+  @Input() item:any
 
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-share-card-video',
@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./share-card-video.component.css']
 })
 export class ShareCardVideoComponent {
-
+  @Input() item:any
+  @Input() details:any
+  @Input() select:boolean=false
 }
