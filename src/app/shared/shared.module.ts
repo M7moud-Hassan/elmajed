@@ -42,6 +42,9 @@ import { FatawaCategoriesSectionComponent } from './components/FatawaCards/fataw
 import { MatDialogModule } from '@angular/material/dialog';
 import { ReadMorePageItemsComponent } from './components/read-more-page-items/read-more-page-items.component';
 import { ReadMoreCarouselCardComponent } from './components/read-more-carousel-card/read-more-carousel-card.component';
+import { AppLoaderComponent } from './components/app-loader/app-loader.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AppLoaderInterceptor } from './core/interceptors/app-loader.interceptor';
 
 
 
@@ -85,7 +88,8 @@ import { ReadMoreCarouselCardComponent } from './components/read-more-carousel-c
     CardLectureComponent,
     FatawaCategoriesSectionComponent,
     ReadMorePageItemsComponent,
-    ReadMoreCarouselCardComponent
+    ReadMoreCarouselCardComponent,
+    AppLoaderComponent
   ],
   imports: [
     CommonModule,
@@ -128,7 +132,15 @@ import { ReadMoreCarouselCardComponent } from './components/read-more-carousel-c
     CardLectureComponent,
     FatawaCategoriesSectionComponent,
     ReadMorePageItemsComponent,
-    ReadMoreCarouselCardComponent
-  ]
+    ReadMoreCarouselCardComponent,
+    AppLoaderComponent
+  ],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AppLoaderInterceptor,
+      multi: true
+    }
+  ],
 })
 export class SharedModule { }
