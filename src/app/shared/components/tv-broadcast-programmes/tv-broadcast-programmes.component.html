@@ -9,6 +9,5 @@
             <app-share-card-video style="cursor: pointer;" *ngFor="let item of getSlicedVideos(youtubeVideos); let index=index;" [item]="item" [details]="allVideosDetails[index]" [select]="item.select" (click)="selectItem(item.id)" ></app-share-card-video>
         </div>
         <p class="app-link text-end pt-2" *ngIf="youtubeVideos.length>4">عرض الكل</p>
-    </div>
-  
+    </div> 
 </div>
