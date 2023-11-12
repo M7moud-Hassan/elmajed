@@ -95,7 +95,8 @@ import { AppLoaderInterceptor } from './core/interceptors/app-loader.interceptor
     CommonModule,
     RouterModule,
     SharedRoutingModule,
-    MatDialogModule
+    MatDialogModule,
+    
   ],
   exports:[
     PaginationComponent,

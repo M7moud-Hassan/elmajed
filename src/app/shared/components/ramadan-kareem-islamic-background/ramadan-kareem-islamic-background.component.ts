@@ -10,6 +10,7 @@ export class RamadanKareemIslamicBackgroundComponent implements OnInit,AfterView
   height=window.innerHeight;
   width=window.innerWidth/2;
   show:boolean=false
+  image=""
   slides:any[]=[]
 
   constructor(private renderer: Renderer2, private el: ElementRef,
@@ -22,6 +23,10 @@ export class RamadanKareemIslamicBackgroundComponent implements OnInit,AfterView
    }, 10);
   }
 
+  Change(id:any){
+    this.show=true
+    this.image=this.slides[id].image
+  }
   ngOnInit(): void {
     //  this.modifyToggleHandle()
     this.service.getSliderImages().subscribe(res=>{
@@ -40,6 +45,9 @@ export class RamadanKareemIslamicBackgroundComponent implements OnInit,AfterView
   }
   change(event:any){
     this.show=!this.show
+    if(this.show){
+      this.image=this.slides[0].image
+    }
     
   }
 
