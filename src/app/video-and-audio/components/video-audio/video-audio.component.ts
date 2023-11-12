@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { HomeService } from 'src/app/home/core/services/home.service';
+import { PaginationVM } from 'src/app/shared/core/models/pagination-vm';
 
 @Component({
   selector: 'app-video-audio',
@@ -9,10 +11,23 @@ import { HomeService } from 'src/app/home/core/services/home.service';
 })
 export class VideoAudioComponent implements OnInit{
   myForm: any;
-  constructor(private service:HomeService,private fb: FormBuilder) {
+  constructor(private service:HomeService,private fb: FormBuilder,private router: Router) {
   }
   items:any[]=[]  
   itemAll:any[]=[]
+  pageNumber:number = 1;
+  PageSize:number = 1000;
+  total:number = 0;
+  selectedItems:any[]=[];
+
+  paginationObj: PaginationVM = {
+    count: 0,
+    total: 0,
+    current_page: 0,
+    per_page: 0,
+    total_pages: 0,
+  };
+
   ngOnInit(): void {
     this.getData()
     this.myForm = this.fb.group({
@@ -32,7 +47,12 @@ export class VideoAudioComponent implements OnInit{
         
         
         this.items = this.interleaveArrays(items1, items2);
+
         this.itemAll=this.items
+        this.total = this.items.length;
+       
+        
+        this.onPageNumberClicked(1);
       });
     });
   }
@@ -63,6 +83,7 @@ export class VideoAudioComponent implements OnInit{
     this.sidebarDisplay = 'none';
     this.overlayDisplay = 'none';
   }
+
   submit(){
     var search=this.itemAll
    if(this.myForm.get('search').value !=""){
@@ -104,8 +125,32 @@ export class VideoAudioComponent implements OnInit{
     })
    }
   }
+}
 
-  
-   
+
+
+  onPageNumberClicked(pageNumber: number) {
+    this.pageNumber = pageNumber;
+    this.getElementsByPageSize(pageNumber,10);
+  }
+
+  getElementsByPageSize(currentPage:number,pageSize: number ){
+    let length = this.items.length;
+    const pageCount = Math.ceil(length / pageSize);
+    const startIndex = (currentPage - 1) * pageSize;
+    const endIndex = Math.min(startIndex + pageSize, length);
+    const elements = this.items.slice(startIndex, endIndex);
+    this.selectedItems = elements;
+    this.paginationObj = {
+      total: length ,
+      count: elements.length,
+      per_page: pageSize,
+      current_page: currentPage,
+      total_pages: pageCount
+    };
+  }
+
+  onSelect(id:any){
+    this.router.navigate(['video-audio/courses-content', id]);
   }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { HomeService } from 'src/app/home/core/services/home.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { HomeService } from 'src/app/home/core/services/home.service';
 })
 export class LecturesComponent implements OnInit{
   items:any[]=[]
-  constructor(private service:HomeService) {
+  constructor(private service:HomeService,private router:Router) {
     
     
   }
@@ -16,8 +17,14 @@ export class LecturesComponent implements OnInit{
     this.getData()
   }
   getData(){
-    this.service.getLectures(1,10).subscribe(res=>{
-      this.items=res.data.items      
+    this.service.getLectures(1,1000).subscribe(res=>{
+      res.data.items.forEach((e:any)=>{
+        this.items.push({...e,'type':'lecture'})
+      })
+         
     })
+  }
+  select(id:any){
+    this.router.navigate(["lectures/lecture-page",id]);
   }
 }

@@ -1,5 +1,5 @@
-<div class="mx-2 bg-light pb-0 mb-0 vh-100">
+<div class="mx-2 bg-light pb-0 mb-0">
     <img [src]="item.image" width="100%" height="300px">
     <p class="item-head p-3 pb-0">{{item.title}}</p>
-    <p class="item-des p-3 pt-0 text-justify pb-4">{{item.question}}</p>
+    <p class="item-des p-3 pt-0 text-justify pb-4 vh-100" style="max-height: 160px; overflow: hidden;">{{item.question}}</p>
 </div>

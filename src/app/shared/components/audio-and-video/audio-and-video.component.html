@@ -17,15 +17,12 @@
             <div class="col-md-4 col-1"></div>
         </div>
        
-        <div  id="slick-carousel-3" style="position: relative; bottom: -70px;">
-                <app-item-section *ngFor="let item of lectures" [item]="item" class="asd0">
-                </app-item-section>
+        <div  id="slick-carousel-3" style="position: relative; bottom: -70px;" dir="rtl">
+                <app-item-section *ngFor="let item of lectures" [item]="item" (click)="OnItemClick(item.slug)" class="asd0" style="cursor: pointer;"></app-item-section>
            
-                <app-item-section *ngFor="let item of courses" [item]="item" class="asd1" >
-                </app-item-section>
+                <app-item-section *ngFor="let item of courses" [item]="item" (click)="OnItemClick(item.slug)" class="asd1" style="cursor: pointer;"></app-item-section>
 
-                <app-item-section *ngFor="let item of lessons" [item]="item" class="asd2">
-                </app-item-section>
+                <app-item-section *ngFor="let item of lessons" [item]="item" (click)="OnItemClick(item.slug)" class="asd2" style="cursor: pointer;"></app-item-section>
         </div>
         <!-- <div  id="slick-carousel-32" style="position: relative; bottom: -70px;">
                

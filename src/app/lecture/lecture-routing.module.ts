@@ -5,7 +5,7 @@ import { LecturePageComponent } from './components/lecture-page/lecture-page.com
 
 const routes: Routes = [
   {path:'',component:LecturesComponent},
-  {path:'lecture-page',component:LecturePageComponent},
+  {path:'lecture-page/:id',component:LecturePageComponent},
 ];
 
 @NgModule({

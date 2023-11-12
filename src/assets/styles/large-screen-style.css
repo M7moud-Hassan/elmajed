@@ -6,4 +6,7 @@
         color: var(--black-color);
         line-height: 47px;
       }
+      .hamdi{
+        height: 65vw !important;
+      }
 }

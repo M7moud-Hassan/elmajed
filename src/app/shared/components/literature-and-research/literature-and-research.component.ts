@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { HomeService } from 'src/app/home/core/services/home.service';
 declare var $: any;
 @Component({
@@ -8,7 +9,7 @@ declare var $: any;
 })
 export class LiteratureAndResearchComponent implements AfterViewInit,OnInit  {
 
-  constructor(private service:HomeService) {
+  constructor(private service:HomeService,private router:Router) {
    
   }
   ngOnInit(): void {
@@ -28,9 +29,10 @@ export class LiteratureAndResearchComponent implements AfterViewInit,OnInit  {
     width:this.widthDouble
     ,...e
         })
-        this.items[0].show=true
+        // this.items[0].show=true
         setTimeout(()=>{
           this.setUpCarousal()
+          this.clickItem(this.items[0])
         },100)
       })
     
@@ -78,8 +80,8 @@ setUpCarousal(){
       infinite: false,
       slidesToShow: 3,
       slidesToScroll: 1,
-      nextArrow:document.getElementById('next-2'),
-      prevArrow:document.getElementById('prev-2'),
+      nextArrow:document.getElementsByClassName('next-2'),
+      prevArrow:document.getElementsByClassName('prev-2'),
       centerPadding:'0',
       // centerMode: true,
       rtl:true,
@@ -110,7 +112,7 @@ setUpCarousal(){
       ]
     }
   );
-  $('#prev-btn1').hide()
+  $('#prev-btn1').css({'color':'grey'})
   slick_.on('afterChange', function(event:any, slick:any, currentSlide:any, nextSlide:any) {
     var totalSlides = slick.slideCount;
 
@@ -120,21 +122,24 @@ setUpCarousal(){
 
     var hasPrevious = currentSlide > 0;
     if (hasNext) {
-      $('#next-btn1').show()
+      $('#next-btn1').css({'color':'#00A58C'})
     } else {
-      $('#next-btn1').hide()
+      $('#next-btn1').css({'color':'grey'})
     }
     if (hasPrevious) {
-      $('#prev-btn1').show()
+      $('#prev-btn1').css({'color':'#00A58C'})
     } else {
-      $('#prev-btn1').hide()
+      $('#prev-btn1').css({'color':'grey'})
     }
 });
 }
 
-  clickItem(id:number){ 
+  clickItem(item:any){
+    if(item.show){
+      this.router.navigate(['research/details/',item.slug])
+    } else{
     this.items.forEach(it=>{
-      if(it.id==id){
+      if(it.id==item.id){
         it.show=true
         it.width=this.widthDouble
       }else{
@@ -142,5 +147,6 @@ setUpCarousal(){
         it.width=this.widthNormal
       }
     })
+  }
   }
 }

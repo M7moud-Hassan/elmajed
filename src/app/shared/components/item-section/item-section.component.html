@@ -1,15 +1,17 @@
-<div class=" mx-auto p-2 pb-4 vh-100" style="position: relative; bottom: -70px;">
-    <div class="bg-light px-2 vh-100" >
+<div class=" mx-auto p-2 pb-4" style="position: relative; bottom: -70px;">
+    <div class="bg-light px-2 vh-0 sm-vh-100 hamdi">
         <div class="image-top">
             <img [src]="item.image" alt="" width="100%" class="">
             <p class="header-card p-2">{{item.title}}</p>
             <p class="text-body p-2 pt-0">
                 {{item.question}}
             </p>
-            <ul class="font-ul custom-list vh-100">
+           
+            <ul class="font-ul custom-list">
                 <li *ngFor="let i of getSlicedArchives(item.archives)">{{ i.title }}</li>
             </ul>
             <a href="" *ngIf="item.archives.length>3" class="alink pb-4 mb-4">المزيد (+{{item.archives.length-3}} درس)</a>
+           
            </div>
     </div>
  

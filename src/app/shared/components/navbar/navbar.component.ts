@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationExtras, Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -13,7 +13,12 @@ export class NavbarComponent {
   }
   navLinks=['/home','/home','/project','/fatawa','/research','/video-audio','/lectures','/cv','/contact-us']
   navHome(){
-    this.rooter.navigate(['/home'])
+    const navigationExtras: NavigationExtras = {
+      skipLocationChange: false,
+    };
+  
+    this.rooter.navigate(['/home'], navigationExtras);
+    // this.rooter.navigate([])
   }
 }
 

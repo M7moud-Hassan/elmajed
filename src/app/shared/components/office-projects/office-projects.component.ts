@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { HomeService } from 'src/app/home/core/services/home.service';
 declare var $: any;
 @Component({
@@ -9,7 +10,7 @@ declare var $: any;
 export class OfficeProjectsComponent implements AfterViewInit {
  items:any[]=[]
  title:string='مشروعات المكتب'
-  constructor(private service:HomeService) {
+  constructor(private service:HomeService,private router:Router) {
     
   }
  
@@ -87,6 +88,9 @@ export class OfficeProjectsComponent implements AfterViewInit {
   });
   }
 
-  
+  ItemClick(slug:string){
+    
+    this.router.navigate(['project/details/',slug])
+  }
 
 }
