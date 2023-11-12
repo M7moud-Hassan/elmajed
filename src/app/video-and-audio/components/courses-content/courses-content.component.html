@@ -52,10 +52,12 @@
 <p class="p-video m-2">الدروس</p>
 
 <div class="mt-3">
-    <app-audio *ngFor="let it of item.archives" [item]="it"></app-audio>
+    <app-audio *ngFor="let it of selectedItems" [item]="it"></app-audio>
     <!-- <app-audio></app-audio>
     <app-audio></app-audio> -->
 </div>
 
-<app-pagination></app-pagination>
+<!-- <app-pagination></app-pagination> -->
+<app-pagination *ngIf="paginationObj.total > 0" (pageNumberClicked)="onPageNumberClicked($event)" [paginationInfo]="paginationObj"></app-pagination>
+
 <app-dialog-video-image #dialog></app-dialog-video-image>
