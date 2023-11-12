@@ -1,4 +1,6 @@
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { HomeService } from 'src/app/home/core/services/home.service';
 import { DialogVideoImageComponent } from 'src/app/shared/components/dialog-video-image/dialog-video-image.component';
 declare var $: any;
 @Component({
@@ -6,13 +8,30 @@ declare var $: any;
   templateUrl: './lecture-page.component.html',
   styleUrls: ['./lecture-page.component.css']
 })
-export class LecturePageComponent  implements AfterViewInit {
+export class LecturePageComponent  implements AfterViewInit,OnInit {
   @ViewChild('dialog', { static: true }) dialog: DialogVideoImageComponent | undefined;
-  play(){
-    this.dialog!.openVideo('https://www.youtube.com/embed/DZYXs7WqZww?si=KGWKRSqpixaMoenW')
+  item:any
+  slug:any
+  slected:any
+  play(url:any){
+    this.dialog!.openVideo('https://www.youtube.com/embed/'+url.split('/')[url.split('/').length-1])
   }
 
- 
+
+  constructor(private service:HomeService,private route:ActivatedRoute) {
+    route.params.subscribe(res=>{
+      this.slug=res['id']
+    })
+  }
+  ngOnInit(): void {
+    this.getData()
+  }
+  getData(){
+    this.service.getDetails(this.slug).subscribe(res=>{
+      this.item=res.data.item
+      this.slected=this.item
+    })
+  }
     ngAfterViewInit(): void {
      var slick_= $('.slick-carousel').slick(
         {
@@ -72,5 +91,9 @@ export class LecturePageComponent  implements AfterViewInit {
     });
     
       
+    }
+
+    Select(item:any){
+      this.slected=item
     }
 }
