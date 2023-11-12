@@ -1,3 +1,8 @@
-<div *ngIf="showSpinner" class="spinnerContainer">
+<!-- <div *ngIf="showSpinner" [ngStyle]="componentStyle" class="spinnerContainer"> -->
+<!-- <div *ngIf="showSpinner" #elementRef class="spinnerContainer">
+    <span class="loader"></span>
+</div> -->
+<div class="page-overlay-wrapper" *ngIf="showSpinner">
+    <!-- <div class="bee-spinner"></div> -->
     <span class="loader"></span>
 </div>
