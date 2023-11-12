@@ -1,6 +1,6 @@
 <div class="row bg-background p-0 m-0">
     <div *ngIf="show" class="p-0 m-0" style="margin-top: 100px;">
-    <div class="bg-image-background"></div>
+    <div class="bg-image-background" [style]="'background-image: url('+slides[0].image+');'"></div>
     <div class="overlay"></div>
     </div>
     <div class="col-6  row">
@@ -18,14 +18,16 @@
            <div class="row">
             <div class="col-10"></div>
             <div class="col-2">
-                <input type="checkbox" checked data-toggle="toggle" (change)="change($event)" data-onstyle="light">
+                <div [class]="show?'toggle btn btn-secondary off':'toggle btn btn-secondary on'" (click)="change($event)" tabindex="0" style="width: 40.1px; height: 44.25px;"><input _ngcontent-tmm-c25="" type="checkbox" checked=""  data-toggle="toggle" data-onstyle="light"><div class="toggle-group"><span class="btn btn-light toggle-on">On</span><span class="btn btn-secondary toggle-off">Off</span><span class="toggle-handle btn width-btn"></span></div></div>
+
             </div>
            </div>
         </div>
     </div>
     <div class="col-6" dir="ltr">
         <div class="mx-auto"  [style.height]="(height-30)+'px'">
-           <app-book-view [width]="width" [height]="height"></app-book-view>
+           <app-book-view [width]="width" [height]="height" [image]="slides[1].image"></app-book-view>
         </div>
     </div>
 </div>
+<!-- <div class="toggle-group"><span class="btn btn-light toggle-on">On</span><span class="btn btn-secondary toggle-off">Off</span><span class="toggle-handle btn width-btn"></span></div> -->

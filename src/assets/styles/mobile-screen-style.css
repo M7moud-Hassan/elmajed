@@ -43,4 +43,11 @@
     .head2{
       font-size: 18px !important;
     }
+    /* .outerNext{
+      width: 32px !important;
+      height: 32px !important;
+    } */
+    .hamdi{
+      height: 100vh !important;
+    }
 }

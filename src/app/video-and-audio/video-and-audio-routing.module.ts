@@ -5,7 +5,7 @@ import { CoursesContentComponent } from './components/courses-content/courses-co
 
 const routes: Routes = [
   {path:'',component:VideoAudioComponent},
-  {path:'courses-content',component:CoursesContentComponent},
+  {path:'courses-content/:id',component:CoursesContentComponent},
 ];
 
 @NgModule({

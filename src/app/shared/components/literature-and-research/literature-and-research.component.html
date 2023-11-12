@@ -1,25 +1,25 @@
 <div class=" main-layout-container pt-4">
     <div class="row">
-        <p class="head2 pt-4 col-8">المؤلفات والبحوث</p>
-        <div class="col-4 d-flex justify-content-end align-items-center">
+        <p class="head2 pt-4 col-6 col-md-8">المؤلفات والبحوث</p>
+        <div class="col-6 col-md-4 d-flex justify-content-end align-items-center">
             <!-- <img src="assets/images/right-arrow-inactive.svg"  height="32"  alt=""> -->
-            <svg width="32" id="prev-2" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg width="32" class="prev-2" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M11.8121 17.0611C12.1234 16.3828 12.1234 15.6081 11.8121 14.9298L7.01516 4.47756C5.69565 1.97593 8.42839 0.537216 10.0982 1.79583C13.1968 4.13141 21.0476 11.1605 24.6024 14.3679C25.0684 14.7883 25.3332 15.3779 25.3332 15.9954C25.3332 16.6129 25.0684 17.2026 24.6024 17.6229C21.0476 20.8304 13.1968 27.8594 10.0982 30.195C8.38704 31.4848 5.72026 29.9683 7.01516 27.5133L11.8121 17.0611Z"/>
                 </svg>
-                <span class="next mx-2"  id="next-btn1">التالي</span>
-                <span class="next mx-2"  id="prev-btn1">السابق</span>
-            <svg width="32" height="32"  id="next-2"  viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <span class="next mx-2 prev-2"  id="prev-btn1">السابق</span>
+                <span class="next mx-2 next-2"  id="next-btn1" >التالي</span>
+            <svg width="32" height="32"  class="next-2"  viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M20.1879 17.0611C19.8766 16.3828 19.8766 15.6081 20.1879 14.9298L24.9848 4.47756C26.3044 1.97593 23.5716 0.537216 21.9018 1.79583C18.8032 4.13141 10.9524 11.1605 7.39762 14.3679C6.93159 14.7883 6.66683 15.3779 6.66683 15.9954C6.66683 16.6129 6.93159 17.2026 7.39762 17.6229C10.9524 20.8304 18.8032 27.8594 21.9018 30.195C23.613 31.4848 26.2797 29.9683 24.9848 27.5133L20.1879 17.0611Z"/>
                 </svg>           
         </div>
     </div>
     <div class="slick-carousel-2" *ngIf="!isMobile">
        
-       <app-item-carousal-home2  *ngFor="let it of items" [item]="it" (click)="clickItem(it.id)" [width]="it.width" [show]="it.show"></app-item-carousal-home2>
+       <app-item-carousal-home2  *ngFor="let it of items" [item]="it"  (click)="clickItem(it)" [width]="it.width" [show]="it.show" style="cursor: pointer;"></app-item-carousal-home2>
    
     
     </div>
-    <div *ngIf="isMobile" class="slick-carousel-2">
+    <div *ngIf="isMobile" class="slick-carousel-2" dir="ltr">
         <app-item-carousal-home2  *ngFor="let it of items"  [item]="it"  [show]="true"></app-item-carousal-home2>
     </div>
 </div>

@@ -10,6 +10,7 @@ export class RamadanKareemIslamicBackgroundComponent implements OnInit,AfterView
   height=window.innerHeight;
   width=window.innerWidth/2;
   show:boolean=false
+  slides:any[]=[]
 
   constructor(private renderer: Renderer2, private el: ElementRef,
     private service:HomeService) {
@@ -23,6 +24,12 @@ export class RamadanKareemIslamicBackgroundComponent implements OnInit,AfterView
 
   ngOnInit(): void {
     //  this.modifyToggleHandle()
+    this.service.getSliderImages().subscribe(res=>{
+     
+      
+      
+      this.slides=res.data.items
+    })
   }
 
   modifyToggleHandle() {

@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { HomeService } from 'src/app/home/core/services/home.service';
 declare var $: any;
 @Component({
@@ -7,7 +8,7 @@ declare var $: any;
   styleUrls: ['./audio-and-video.component.css']
 })
 export class AudioAndVideoComponent implements AfterViewInit,OnInit {
-  constructor(private service:HomeService) {
+  constructor(private service:HomeService,private router:Router) {
   }
   courses:any[]=[]
   lectures:any[]=[]
@@ -93,5 +94,9 @@ export class AudioAndVideoComponent implements AfterViewInit,OnInit {
    $('.asd'+1).hide()
    $('.asd'+0).hide()
    }
+  }
+
+  OnItemClick(slug:any){
+    this.router.navigate(['video-audio/courses-content/',slug])
   }
 }
