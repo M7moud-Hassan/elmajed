@@ -10,25 +10,29 @@ import { DialogVideoImageComponent } from 'src/app/shared/components/dialog-vide
 })
 export class CoursesContentComponent implements OnInit {
   id:any
-  constructor(private route:ActivatedRoute,private service:HomeService) {
+  constructor(private route:ActivatedRoute,private service:HomeService,
+    ) {
    route.params.subscribe(res=>{
     this.id=res['id']
    })
     
   }
+  item:any
   ngOnInit(): void {
     this.getData(this.id)
   }
   @ViewChild('dialog', { static: true }) dialog: DialogVideoImageComponent | undefined;
-  play(){
-    this.dialog!.openVideo('https://www.youtube.com/embed/DZYXs7WqZww?si=KGWKRSqpixaMoenW')
+  play(id_video:any){
+    this.dialog!.openVideo('https://www.youtube.com/embed/'+id_video)
   }
 
   getData(id:any){
     this.service.getDetails(id).subscribe(res=>{
-      console.log(res.data);
+      this.item=res.data.item
+      console.log("asdddddddd");
       
-
+      console.log(this.item);
+      
     })
   }
 

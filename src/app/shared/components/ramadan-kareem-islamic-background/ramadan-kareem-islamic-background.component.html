@@ -1,6 +1,6 @@
 <div class="row bg-background p-0 m-0">
     <div *ngIf="show" class="p-0 m-0" style="margin-top: 100px;">
-    <div class="bg-image-background" [style]="'background-image: url('+slides[0].image+');'"></div>
+    <div class="bg-image-background" [style]="'background-image: url('+image+');'"></div>
     <div class="overlay"></div>
     </div>
     <div class="col-6  row">
@@ -10,9 +10,9 @@
             <div class="d-flex justify-content-between bg-bg-bg">
                 <a routerLink="/fatawa" class="" style="z-index: 100;">فتاوي الشيخ</a>
                 <div class="border-right"></div>
-                <a href="" class="" style="z-index: 100;">البدع العملية</a>
+                <a  class="" style="z-index: 100; cursor: pointer;" (click)="Change(1)">البدع العملية</a>
                 <div class="border-right"></div>
-                <a href="" class=" none-border" style="z-index: 100;">تخريج الأصول على  الفروع</a>
+                <a class=" none-border" style="z-index: 100; cursor: pointer;" (click)="Change(2)">تخريج الأصول على  الفروع</a>
             </div>
             <div style="height: 50%;"></div>
            <div class="row">

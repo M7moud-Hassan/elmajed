@@ -1,16 +1,16 @@
 <p class="p-video mt-4 pt-4">
-    تخريج الفروع على الأصول من كتاب منهج السالكين
+    {{item.title}}
 </p>
 <div style=" position: relative" class="p-2 bg-light mt-4">
-    <div class="d-flex justify-content-center align-items-center pg-audo">
-        <img src="assets/images/_12.Play.svg" alt="" (click)="play()">
+    <div class="d-flex justify-content-center align-items-center pg-audo" [style]="'background-image: url('+item.image+');'">
+        <img src="assets/images/_12.Play.svg" alt="" (click)="play(item.youTube)">
     </div>
     <span class="p-light p-3">
         دورة
     </span>
     <div class="row mt-4">
         <div class="col-12 col-md-6">
-            <p class="col-p">تخريج الفروع على الأصول من كتاب منهج السالكين</p>
+            <p class="col-p"> {{item.title}}</p>
             <div class="row">
                 <div class="col">
                     <p class="p1">التخصص</p>
@@ -20,7 +20,7 @@
                         عدد الدروس :
                     </span>
                     <span class="p3">
-                        6 دروس
+                        {{item.archives.length}} دروس
                     </span>
                 </div>
                 <div class="col">
@@ -28,21 +28,21 @@
                         مدة المادة :
                     </span>
                     <span class="p3">
-                        03:50 دقيقة
+                        {{item.duration}} دقيقة
                     </span>
                 </div>
             </div>
-            <p class="pppp mt-2">سلسلة دروس علمية لفضيلة الشيخ سليمان بن عبدالله الماجد في (تخريج الفروع على الأصول من كتاب منهج السالكين) للعلامة ابن السعدي رحمه الله</p>
+            <p class="pppp mt-2">{{item.question}}</p>
             <div class="card-share">
                 <!-- <div class="card-details-title" style="margin-bottom: 40px;">{{detailsLabel.share}}</div> -->
                 <div class="research-icons research-inner-container">
                     <!-- <span hidden #itemTitle [innerHTML]="itemDetails.title" ></span> -->
                     <!-- <span hidden #facebook [innerHTML]="getItemLink" ></span> -->
-                    <a class="search-social-media-item-container" href="" target="_blank"><span class="search-social-media-item"><i class="fa-brands fa-facebook-f"></i></span></a>
-                    <a class="search-social-media-item-container" href="https://m.twitter.com/intent/tweet?text=" target="_blank" ><span class="search-social-media-item"><i class="fa-brands fa-x-twitter"></i></span></a>
-                    <a class="search-social-media-item-container" href="mailto:?subject&body=" target="_blank"><span class="search-social-media-item"><i class="fa-regular fa-envelope"></i></span></a>
-                    <a class="search-social-media-item-container" href="https://wa.me/?text=" target="_blank"><span class="search-social-media-item"><i class="fa-brands fa-whatsapp"></i></span></a>
-                    <a class="search-social-media-item-container" href="" target="_blank"><span class="search-social-media-item"><i class="fa-solid fa-download"></i></span></a>
+                    <a class="search-social-media-item-container" [href]="'https://www.facebook.com/sharer/sharer.php?u='+item.audio_file" target="_blank"><span class="search-social-media-item"><i class="fa-brands fa-facebook-f"></i></span></a>
+                    <a class="search-social-media-item-container" [href]="'https://m.twitter.com/intent/tweet?text='+item.audio_file" target="_blank" ><span class="search-social-media-item"><i class="fa-brands fa-x-twitter"></i></span></a>
+                    <a class="search-social-media-item-container" [href]="'mailto:?subject&body='+item.audio_file" target="_blank"><span class="search-social-media-item"><i class="fa-regular fa-envelope"></i></span></a>
+                    <a class="search-social-media-item-container" [href]="'https://wa.me/?text='+item.audio_file" target="_blank"><span class="search-social-media-item"><i class="fa-brands fa-whatsapp"></i></span></a>
+                    <a class="search-social-media-item-container" [href]="item.audio_file" target="_blank"><span class="search-social-media-item"><i class="fa-solid fa-download"></i></span></a>
                 </div>
             </div>
         </div>
@@ -52,9 +52,9 @@
 <p class="p-video m-2">الدروس</p>
 
 <div class="mt-3">
-    <app-audio></app-audio>
-    <app-audio></app-audio>
-    <app-audio></app-audio>
+    <app-audio *ngFor="let it of item.archives" [item]="it"></app-audio>
+    <!-- <app-audio></app-audio>
+    <app-audio></app-audio> -->
 </div>
 
 <app-pagination></app-pagination>
