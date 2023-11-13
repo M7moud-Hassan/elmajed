@@ -1,0 +1,13 @@
+<div class=" pt-4">
+    <p class="head  pt-4 mt-4">البرامج التلفزيونية</p>
+    <div class="row">
+        <div class="col-md-12  col-12">
+            <iframe width="100%"   class="video_youtube" height="400px"  id="video" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="col-12 row bg-light">
+            <div class="col-12">
+                <app-share-card-video style="cursor: pointer;" *ngFor="let item of youtubeVideos; let index=index;" [item]="item" [details]="allVideosDetails[index]" [select]="item.select" (click)="selectItem(item.id)" ></app-share-card-video>
+            </div>
+        </div>
+    </div> 
+</div>

@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { MainLayoutComponent } from './layout/main-layout/main-layout.component';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { AppLoaderComponent } from './shared/components/app-loader/app-loader.component';
+import { TvPageComponent } from './shared/components/tv-page/tv-page.component';
 
 const routes: Routes = [
   {path:'loader',component:AppLoaderComponent},
@@ -19,6 +20,7 @@ const routes: Routes = [
     {path:'blogs',loadChildren:()=>import('./blog/blog.module').then(m=>m.BlogModule)},
     {path:'al-mawjaz-al-fiqhi',loadChildren:()=>import('./al-mawjaz-al-fiqhi/al-mawjaz-al-fiqhi.module').then(m=>m.AlMawjazAlFiqhiModule)},
     {path:'qatuf',loadChildren:()=>import('./qatuf/qatuf.module').then(m=>m.QatufModule)},
+    {path:'tv-page',component:TvPageComponent},
   ]},
 ];
 

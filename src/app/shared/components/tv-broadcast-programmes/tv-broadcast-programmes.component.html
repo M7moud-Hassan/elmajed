@@ -8,6 +8,6 @@
         <div class="col-md-5 col-12">
             <app-share-card-video style="cursor: pointer;" *ngFor="let item of getSlicedVideos(youtubeVideos); let index=index;" [item]="item" [details]="allVideosDetails[index]" [select]="item.select" (click)="selectItem(item.id)" ></app-share-card-video>
         </div>
-        <a class="app-link text-end pt-2 text-decoration-none" *ngIf="youtubeVideos.length>4">عرض الكل</a>
+        <a class="app-link text-end pt-2 text-decoration-none" routerLink="/tv-page" *ngIf="youtubeVideos.length>4">عرض الكل</a>
     </div> 
 </div>
