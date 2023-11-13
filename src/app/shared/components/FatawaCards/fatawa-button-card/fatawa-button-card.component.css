@@ -14,9 +14,9 @@
     transition: all .5s ease-in-out;
     margin-bottom: 20px;
 }
-.button-info-card-container:hover{
+/* .button-info-card-container:hover{
     border-color: #00A58C;
-}
+} */
 .button-label{
     display: inline-block;
     padding-right: 15px;

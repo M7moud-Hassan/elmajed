@@ -4,7 +4,7 @@
     <img (click)="toggleDiv(i)" *ngIf="divStates[i] === 'open'" src="/assets/images/collapse.svg" class="icon-collapse-expand">
     <div  [@fadeInOut]="divStates[i]" class="sub-item-element">
         <!-- <a routerLink="#" class="inner-item" *ngIf="category.childs.length==0"> لا يوجد فتاوى فرعية </a> -->
-        <a routerLink="/fatawa/related-questions/{{category.id}}" class="inner-item" *ngIf="category.childs.length==0"> {{category.cat}}</a>
+        <a routerLink="/fatawa/related-questions/{{category.id}}" class="inner-item"> {{category.cat}}</a>
         <a routerLink="/fatawa/related-questions/{{subItem.id}}" class="inner-item" *ngFor="let subItem of category.childs">{{subItem.cat}}</a>
     </div>
 </div>
