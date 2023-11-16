@@ -4,6 +4,7 @@ import { FatawaService } from '../../core/services/fatawa.service';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { PopUpCardComponent } from 'src/app/shared/components/pop-up-card/pop-up-card.component';
+import { AboutService } from 'src/app/shared/core/services/about.service';
 
 @Component({
   selector: 'app-send-question',
@@ -11,6 +12,7 @@ import { PopUpCardComponent } from 'src/app/shared/components/pop-up-card/pop-up
   styleUrls: ['./send-question.component.css']
 })
 export class SendQuestionComponent implements AfterViewInit {
+  about:any;
   windowWidth:number = 0;
   ageList:string[]=[];
   pageHeaderObj:any = {
@@ -29,13 +31,14 @@ export class SendQuestionComponent implements AfterViewInit {
   }
 
   form:FormGroup = new FormGroup({});
-  constructor(private fb:FormBuilder,private service:FatawaService,private router:Router,private dialog: MatDialog) {}
+  constructor(private fb:FormBuilder,private service:FatawaService,private router:Router,private dialog: MatDialog,private aboutService:AboutService) {}
 
 
   ngOnInit(): void {
   this.createForm();
   this.windowWidth = window.innerWidth;
   this.createAgeDropdownValue();
+  this.getabout();
   }
   createAgeDropdownValue()
   {
@@ -142,6 +145,18 @@ export class SendQuestionComponent implements AfterViewInit {
     });
     dialogRef.afterClosed().subscribe(result => {
       //
+    });
+  }
+  getabout(){
+    this.aboutService.getAbout().subscribe({
+      next:(response:any)=>{
+        if(response.status == 200){
+          this.about = response.data.setting;
+        }
+      },
+      error:(error)=>{
+        console.log("Error : ===> ==> "+error.description);
+      }
     });
   }
 }

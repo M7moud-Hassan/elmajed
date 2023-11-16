@@ -4,6 +4,7 @@ import { ContactUsService } from '../../core/services/contact-us.service';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { PopUpCardComponent } from 'src/app/shared/components/pop-up-card/pop-up-card.component';
+import { AboutService } from 'src/app/shared/core/services/about.service';
 
 @Component({
   selector: 'app-contact-us',
@@ -11,6 +12,7 @@ import { PopUpCardComponent } from 'src/app/shared/components/pop-up-card/pop-up
   styleUrls: ['./contact-us.component.css']
 })
 export class ContactUsComponent implements AfterViewInit {
+  about:any;
   windowWidth:number = 0;
   pageHeaderObj:any = {
     title:'اتصل بنا',
@@ -27,12 +29,13 @@ export class ContactUsComponent implements AfterViewInit {
   }
 
   form:FormGroup = new FormGroup({});
-  constructor(private fb:FormBuilder,private contactUsService:ContactUsService,private router:Router,private dialog: MatDialog) {}
+  constructor(private fb:FormBuilder,private contactUsService:ContactUsService,private router:Router,private dialog: MatDialog,private aboutService:AboutService) {}
 
 
   ngOnInit(): void {
   this.createForm();
   this.windowWidth = window.innerWidth;
+  this.getabout();
   }
   createForm(){
     this.form = this.fb.group({
@@ -53,8 +56,7 @@ export class ContactUsComponent implements AfterViewInit {
       next:(res)=>{
         if(res.status == 200 && res.success == true){
           this.form.reset();
-          //TODO : make alert message .
-          // alert("تم ارسال الرسالة بنجاح");
+          this.opensendQuestionDialog();
         }
       },
       error:(error)=>{
@@ -115,6 +117,18 @@ export class ContactUsComponent implements AfterViewInit {
     });
     dialogRef.afterClosed().subscribe(result => {
       //
+    });
+  }
+  getabout(){
+    this.aboutService.getAbout().subscribe({
+      next:(response:any)=>{
+        if(response.status == 200){
+          this.about = response.data.setting;
+        }
+      },
+      error:(error)=>{
+        console.log("Error : ===> ==> "+error.description);
+      }
     });
   }
 }

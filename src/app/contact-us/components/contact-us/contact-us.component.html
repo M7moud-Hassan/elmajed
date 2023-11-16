@@ -1,6 +1,5 @@
 <app-page-header [pageHeaderInfo]="pageHeaderObj"></app-page-header>
-<div class="vision-container">إذا كان لديك أي عمل مني أو أي نوع من أنواع التعليمات المتعلقة بالبرنامج التعليمي الخاص بي
-    ، فيمكنك إرسال رسالة إلي من هنا. إنه لمن دواعي سروري أن أساعدك.</div>
+<div class="vision-container" [innerHTML]="about.vision" ></div>
 <div class="row">
     <div class="col-12 col-md-8">
         <div class="form-container">
