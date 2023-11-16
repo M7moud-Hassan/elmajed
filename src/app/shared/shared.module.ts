@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { ProjectCardComponent } from './components/project-card/project-card.component';
@@ -45,6 +45,7 @@ import { ReadMoreCarouselCardComponent } from './components/read-more-carousel-c
 import { AppLoaderComponent } from './components/app-loader/app-loader.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppLoaderInterceptor } from './core/interceptors/app-loader.interceptor';
+import { TvPageComponent } from './components/tv-page/tv-page.component';
 
 
 
@@ -89,7 +90,8 @@ import { AppLoaderInterceptor } from './core/interceptors/app-loader.interceptor
     FatawaCategoriesSectionComponent,
     ReadMorePageItemsComponent,
     ReadMoreCarouselCardComponent,
-    AppLoaderComponent
+    AppLoaderComponent,
+    TvPageComponent
   ],
   imports: [
     CommonModule,
@@ -134,7 +136,8 @@ import { AppLoaderInterceptor } from './core/interceptors/app-loader.interceptor
     FatawaCategoriesSectionComponent,
     ReadMorePageItemsComponent,
     ReadMoreCarouselCardComponent,
-    AppLoaderComponent
+    AppLoaderComponent,
+    ShareCardVideoComponent
   ],
   providers: [
     {
@@ -143,5 +146,6 @@ import { AppLoaderInterceptor } from './core/interceptors/app-loader.interceptor
       multi: true
     }
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class SharedModule { }
