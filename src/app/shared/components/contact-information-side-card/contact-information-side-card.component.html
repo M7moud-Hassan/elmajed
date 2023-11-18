@@ -11,8 +11,7 @@
                     <div class="col-md-8 d-flex align-items-center justify-content-start">
                         <div class="info-item-container">
                             <div class="info-item-header">الواتـــساب</div>
-                            <div class="info-item-data">+2001012139683</div>
-                            <div class="info-item-data">+2001142788054</div>
+                            <div class="info-item-data" *ngIf="about">{{about.phone}}</div>
                         </div>
                     </div>
                 </div>
@@ -27,8 +26,7 @@
                     <div class="col-md-8 d-flex align-items-center justify-content-start">
                         <div class="info-item-container">
                             <div class="info-item-header">الجــوال</div>
-                            <div class="info-item-data">+2001012139683</div>
-                            <div class="info-item-data">+2001142788054</div>
+                            <div class="info-item-data" *ngIf="about">{{about.phone}}</div>
                         </div>
                     </div>
                 </div>
@@ -43,8 +41,7 @@
                     <div class="col-md-8 d-flex align-items-center justify-content-start">
                         <div class="info-item-container">
                             <div class="info-item-header">البريد الإليكترونى</div>
-                            <div class="info-item-data">m7moud@gmail.com</div>
-                            <div class="info-item-data">info.m7moud@gmail.com</div>
+                            <div class="info-item-data" *ngIf="about">{{about.email}}</div>
                         </div>
                     </div>
                 </div>
