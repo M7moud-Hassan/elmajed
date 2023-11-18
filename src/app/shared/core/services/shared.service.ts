@@ -26,7 +26,7 @@ export class SharedService {
   //   // let url = `${domainName}/${path}/${slug}`;
   //   return url;
   // }
-  getItemLink(path:string,slug:string){
+  getItemLink(path:string,slug:string=""){
     const currentUrl = window.location.href;
     const baseUrl = currentUrl.split('/').slice(0, 3).join('/');  
     let url = `${baseUrl}${path}`;
