@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, HostListener, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HomeService } from 'src/app/home/core/services/home.service';
@@ -9,9 +9,17 @@ import { PaginationVM } from 'src/app/shared/core/models/pagination-vm';
   templateUrl: './video-audio.component.html',
   styleUrls: ['./video-audio.component.css']
 })
-export class VideoAudioComponent implements OnInit{
+export class VideoAudioComponent implements OnInit,AfterViewInit{
   myForm: any;
   constructor(private service:HomeService,private fb: FormBuilder,private router: Router) {
+  }
+  ngAfterViewInit(): void {
+    
+  }
+
+  @HostListener('window:scroll', ['$event'])
+  onWindowScroll() {
+    this.w3_close();
   }
   items:any[]=[]  
   itemAll:any[]=[]
@@ -38,12 +46,17 @@ export class VideoAudioComponent implements OnInit{
     })
    
   }
+  deleteA(){
+    this.myForm.get('search').setValue('');
+    this.myForm.get('type').setValue(false);
+    this.myForm.get('type2').setValue(false);
+  }
   getData() {
     this.service.getCourses(1, 1000).subscribe(res => {
       const items1 = res.data.items;
       this.service.getLessons(1, 1000).subscribe(res2 => {
         const items2 = res2.data.items;
-        // console.log(res2.data.items);
+        console.log(res2.data.items);
         
         
         this.items = this.interleaveArrays(items1, items2);
@@ -85,46 +98,47 @@ export class VideoAudioComponent implements OnInit{
   }
 
   submit(){
-    var search=this.itemAll
+    this.selectedItems=[]
+    var search:any[]=this.itemAll
    if(this.myForm.get('search').value !=""){
     this.items=[]
+    var temp:any[]=[]
     this.itemAll.forEach((e:any)=>{
       if(e.title.includes(this.myForm.get('search').value)){
-        this.items.push(e)
+        temp.push(e)
       }
     })
+    this.selectedItems=temp
+    search=temp
    }
    else{
-    this.items=this.itemAll
+    this.selectedItems=this.itemAll
    }
 
    
    if(this.myForm.get('type').value && this.myForm.get('type2').value){
-    
+    // this.selectedItems=this.itemAll
    }else{
+   
    if(this.myForm.get('type').value){
-    if(this.myForm.get('search').value!=""){
-      search=this.items
-      this.items=[]
-     }
+    this.selectedItems=[]
     search.forEach((e:any)=>{
-      if(e.type='lession'){
-        this.items.push(e)
+      if(e.type=='lession'){
+        this.selectedItems.push(e)
       }
     })
    }
    if(this.myForm.get('type2').value){
-    if(this.myForm.get('search').value!=""){
-      search=this.items
-      this.items=[]
-     }
+    this.selectedItems=[]
+   
     search.forEach((e:any)=>{
-      if(e.type='course'){
-        this.items.push(e)
+      if(e.type=='course'){
+        this.selectedItems.push(e)
       }
     })
    }
   }
+  this.w3_close()
 }
 
 

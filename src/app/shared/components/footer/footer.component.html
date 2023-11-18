@@ -31,21 +31,21 @@
         <div class="col-md-4 col-12">
             <img src="assets/images/Logo-footer.svg" alt="">
             <p class="pppp pt-4">ماهو وقف مناطات؟</p>
-            <p class="pd-pp">
-                يوضع هنا وصف مناطات الذي يتكون من عدة أسطر.يوضع هنا وصف مناطات الذي يتكون من عدة أسطر.يوضع هنا وصف مناطات الذي يتكون من عدة أسطر.
+            <p class="pd-pp" [innerHTML]="about.about">
+              
             </p>
             <p class="d-link">
                 تابعنا على منصات التواصل الإجتماعي
             </p>
             <div class="d-flex justify-content-between">
-                <a href="https://www.facebook.com/sulimanalmajed">
+                <a [href]="about.facebook" target="_blank">
                     <img src="assets/images/facebook-5.svg" alt="">
                    </a> 
-                   <a href="https://www.youtube.com/c/snalmajed"> <img src="assets/images/youtube.svg" alt=""></a>
-                   <a href="https://www.instagram.com/salmajed1656"><img src="assets/images/instagram-logo.svg" alt=""></a> 
-                   <a href="https://twitter.com/fwaedsalmjed"><img src="assets/images/twitter-2 1.svg" alt=""></a> 
-                    <img src="assets/images/whatsapp-5 1.svg" alt="">
-                    <img src="assets/images/telegram.svg" alt="">
+                   <a [href]="about.youTube" target="_blank"> <img src="assets/images/youtube.svg" alt=""></a>
+                   <a [href]="about.instagram" target="_blank"><img src="assets/images/instagram-logo.svg" alt=""></a> 
+                   <a [href]="about.twitter" target="_blank"><img src="assets/images/twitter-2 1.svg" alt=""></a> 
+                   <a [href]="about.phone" target="_blank"> <img src="assets/images/whatsapp-5 1.svg" alt=""> </a>
+                   <a [href]="about.telegram" target="_blank"> <img src="assets/images/telegram.svg" alt=""> </a>
             </div>
         </div>
         <div class="col-md-8 col-12 ps-4">
@@ -101,21 +101,22 @@
             <div class="col-md-4 col-12">
                 <img src="assets/images/Logo-footer.svg" alt="">
                 <p class="pppp pt-4">ماهو وقف مناطات؟</p>
-                <p class="pd-pp">
-                    يوضع هنا وصف مناطات الذي يتكون من عدة أسطر.يوضع هنا وصف مناطات الذي يتكون من عدة أسطر.يوضع هنا وصف مناطات الذي يتكون من عدة أسطر.
+                <p class="pd-pp" [innerHTML]="about.about">
+                   
                 </p>
                 <p class="d-link">
                     تابعنا على منصات التواصل الإجتماعي
                 </p>
                 <div class="d-flex justify-content-between">
-                   <a href="https://www.facebook.com/sulimanalmajed">
-                    <img src="assets/images/facebook-5.svg" alt="">
-                   </a> 
-                   <a href="https://www.youtube.com/c/snalmajed"> <img src="assets/images/youtube.svg" alt=""></a>
-                   <a href="https://www.instagram.com/salmajed1656"><img src="assets/images/instagram-logo.svg" alt=""></a> 
-                   <a href="https://twitter.com/fwaedsalmjed"><img src="assets/images/twitter-2 1.svg" alt=""></a> 
-                    <img src="assets/images/whatsapp-5 1.svg" alt="">
-                    <img src="assets/images/telegram.svg" alt="">
+                    <a [href]="about.facebook" target="_blank">
+                        <img src="assets/images/facebook-5.svg" alt="">
+                       </a> 
+                       <a [href]="about.youTube" target="_blank"> <img src="assets/images/youtube.svg" alt=""></a>
+                       <a [href]="about.instagram" target="_blank"><img src="assets/images/instagram-logo.svg" alt=""></a> 
+                       <a [href]="about.twitter" target="_blank"><img src="assets/images/twitter-2 1.svg" alt=""></a> 
+                       <a [href]="about.phone" target="_blank"> <img src="assets/images/whatsapp-5 1.svg" alt=""> </a>
+                       <a [href]="about.telegram" target="_blank"> <img src="assets/images/telegram.svg" alt=""> </a>
+    
                 </div>
             </div>
             <div class="col-md-8 col-12 pt-4 mt-4">
