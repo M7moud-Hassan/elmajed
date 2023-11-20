@@ -124,7 +124,8 @@ navigateToRouteWithDetails() {
   const data = this.detailsData;
   const dataString = encodeURIComponent(JSON.stringify(data));
   const url = `/fatawa/details/${dataString}`;
-  this.router.navigateByUrl(url);
+  // this.router.navigateByUrl(url);
+  this.router.navigate(['/fatawa/details/',dataString]);
   // const dataString = encodeURIComponent(JSON.stringify(data));
   // const url = `/fatawa/related-questions-by-free-search/${dataString}`;
   // this.router.navigateByUrl(url);
