@@ -41,7 +41,7 @@ line-height: 34px; /* 170% */
     position: relative;
     margin-bottom: 10px;
 
-    &::before {
+&::before {
         content: "\2022";
         display: inline-block;
         width: 10px;

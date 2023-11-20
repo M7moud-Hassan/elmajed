@@ -116,9 +116,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-  
-  
-    .bee-spinner {
+  }
+  .bee-spinner {
       width: 20%;
       height: 20%;
       position: fixed;
@@ -131,4 +130,3 @@
       animation: bouncing 0.4s cubic-bezier(0.1, 0.25, 0.1, 1) 0s infinite
         alternate both;
     }
-  }
