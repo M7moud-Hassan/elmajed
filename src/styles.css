@@ -110,6 +110,22 @@
   outline: none;
   border-radius: 16px;
 }
+.submit-btn-outline{
+  display: inline-block;
+  text-align: center;
+  color: #00A58C;
+  background-color:white;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+  padding: 20px;
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 16px;
+  border: 1px solid #00A58C;
+  text-decoration: none;
+}
 
 
 .toggle-group .toggle-handle{
