@@ -167,7 +167,6 @@ export class RelatedQuestionsComponent implements OnInit {
             this.detailsData=res.data.data[0];
             this.navigateToRouteWithData();
           }else{
-            alert("Not found")
           }
         }
       }
