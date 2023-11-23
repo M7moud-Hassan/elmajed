@@ -139,7 +139,7 @@ export class SendQuestionComponent implements AfterViewInit {
         label:'حسنا',
         submit:()=>{
           const url = `/fatawa/send-question`;
-          this.router.navigateByUrl(url);
+          this.router.navigate([url]);
         }
       }
     });

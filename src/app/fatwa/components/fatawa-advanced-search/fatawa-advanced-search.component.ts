@@ -118,7 +118,8 @@ navigateToRouteWithData() {
   const data = this.searchModel;
   const dataString = encodeURIComponent(JSON.stringify(data));
   const url = `/fatawa/related-questions-by-free-search/${dataString}`;
-  this.router.navigateByUrl(url);
+  // const url = `/fatawa/related-questions-by-free-search/${data}`;
+  this.router.navigate([url]);
 }
 navigateToRouteWithDetails() {
   const data = this.detailsData;
@@ -142,7 +143,7 @@ openNotFoundDialog() {
       label:'أعد البحث',
       submit:()=>{
         const url = `/fatawa/search`;
-        this.router.navigateByUrl(url);
+        this.router.navigate([url]);
       }
     }
   });

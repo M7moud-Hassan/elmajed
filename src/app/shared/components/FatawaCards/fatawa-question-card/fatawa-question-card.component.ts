@@ -22,7 +22,12 @@ export class FatawaQuestionCardComponent  implements OnInit {
       answer:''
     };
   }
-
+  pageHeaderObj = {
+    title:'فتاوى مختارة',
+    hasSubTitle : false,
+    subtitle:'',
+    total:0
+  };
   ngOnInit(): void {
      this.getPreferredFatawy();
   }
@@ -31,7 +36,7 @@ export class FatawaQuestionCardComponent  implements OnInit {
     this.service.getPreferredFatwa().subscribe({
       next : (res:any)=>{
         if(res.status==200 && res.success==true && res.data.data.length>0){
-          this.preferredList = res.data.data ;
+          this.preferredList = res.data.data;
           let fatwa_Id = this.preferredList[0].id;
           this.service.getFatwaDetails(fatwa_Id).subscribe({
             next:(response:any)=>{
@@ -43,5 +48,12 @@ export class FatawaQuestionCardComponent  implements OnInit {
       error:(error)=>{
       }
     })
+  }
+  shuffleArray<T>(array: T[]): T[] {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
   }
 }

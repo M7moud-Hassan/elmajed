@@ -41,11 +41,11 @@ export class CVComponent implements OnInit {
             content: this.cv.note
           };
           this.commissionInfo = {
-            label:'اللجان والتمثيل',
+            label:'المؤتمرات والندوات و اللجان و التمثيل',
             content: this.cv.representation
           };
           this.conferencesInfo = {
-            label:'المؤتمرات والندوات',
+            label:'الإسهام العلمى',
             content: this.cv.conferences
           };
         }

@@ -79,8 +79,8 @@ export class FatawaComponent implements AfterViewInit, OnInit {
     this.todaysFatwaSection.nativeElement.scrollIntoView({ behavior: 'smooth' });
   }
   getDailyFatwa(){
-    // this.service.getDailyFatwa().subscribe({
-    this.service.getPreferredFatwa().subscribe({
+    this.service.getDailyFatwa().subscribe({
+    // this.service.getPreferredFatwa().subscribe({
       next : (res:any)=>{
         if(res.status==200 && res.success==true && res.data.data.length>0){
           this.fatawyList = res.data.data;
@@ -98,13 +98,6 @@ export class FatawaComponent implements AfterViewInit, OnInit {
                 id:this.daily.id,
                 ques:this.daily.ques
               };
-              // alert(`
-              //   -img :  ${this.daily.img}
-              //   -title :  ${this.daily.title}
-              //   -date :  ${this.daily.date}
-              //   -id :  ${this.daily.id}
-              //   -ques :  ${this.daily.ques}
-              // `);
             }
           }); 
         }else{

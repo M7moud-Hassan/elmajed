@@ -11,9 +11,10 @@
     </div>
 </div>
 <app-fatawa-question-card></app-fatawa-question-card>
-<div class="row" style="padding-bottom: 50px;">
+<div  class="row" style="padding-bottom: 50px;">
     <div class="col-12 col-md-8" #todaysFatwaSection>
         <app-page-header [pageHeaderInfo]="pageHeaderDailyFatwaObj"></app-page-header>
+        <div *ngIf="!hasNoTodayFatwa">
         <app-fatwa-card [Question]="questionDetails"></app-fatwa-card>
         <app-fatwa-answer-card [answer]="answer"></app-fatwa-answer-card>
         <div class="sub-header">كلمات مفتاحية</div>
@@ -24,6 +25,10 @@
             <app-fatawa-preferred-card title="{{item.cat}}" label="فتاوي مختارة" flag="true"
                 id="{{item.id}}"></app-fatawa-preferred-card>
         </div>
+    </div>
+    <div  *ngIf="hasNoTodayFatwa" style="background-color: white;">
+        <div class="sub-header py-5 text-center">لا توجد فتوى يومية</div>
+    </div>
     </div>
     <div class="col-12 col-md-4">
         <app-page-header [pageHeaderInfo]="pageHeaderSpeedSearchObj"></app-page-header>

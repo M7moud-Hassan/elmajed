@@ -51,6 +51,7 @@ export class RelatedQuestionsComponent implements OnInit {
         this.getAllItemsByKeyword();
       }else if(this.search != ""){
         const data = JSON.parse(decodeURIComponent(this.search!));
+        // const data = this.search!;
         this.searchModel = data;
         this.searchModel = {
           flt: this.searchModel.flt,
@@ -70,8 +71,8 @@ export class RelatedQuestionsComponent implements OnInit {
     this.service.GETListFatwaByFatwaCategory(this.id,this.pageNumber,this.PageSize).subscribe({
       next:(response:any)=>{
         if(response.status == 200){
-          this.items = response.data.data;
-          this.total = this.items.length;
+          this.items = response?.data?.data;
+          this.total = this.items?.length;
           this.onPageNumberClicked(1);
           this.pageHeaderObj = {
             title:'الفتاوى المتعلقة',
@@ -93,7 +94,7 @@ export class RelatedQuestionsComponent implements OnInit {
     this.service.GETListFatwaByKeyword(this.keyword,this.pageNumber,this.PageSize).subscribe({
       next:(response:any)=>{
         if(response.status == 200){
-          this.items = response.data.data;
+          this.items = response?.data?.data;
           this.total = this.items.length;
           this.onPageNumberClicked(1);
           this.pageHeaderObj = {
@@ -116,8 +117,9 @@ export class RelatedQuestionsComponent implements OnInit {
     this.service.getFatwaFreeSearch(this.searchModel,this.pageNumber,this.PageSize).subscribe({
       next:(response:any)=>{
         if(response.status == 200){
-          this.items = response.data.data;
-          this.total = this.items.length;
+          console.log("items",response);
+          this.items = response?.data?.data;
+          this.total = this.items?.length;
           this.onPageNumberClicked(1);
           this.pageHeaderObj = {
             title:'الفتاوى المتعلقة',
@@ -141,15 +143,15 @@ export class RelatedQuestionsComponent implements OnInit {
   }
 
   getElementsByPageSize(currentPage:number,pageSize: number ){
-    let length = this.items.length;
+    let length = this.items?.length;
     const pageCount = Math.ceil(length / pageSize);
     const startIndex = (currentPage - 1) * pageSize;
     const endIndex = Math.min(startIndex + pageSize, length);
-    const elements = this.items.slice(startIndex, endIndex);
+    const elements = this.items?.slice(startIndex, endIndex);
     this.selectedItems = elements;
     this.paginationObj = {
       total: length ,
-      count: elements.length,
+      count: elements?.length,
       per_page: pageSize,
       current_page: currentPage,
       total_pages: pageCount
@@ -192,7 +194,7 @@ export class RelatedQuestionsComponent implements OnInit {
         label:'أعد البحث',
         submit:()=>{
           const url = `/fatawa/search`;
-          this.router.navigateByUrl(url);
+          this.router.navigate([url]);
         }
       }
     });
