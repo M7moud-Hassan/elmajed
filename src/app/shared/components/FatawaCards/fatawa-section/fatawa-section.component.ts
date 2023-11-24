@@ -25,7 +25,7 @@ export class FatawaSectionComponent implements OnInit {
   items: number[] = [1, 2, 3, 4, 5];
   divStates: string[] = [];
   categories:any[]=[];
-  constructor(private fatwaService:FatawaService,private activatedRoute:ActivatedRoute){ }
+  constructor(private fatwaService:FatawaService,private activatedRoute:ActivatedRoute,private renderer:Renderer2){ }
 
   ngOnInit(): void {
     this.getFatawyCategories();
@@ -63,17 +63,11 @@ export class FatawaSectionComponent implements OnInit {
 
 
   scrollToItem(itemId: any) {
-    const element = this.listContainer.nativeElement.querySelector(`#${itemId}`);
+    const element = this.listContainer.nativeElement.querySelector(`#item${itemId}`);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
+  
     }
-  }
- 
-  applyAnimation(divId: any) {
-    // const element = this.listContainer.nativeElement.querySelector(`#${divId}`);
-    // if (element) {
-    //   alert(element)
-    // }
   }
 
 }

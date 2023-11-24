@@ -408,3 +408,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   animation-duration: 3s;
   animation-delay: 3s;
 }
+.test{
+  background-color: red;
+  color: green;
+  border: 1px solid blue;
+}

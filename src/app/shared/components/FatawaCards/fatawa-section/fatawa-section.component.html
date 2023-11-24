@@ -1,7 +1,6 @@
-<!-- <a (click)="scrollToItem()">Go</a> -->
 <div #listContainer>
-<div *ngFor="let category of categories;let i = index" class="couter-container-category-item"  id="{{category.id}}">
-    <div (click)="toggleDiv(i)" class="item-container" id="item{{category.id}}">{{category.cat}}</div>
+<div *ngFor="let category of categories;let i = index" class="couter-container-category-item"  id="item{{category.id}}">
+    <div (click)="toggleDiv(i)" class="item-container">{{category.cat}}</div>
     <img (click)="toggleDiv(i)" *ngIf="divStates[i] === 'closed'" src="/assets/images/expand.svg" class="icon-collapse-expand">
     <img (click)="toggleDiv(i)" *ngIf="divStates[i] === 'open'" src="/assets/images/collapse.svg" class="icon-collapse-expand">
     <div  [@fadeInOut]="divStates[i]" class="sub-item-element">
