@@ -12,8 +12,8 @@ export class ResearchDetailsComponent{
       subTitle1:'ملخص البحـــث :',
       subTitle2:'المزيد :',
       details:'تفاصيل البحث',
-      duration:'مدة البحث',
-      date:'تاريخ إطلاق البحث',
+      duration:'عدد الصفحات',
+      date:'تاريخ  النشر',
       author:'مؤلف البحث',
       share:'مشاركة البحث',
     };

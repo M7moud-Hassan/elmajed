@@ -10,7 +10,7 @@ import { FatawaService } from 'src/app/fatwa/core/services/fatawa.service';
   animations: [
     trigger('fadeInOut', [
       state('open', style({
-        'max-height': '500px',
+        'max-height': '2000px',
       })),
       state('closed', style({
         'max-height': '0',
@@ -22,7 +22,6 @@ import { FatawaService } from 'src/app/fatwa/core/services/fatawa.service';
 export class FatawaSectionComponent implements OnInit {
   targetId:number = 0;
   targetIndex:number = 0;
-  items: number[] = [1, 2, 3, 4, 5];
   divStates: string[] = [];
   categories:any[]=[];
   constructor(private fatwaService:FatawaService,private activatedRoute:ActivatedRoute,private renderer:Renderer2){ }
@@ -46,12 +45,12 @@ export class FatawaSectionComponent implements OnInit {
         if(res.status==200 && res.success==true){
           console.log(res);
           this.categories=res.data.data;
+          console.log("categories : ",this.categories);
           this.categories.forEach(() => this.divStates.push('closed'));
           if(this.targetId != 0){
             this.targetIndex = this.categories.findIndex((x:any) => x.id ==this.targetId );
             this.divStates[this.targetIndex] = 'open';
             this.scrollToItem(this.targetId);
-            // this.applyAnimation(this.targetId);
           }
         }
       },
