@@ -45,12 +45,12 @@
 .research-image{
     width: 100%;
     height: 360px;
-    background-size: 100% 100%;
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
 }
 .research-inner-container{
-    padding: 20px 15px 0px 15px;
+    padding: 20px 0px 0px 0px;
 }
 .research-title{
     font-weight: 700;
