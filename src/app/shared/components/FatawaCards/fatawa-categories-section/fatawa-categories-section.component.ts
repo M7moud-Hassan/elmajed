@@ -30,7 +30,8 @@ export class FatawaCategoriesSectionComponent implements OnInit {
       next:(response:any)=>{
         if(response.status == 200){
           let data = response?.data?.data;
-          console.log("Data" , data);
+          console.log("Data : " , data);
+          // if(data.length > 0 ){
           if(data.length > 0){
             this.router.navigate([`/fatawa/related-questions/${id}`]);
           }else{

@@ -19,7 +19,7 @@ export class RelatedQuestionsComponent implements OnInit {
   search:any;
   searchModel:any;
   items:any[] = [];
-  pageNumber:number = 1;
+  pageNumber:number = 0;
   PageSize:number = 1000;
   total:number = 0;
   selectedItems:any[]=[];
@@ -81,6 +81,9 @@ export class RelatedQuestionsComponent implements OnInit {
             total:this.total
           };
           if(this.total == 0){
+            console.log("DDAATTAA :: ",response?.data?.data);
+            console.log("ID :: ",this.id);
+            
             this.openNotFoundDialog();
           }
         }

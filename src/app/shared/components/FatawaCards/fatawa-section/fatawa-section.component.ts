@@ -17,11 +17,6 @@ import { FatawaService } from 'src/app/fatwa/core/services/fatawa.service';
       })),
       transition('closed <=> open', animate('200ms ease-in-out'))
     ]),
-    trigger('colorAnimation', [
-      state('black', style({ color: 'black' })),
-      state('color', style({ color: 'red' })),
-      transition('black <=> color', animate('1s')),
-    ])
   ]
 })
 export class FatawaSectionComponent implements OnInit {
@@ -30,7 +25,7 @@ export class FatawaSectionComponent implements OnInit {
   items: number[] = [1, 2, 3, 4, 5];
   divStates: string[] = [];
   categories:any[]=[];
-  constructor(private fatwaService:FatawaService,private activatedRoute:ActivatedRoute,private renderer: Renderer2){ }
+  constructor(private fatwaService:FatawaService,private activatedRoute:ActivatedRoute){ }
 
   ngOnInit(): void {
     this.getFatawyCategories();
@@ -56,6 +51,7 @@ export class FatawaSectionComponent implements OnInit {
             this.targetIndex = this.categories.findIndex((x:any) => x.id ==this.targetId );
             this.divStates[this.targetIndex] = 'open';
             this.scrollToItem(this.targetId);
+            // this.applyAnimation(this.targetId);
           }
         }
       },
@@ -71,6 +67,13 @@ export class FatawaSectionComponent implements OnInit {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+  }
+ 
+  applyAnimation(divId: any) {
+    // const element = this.listContainer.nativeElement.querySelector(`#${divId}`);
+    // if (element) {
+    //   alert(element)
+    // }
   }
 
 }

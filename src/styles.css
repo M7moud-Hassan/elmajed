@@ -386,3 +386,25 @@ a{
 /* -----------------------------forms and inputs styles-------------------------------------- */
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+@keyframes myAnimation {
+  0% {
+    background-color: #00A58C;
+    color: white;
+  }
+  50% {
+    background-color: white;
+    color: #00A58C;
+  }
+  100% {
+    background-color: #00A58C;
+    color: white;
+  }
+}
+
+.animate-class {
+  animation: myAnimation 1s;
+  animation-duration: 3s;
+  animation-delay: 3s;
+}
