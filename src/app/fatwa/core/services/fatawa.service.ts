@@ -35,10 +35,11 @@ export class FatawaService {
     const url = `${environment.baseUrl}/fatwa?cmd=fatwa&arno=${fatwaId}`;
     return this.http.get<ResponseVM>(url).pipe(retry(3));
   }
-  getFatwaFreeSearch(model:any,start:number,count:number,ver:number=1):Observable<ResponseVM>{
+  getFatwaFreeSearch(model:any,start:number,count:number):Observable<ResponseVM>{
+    console.log("Model  ",model);
     // const url = `${environment.baseUrl}/fatwa?cmd=search&ver=${ver}&title=${model.title}&ques=${model.ques}&ans=${model.ans}&syn1=${model.syn1}&syn2=${model.syn2}&syn3=${model.syn3}&flt=${model.flt}&start=${start}&count=${count}`;
     //https://salmajed.taiba-soft.com/api/fatwa?cmd=search&count=10
-    const url = `${environment.baseUrl}/fatwa?cmd=search&ver=${ver}&title=${model.title}&ques=${model.ques}&ans=${model.ans}&syn1=${model.syn1}&syn2=${model.syn2}&syn3=${model.syn3}&flt=${model.flt}&start=${start}&count=${count}`;
+    const url = `${environment.baseUrl}/fatwa?cmd=search&title=${model.title}&ques=${model.ques}&ans=${model.ans}&syn1=${model.syn1}&syn2=${model.syn2}&syn3=${model.syn3}&flt=${model.flt}&start=${start}&count=${count}`;
     return this.http.get<ResponseVM>(url).pipe(retry(3));
   }
 

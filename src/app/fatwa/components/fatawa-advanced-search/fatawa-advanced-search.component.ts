@@ -13,7 +13,7 @@ import { MatDialog } from '@angular/material/dialog';
 export class FatawaAdvancedSearchComponent implements AfterViewInit, OnInit {
   result :any[]= [];
   searchModel:any = {
-      flt: "",
+      flt: "or",
       title: "",
       ques: "",
       ans: "",
@@ -67,13 +67,13 @@ export class FatawaAdvancedSearchComponent implements AfterViewInit, OnInit {
     this.checkbox3 = false;
   }
   getFilterSign(){
-    let sign = "";
+    let sign = "or";
     if(this.checkbox1 == true){
       sign = "or";
     }
     else if (this.checkbox2 == true){
       sign = "and";
-    }else{
+    }else if (this.checkbox3 == true){
       sign = "";
     }
     return sign;
@@ -114,20 +114,16 @@ export class FatawaAdvancedSearchComponent implements AfterViewInit, OnInit {
   }
 }
 navigateToRouteWithData() {
-  // const data = this.detailsData;
   const data = this.searchModel;
   const dataString = encodeURIComponent(JSON.stringify(data));
   const url = `/fatawa/related-questions-by-free-search/${dataString}`;
-  this.router.navigateByUrl(url);
+  this.router.navigate([url]);
 }
 navigateToRouteWithDetails() {
   const data = this.detailsData;
   const dataString = encodeURIComponent(JSON.stringify(data));
   const url = `/fatawa/details/${dataString}`;
-  this.router.navigateByUrl(url);
-  // const dataString = encodeURIComponent(JSON.stringify(data));
-  // const url = `/fatawa/related-questions-by-free-search/${dataString}`;
-  // this.router.navigateByUrl(url);
+  this.router.navigate([url]);
 }
 openNotFoundDialog() {
   const dialogRef = this.dialog.open(PopUpCardComponent, {
@@ -141,12 +137,11 @@ openNotFoundDialog() {
       label:'أعد البحث',
       submit:()=>{
         const url = `/fatawa/search`;
-        this.router.navigateByUrl(url);
+        this.router.navigate([url]);
       }
     }
   });
   dialogRef.afterClosed().subscribe(result => {
-    //
   });
 }
 }

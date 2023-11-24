@@ -12,7 +12,7 @@ export class ProjectDetailsComponent {
       subTitle1:'نبذة عن المشروع :',
       subTitle2:'أهداف المشروع:',
       details:'تفاصيل المشروع',
-      duration:'مدة المشروع',
+      duration:'مدة المشروع (بالشهر)',
       date:'تاريخ إطلاق المشروع',
       author:'مؤلف المشروع',
       share:'مشاركة المشروع',
