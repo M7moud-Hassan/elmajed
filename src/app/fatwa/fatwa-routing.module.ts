@@ -10,6 +10,7 @@ import { RelatedQuestionsComponent } from './components/related-questions/relate
 const routes: Routes = [
   {path:'',component:FatawaComponent},
   {path:'search',component:FatawaAdvancedSearchComponent},
+  {path:'search/:id',component:FatawaAdvancedSearchComponent},
   {path:'send-question',component:SendQuestionComponent},
   {path:'search-result',component:FatawaSearchResultComponent},
   {path:'details/:data',component:FatwaDetailsComponent},

@@ -1,7 +1,7 @@
 import { trigger, state, style, animate, transition } from '@angular/animations';
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { FatawaService } from 'src/app/fatwa/core/services/fatawa.service';
-import { ResponseVM } from 'src/app/shared/core/models/responseVM';
 
 @Component({
   selector: 'app-fatawa-section',
@@ -16,19 +16,29 @@ import { ResponseVM } from 'src/app/shared/core/models/responseVM';
         'max-height': '0',
       })),
       transition('closed <=> open', animate('200ms ease-in-out'))
+    ]),
+    trigger('colorAnimation', [
+      state('black', style({ color: 'black' })),
+      state('color', style({ color: 'red' })),
+      transition('black <=> color', animate('1s')),
     ])
   ]
 })
 export class FatawaSectionComponent implements OnInit {
-
-  
+  targetId:number = 0;
+  targetIndex:number = 0;
   items: number[] = [1, 2, 3, 4, 5];
   divStates: string[] = [];
   categories:any[]=[];
-  constructor(private fatwaService:FatawaService){ }
+  constructor(private fatwaService:FatawaService,private activatedRoute:ActivatedRoute,private renderer: Renderer2){ }
 
   ngOnInit(): void {
     this.getFatawyCategories();
+    this.activatedRoute.paramMap.subscribe((param)=>{
+      if(param.has("id")){
+        this.targetId = Number(param.get("id"));
+      }
+    });
   }
   
   toggleDiv(index: number) {
@@ -42,10 +52,25 @@ export class FatawaSectionComponent implements OnInit {
           console.log(res);
           this.categories=res.data.data;
           this.categories.forEach(() => this.divStates.push('closed'));
+          if(this.targetId != 0){
+            this.targetIndex = this.categories.findIndex((x:any) => x.id ==this.targetId );
+            this.divStates[this.targetIndex] = 'open';
+            this.scrollToItem(this.targetId);
+          }
         }
       },
       error:(error)=>{
       }
     })
   }
+  @ViewChild('listContainer', { static: false, read: ElementRef }) listContainer: any;
+
+
+  scrollToItem(itemId: any) {
+    const element = this.listContainer.nativeElement.querySelector(`#${itemId}`);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
 }

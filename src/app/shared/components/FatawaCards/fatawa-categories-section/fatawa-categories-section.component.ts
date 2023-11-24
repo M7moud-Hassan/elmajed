@@ -34,7 +34,7 @@ export class FatawaCategoriesSectionComponent implements OnInit {
           if(data.length > 0){
             this.router.navigate([`/fatawa/related-questions/${id}`]);
           }else{
-            this.router.navigate([`/fatawa/search`]);
+            this.router.navigate([`/fatawa/search/${id}`]);
           }
           // alert(data.length);
           // if(data != null)
