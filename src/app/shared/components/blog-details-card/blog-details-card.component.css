@@ -8,7 +8,7 @@
 .blog-image{
     height: 315px;
     width: 100%;
-    background-position: center;
+    background-position: top;
     background-repeat: no-repeat;
     background-size: contain;
 }

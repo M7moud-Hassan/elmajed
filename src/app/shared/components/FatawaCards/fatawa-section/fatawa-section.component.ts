@@ -1,5 +1,5 @@
 import { trigger, state, style, animate, transition } from '@angular/animations';
-import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, QueryList, Renderer2, ViewChild, ViewChildren ,AfterViewInit, AfterViewChecked} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FatawaService } from 'src/app/fatwa/core/services/fatawa.service';
 
@@ -19,7 +19,7 @@ import { FatawaService } from 'src/app/fatwa/core/services/fatawa.service';
     ]),
   ]
 })
-export class FatawaSectionComponent implements OnInit {
+export class FatawaSectionComponent implements OnInit, AfterViewChecked {
   targetId:number = 0;
   targetIndex:number = 0;
   divStates: string[] = [];
@@ -60,13 +60,24 @@ export class FatawaSectionComponent implements OnInit {
   }
   @ViewChild('listContainer', { static: false, read: ElementRef }) listContainer: any;
 
-
   scrollToItem(itemId: any) {
-    const element = this.listContainer.nativeElement.querySelector(`#item${itemId}`);
+    const element = this.listContainer.nativeElement.querySelector(`item-${itemId}`);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-  
+      element.renderer.scrollIntoView({ behavior: 'smooth' });
+      console.log("element : ",element);
     }
+  }
+  @ViewChildren('itemRef') itemRefs: QueryList<ElementRef> = new QueryList();
+
+  ngAfterViewChecked() {
+    this.itemRefs.forEach((itemRef: ElementRef) => {
+      const itemElement = itemRef.nativeElement;
+      // alert(itemElement.id);
+      if(`${itemElement.id}` == `item-${this.targetId}`){
+        itemRef.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+      }
+      console.log(itemElement.textContent);
+    });
   }
 
 }
