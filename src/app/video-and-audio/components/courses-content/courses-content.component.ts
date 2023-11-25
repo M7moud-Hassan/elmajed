@@ -12,6 +12,7 @@ import { PaginationVM } from 'src/app/shared/core/models/pagination-vm';
 export class CoursesContentComponent implements OnInit {
   id:any;
   archives:any[] = [];
+  text=''
   pageNumber:number = 1;
   PageSize:number = 1000;
   total:number = 0;
@@ -35,14 +36,24 @@ export class CoursesContentComponent implements OnInit {
     this.getData(this.id)
   }
   @ViewChild('dialog', { static: true }) dialog: DialogVideoImageComponent | undefined;
-  play(id_video:any){
-    this.dialog!.openVideo('https://www.youtube.com/embed/'+id_video)
+  play(id_video:any){ 
+    this.dialog!.openVideo('https://www.youtube.com/embed/'+id_video.split('/')[id_video.split('/').length-1])
   }
 
   getData(id:any){
     this.service.getDetails(id).subscribe(res=>{
       this.item=res.data.item;
       this.archives = this.item.archives;
+      if(this.item.category.title=='در وس'){
+        this.text='درس'
+      }else if(this.item.category.title=='محاضرات')
+      {
+        this.text='محاضرة'
+      }else{
+        this.text='دورة'
+      }
+      console.log(this.item);
+      
       this.onPageNumberClicked(1); 
     })
   }

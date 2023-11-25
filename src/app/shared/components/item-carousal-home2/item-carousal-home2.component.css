@@ -30,6 +30,8 @@ font-size: 14px;
 font-style: normal;
 font-weight: 700;
 line-height: 24px;
+text-align: justify;
+direction: rtl;
 }
 .bg-bg{
 background-color: rgba(0, 0, 0, .2)

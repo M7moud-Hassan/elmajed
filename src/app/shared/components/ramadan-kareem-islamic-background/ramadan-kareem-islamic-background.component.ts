@@ -7,7 +7,7 @@ import { HomeService } from 'src/app/home/core/services/home.service';
   styleUrls: ['./ramadan-kareem-islamic-background.component.css']
 })
 export class RamadanKareemIslamicBackgroundComponent implements OnInit,AfterViewInit  {
-  height=window.innerHeight;
+  height=window.innerHeight/1.5;
   width=window.innerWidth/2;
   show:boolean=false
   image=""

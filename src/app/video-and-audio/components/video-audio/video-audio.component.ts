@@ -52,11 +52,11 @@ export class VideoAudioComponent implements OnInit,AfterViewInit{
     this.myForm.get('type2').setValue(false);
   }
   getData() {
-    this.service.getCourses(1, 1000).subscribe(res => {
+    this.service.getLessons(1, 1000).subscribe(res => {
       const items1 = res.data.items;
-      this.service.getLessons(1, 1000).subscribe(res2 => {
+      this.service.getCourses(1, 1000).subscribe(res2 => {
         const items2 = res2.data.items;
-        console.log(res2.data.items);
+        // console.log(res2.data.items);
         
         
         this.items = this.interleaveArrays(items1, items2);

@@ -18,11 +18,11 @@
         </div>
        
         <div  id="slick-carousel-3" style="position: relative; bottom: -70px;" dir="rtl">
-                <app-item-section *ngFor="let item of lectures" [item]="item" (click)="OnItemClick(item.slug)" class="asd0" style="cursor: pointer;"></app-item-section>
+                <app-item-section *ngFor="let item of lessons " [item]="item" (click)="OnItemClick(item.slug)" class="asd0" style="cursor: pointer;"></app-item-section>
            
-                <app-item-section *ngFor="let item of courses" [item]="item" (click)="OnItemClick(item.slug)" class="asd1" style="cursor: pointer;"></app-item-section>
+                <app-item-section *ngFor="let item of lectures " [item]="item" (click)="OnItemClick(item.slug)" class="asd1" style="cursor: pointer;"></app-item-section>
 
-                <app-item-section *ngFor="let item of lessons" [item]="item" (click)="OnItemClick(item.slug)" class="asd2" style="cursor: pointer;"></app-item-section>
+                <app-item-section *ngFor="let item of courses" [item]="item" (click)="OnItemClick(item.slug)" class="asd2" style="cursor: pointer;"></app-item-section>
         </div>
         <!-- <div  id="slick-carousel-32" style="position: relative; bottom: -70px;">
                
