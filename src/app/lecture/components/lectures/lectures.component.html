@@ -1,4 +1,4 @@
 <span class="mt-4"></span>
-<p class="po">دروس ودورات <span class="po_h">({{items.length}} درس ودورة)</span></p>
+<p class="po">المحاضرات <span class="po_h">({{items.length}} محاضرة)</span></p>
 <app-audio-card *ngFor="let item of items" [item]="item" (click)="select(item.slug)" style="cursor: pointer;"></app-audio-card>
 <app-pagination></app-pagination>
