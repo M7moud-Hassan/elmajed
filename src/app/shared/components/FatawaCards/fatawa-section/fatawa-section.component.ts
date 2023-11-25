@@ -25,13 +25,22 @@ export class FatawaSectionComponent implements OnInit, AfterViewChecked {
   divStates: string[] = [];
   categories:any[]=[];
   constructor(private fatwaService:FatawaService,private activatedRoute:ActivatedRoute,private renderer:Renderer2){ }
-
+  @ViewChildren('itemRef') itemRefs: QueryList<ElementRef> = new QueryList();
   ngOnInit(): void {
     this.getFatawyCategories();
     this.activatedRoute.paramMap.subscribe((param)=>{
       if(param.has("id")){
         this.targetId = Number(param.get("id"));
       }
+    });
+  }
+  ngAfterViewChecked() {
+    this.itemRefs.forEach((itemRef: ElementRef) => {
+      const itemElement = itemRef.nativeElement;
+      if(`${itemElement.id}` == `item-${this.targetId}`){
+        itemRef.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+      }
+      console.log(itemElement.textContent);
     });
   }
   
@@ -50,7 +59,6 @@ export class FatawaSectionComponent implements OnInit, AfterViewChecked {
           if(this.targetId != 0){
             this.targetIndex = this.categories.findIndex((x:any) => x.id ==this.targetId );
             this.divStates[this.targetIndex] = 'open';
-            this.scrollToItem(this.targetId);
           }
         }
       },
@@ -58,26 +66,6 @@ export class FatawaSectionComponent implements OnInit, AfterViewChecked {
       }
     })
   }
-  @ViewChild('listContainer', { static: false, read: ElementRef }) listContainer: any;
 
-  scrollToItem(itemId: any) {
-    const element = this.listContainer.nativeElement.querySelector(`item-${itemId}`);
-    if (element) {
-      element.renderer.scrollIntoView({ behavior: 'smooth' });
-      console.log("element : ",element);
-    }
-  }
-  @ViewChildren('itemRef') itemRefs: QueryList<ElementRef> = new QueryList();
-
-  ngAfterViewChecked() {
-    this.itemRefs.forEach((itemRef: ElementRef) => {
-      const itemElement = itemRef.nativeElement;
-      // alert(itemElement.id);
-      if(`${itemElement.id}` == `item-${this.targetId}`){
-        itemRef.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
-      }
-      console.log(itemElement.textContent);
-    });
-  }
 
 }
