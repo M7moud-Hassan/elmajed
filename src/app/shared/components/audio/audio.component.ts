@@ -1,14 +1,15 @@
 import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { AudioService } from 'src/app/video-and-audio/core/services/audio.service';
-
 @Component({
   selector: 'app-audio',
   templateUrl: './audio.component.html',
   styleUrls: ['./audio.component.css']
 })
+
 export class AudioComponent {
   @Input() item:any
   play=true
+  @Input() text='';
   audioDuration: number=0;
   @ViewChild('audioPlayer') audioPlayer: ElementRef | undefined;
 
@@ -18,8 +19,14 @@ export class AudioComponent {
   }
 
   getAudioDuration() {
+   
     if (this.audioPlayer!.nativeElement.duration) {
-      this.audioDuration = this.audioPlayer!.nativeElement.duration;
+      this.audioDuration = new Date(1970, 0, 1).setSeconds(this.audioPlayer!.nativeElement.duration);
+      console.log(this.audioDuration );
+      
+    }else{
+      console.log("error");
+      
     }
   }
 

@@ -20,13 +20,15 @@ font-family: Almarai;
 font-size: 20px;
 font-style: normal;
 font-weight: 300;
+text-align: justify;
+direction: rtl;
 line-height: 34px; /* 170% */
 }
 .font-ul{
     color: #1A201D;
     text-align: right;
     font-family: Almarai;
-    font-size: 20px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 300;
     line-height: 34px; /* 170% */

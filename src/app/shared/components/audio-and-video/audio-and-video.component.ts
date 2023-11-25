@@ -13,6 +13,7 @@ export class AudioAndVideoComponent implements AfterViewInit,OnInit {
   courses:any[]=[]
   lectures:any[]=[]
   lessons:any[]=[]
+
   index=0
   ngOnInit(): void {
     this.service.getCourses(1,10).subscribe(res=>{
@@ -46,6 +47,7 @@ export class AudioAndVideoComponent implements AfterViewInit,OnInit {
         slidesToScroll: 1,
         centerPadding:'0',
         rtl:true,
+        arrows:false,
         responsive: [
           {
             breakpoint: 1024,
@@ -59,8 +61,8 @@ export class AudioAndVideoComponent implements AfterViewInit,OnInit {
           {
             breakpoint: 600,
             settings: {
-              slidesToShow: 2,
-              slidesToScroll: 2
+              slidesToShow: 1,
+              slidesToScroll: 1
             }
           },
           {
