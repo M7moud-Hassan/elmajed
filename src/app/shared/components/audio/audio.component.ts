@@ -10,7 +10,7 @@ export class AudioComponent {
   @Input() item:any
   play=true
   @Input() text='';
-  audioDuration: number=0;
+  audioDuration: string='';
   @ViewChild('audioPlayer') audioPlayer: ElementRef | undefined;
 
   constructor(private audioService: AudioService) {
@@ -19,17 +19,30 @@ export class AudioComponent {
   }
 
   getAudioDuration() {
-   
+    
     if (this.audioPlayer!.nativeElement.duration) {
-      this.audioDuration = new Date(1970, 0, 1).setSeconds(this.audioPlayer!.nativeElement.duration);
-      console.log(this.audioDuration );
+      console.log(this.audioPlayer!.nativeElement.duration);
+      
+      var durations =this.audioPlayer!.nativeElement.duration;
+      const hours: number = Math.floor(durations / 3600);
+    const minutes: number = Math.floor((durations % 3600) / 60);
+    const remainingSeconds: number = durations % 60;
+
+    const formattedHours: string = this.padNumber(hours);
+    const formattedMinutes: string = this.padNumber(minutes);
+    const formattedSeconds: string = Math.floor(Number(this.padNumber(remainingSeconds))).toString();
+    this.audioDuration= `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
+
+      // console.log(this.audioDuration );
       
     }else{
       console.log("error");
       
     }
   }
-
+  private padNumber(num: number): string {
+    return num < 10 ? `0${num}` : num.toString();
+  }
   playPause(audio: HTMLAudioElement) {
     this.play=!this.play
     if (audio.paused) {
