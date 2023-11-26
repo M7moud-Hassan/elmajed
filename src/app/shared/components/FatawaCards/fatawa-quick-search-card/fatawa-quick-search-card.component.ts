@@ -78,7 +78,7 @@ export class FatawaQuickSearchCardComponent  {
     }
     this.searchModel = {
       flt: "",
-      title: title,
+      title: title.replaceAll(" ","_"),
       ques: "",
       ans: "",
       syn1: "",
