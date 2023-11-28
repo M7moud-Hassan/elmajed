@@ -39,6 +39,7 @@ export class FatawaService {
     console.log("Model  ",model);
     // const url = `${environment.baseUrl}/fatwa?cmd=search&ver=${ver}&title=${model.title}&ques=${model.ques}&ans=${model.ans}&syn1=${model.syn1}&syn2=${model.syn2}&syn3=${model.syn3}&flt=${model.flt}&start=${start}&count=${count}`;
     //https://salmajed.taiba-soft.com/api/fatwa?cmd=search&count=10
+    //`https://salmajed.taiba-soft.com/api/fatwa?cmd=search&title=${model.title}&ques=${model.ques}&ans=${model.ans}&syn1=${model.syn1}&syn2=${model.syn2}&syn3=${model.syn3}&flt=${model.flt}&start=${start}&count=${count}`
     const url = `${environment.baseUrl}/fatwa?cmd=search&title=${model.title}&ques=${model.ques}&ans=${model.ans}&syn1=${model.syn1}&syn2=${model.syn2}&syn3=${model.syn3}&flt=${model.flt}&start=${start}&count=${count}`;
     return this.http.get<ResponseVM>(url).pipe(retry(3));
   }
@@ -48,9 +49,11 @@ export class FatawaService {
     let url = `${environment.baseUrl}/fatwa?cmd=bycat&ver=${ver}&cat=${catId}&start=${start}&count=${count}`;
     return this.http.get<ResponseVM>(url).pipe(retry(3));
   }
-  GETListFatwaByKeyword(kword:number,start:number=0,count:number=20,ver:number=1):Observable<ResponseVM>{
+  GETListFatwaByKeyword(kword:any,start:number=0,count:number=20,ver:number=1):Observable<ResponseVM>{
     //https://salmajed.taiba-soft.com/api/fatwa?cmd=bysyn&kword=2512
+
     let url = `${environment.baseUrl}/fatwa?cmd=bysyn&ver=${ver}&kword=${kword}&start=${start}&count=${count}`;
+    // const url = `${environment.baseUrl}/fatwa?cmd=search&title=${kword.replace(" ","_")}&start=${start}&count=${count}`;
     return this.http.get<ResponseVM>(url).pipe(retry(3));
   }
 /*

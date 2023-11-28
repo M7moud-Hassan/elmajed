@@ -117,6 +117,15 @@ export class RelatedQuestionsComponent implements OnInit {
     });
   }
   getAllItemsByFreeSearch(){
+    this.searchModel = {
+      flt: this.searchModel.flt.replaceAll(" ","_"),
+      title: this.searchModel.title.replaceAll(" ","_"),
+      ques: this.searchModel.ques.replaceAll(" ","_"),
+      ans: this.searchModel.ans.replaceAll(" ","_"),
+      syn1: this.searchModel.syn1.replaceAll(" ","_"),
+      syn2: this.searchModel.syn2.replaceAll(" ","_"),
+      syn3: this.searchModel.syn3.replaceAll(" ","_")
+    };
     this.service.getFatwaFreeSearch(this.searchModel,this.pageNumber,this.PageSize).subscribe({
       next:(response:any)=>{
         if(response.status == 200){
