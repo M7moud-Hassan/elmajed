@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { HomeService } from 'src/app/home/core/services/home.service';
 declare var $: any;
@@ -10,6 +10,7 @@ declare var $: any;
 export class AudioAndVideoComponent implements AfterViewInit,OnInit {
   constructor(private service:HomeService,private router:Router) {
   }
+  @ViewChild('slickCarousel', { static: true }) slickCarousel: ElementRef | undefined;
   courses:any[]=[]
   lectures:any[]=[]
   lessons:any[]=[]
@@ -40,14 +41,18 @@ export class AudioAndVideoComponent implements AfterViewInit,OnInit {
    
   }
   setUpCarousal(){
-    $('#slick-carousel-3').slick(
+    $(this.slickCarousel!.nativeElement).slick(
       {
         infinite: false,
         slidesToShow: 3,
         slidesToScroll: 1,
         centerPadding:'0',
         rtl:true,
-        arrows:false,
+        nextArrow:document.getElementsByClassName('outerNext_10'),
+        // nextArrow:document.getElementById('next'),
+        // prevArrow:document.getElementById('prev'),
+        prevArrow:document.getElementsByClassName('outerPrev_10'),
+        // arrows:false,
         responsive: [
           {
             breakpoint: 1024,
@@ -78,7 +83,21 @@ export class AudioAndVideoComponent implements AfterViewInit,OnInit {
         ]
       }
     );
+    const length1=this.lessons.length;
+    $(this.slickCarousel!.nativeElement).on('afterChange', (event: any, slick: any, currentSlide: any) => {
+      if (currentSlide == this.lessons.length - 2) {
+        $(this.slickCarousel!.nativeElement).slick('slickSetOption', 'autoplay', false, true);
+        $(this.slickCarousel!.nativeElement).slick('slickGoTo', 1);
+      } else if (currentSlide == (this.lessons.length + this.lectures.length) - 2) {
+        $(this.slickCarousel!.nativeElement).slick('slickSetOption', 'autoplay', false, true);
+        $(this.slickCarousel!.nativeElement).slick('slickGoTo', 1);
+      } else if (currentSlide == (this.lessons.length + this.lectures.length + this.courses.length) - 2) {
+        $(this.slickCarousel!.nativeElement).slick('slickSetOption', 'autoplay', false, true);
+        $(this.slickCarousel!.nativeElement).slick('slickGoTo', 1);
+      }
+    });
   }
+
   onSelect(id:any){
     this.index=id
    if(id==0){
