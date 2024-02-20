@@ -14,12 +14,10 @@
         </div>
     </div>
     <div class="slick-carousel-2" *ngIf="!isMobile">
-       
        <app-item-carousal-home2  *ngFor="let it of items" [item]="it"  (click)="clickItem(it)" [width]="it.width" [show]="it.show" style="cursor: pointer;"></app-item-carousal-home2>
-   
-    
+
     </div>
     <div *ngIf="isMobile" class="slick-carousel-2" dir="ltr">
-        <app-item-carousal-home2  *ngFor="let it of items"  [item]="it"  [show]="true"></app-item-carousal-home2>
+        <app-item-carousal-home  *ngFor="let it of items"  [item]="it"  [show]="true"></app-item-carousal-home>
     </div>
 </div>

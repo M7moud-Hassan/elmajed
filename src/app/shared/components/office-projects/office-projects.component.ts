@@ -16,7 +16,7 @@ export class OfficeProjectsComponent implements AfterViewInit {
  
   getData(){
     this.service.getProjects(1,10).subscribe(res=>{
-      this.items=res.data.items
+      this.items=res.data.items;
       setTimeout(()=>{
         this.setUpCarousal()
       },100)

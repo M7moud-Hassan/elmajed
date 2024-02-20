@@ -4,9 +4,12 @@ import { MainLayoutComponent } from './layout/main-layout/main-layout.component'
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { AppLoaderComponent } from './shared/components/app-loader/app-loader.component';
 import { TvPageComponent } from './shared/components/tv-page/tv-page.component';
+import { HomeComponent } from './home/components/home/home.component';
+import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
   {path:'loader',component:AppLoaderComponent},
+  {path:'',component:HomeComponent},
   {path:'',loadChildren:()=>import('./home/home.module').then(m=>m.HomeModule)},
   {path:'',component:MainLayoutComponent,children:[
     {path:'',component:NavbarComponent},
@@ -21,6 +24,7 @@ const routes: Routes = [
     {path:'al-mawjaz-al-fiqhi',loadChildren:()=>import('./al-mawjaz-al-fiqhi/al-mawjaz-al-fiqhi.module').then(m=>m.AlMawjazAlFiqhiModule)},
     {path:'qatuf',loadChildren:()=>import('./qatuf/qatuf.module').then(m=>m.QatufModule)},
     {path:'tv-page',component:TvPageComponent},
+    // {path:'fatwa',component:AdminComponent},
   ]},
 ];
 

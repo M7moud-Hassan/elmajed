@@ -21,7 +21,7 @@ export interface VideoDuration {
   providedIn: 'root'
 })
 export class HomeService {
-  private apiKey = 'AIzaSyCLeym78l6J2CaKRfmTjFQZyhm5Jvtsvoo';
+  private apiKey = 'AIzaSyDOYsH2W1-N-RDHSbONuqdi0WoXt8FKy48';
   constructor(private http:HttpClient,private location:Location) { }
 
   getDetails(slug:string):Observable<IResponseModel>{
