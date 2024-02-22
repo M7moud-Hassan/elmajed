@@ -6,9 +6,9 @@
     <span class="circle p-3 col-1 d-flex justify-content-center align-items-center">
         <img width="32" height="32" [src]="play?'assets/images/play.svg':'assets/images/pause.svg'" alt="" (click)="playPause(audioPlayer)" style="cursor: pointer;">
     </span>
-    <span class="p-text-audio col-8">
+    <a class="p-text-audio col-8 text-decoration-none" [href]="['video-audio/courses-content/'+item.slug]">
       {{text}}: ({{item.title}})
-    </span>
+    </a>
     <div class="col-3 text-end">
         <span class="p-hint">مدة المادة :</span>
         <span class="pp-hint">{{ audioDuration}}</span>
