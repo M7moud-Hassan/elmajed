@@ -5,6 +5,8 @@
 .answer{
     padding: 25px;
     text-align: justify;
+    font-size: 16px;
+    line-height: 32px;
 }
 .label-card-answer{
     padding: 10px 25px;

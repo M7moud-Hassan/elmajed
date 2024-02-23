@@ -2,6 +2,7 @@ import { AfterViewInit, Component, HostListener, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HomeService } from 'src/app/home/core/services/home.service';
+import { PageHeaderVM } from 'src/app/shared/core/models/page-header-vm';
 import { PaginationVM } from 'src/app/shared/core/models/pagination-vm';
 
 @Component({
@@ -11,6 +12,7 @@ import { PaginationVM } from 'src/app/shared/core/models/pagination-vm';
 })
 export class VideoAudioComponent implements OnInit,AfterViewInit{
   myForm: any;
+  pageHeaderObj:PageHeaderVM = {} as PageHeaderVM; 
   constructor(private service:HomeService,private fb: FormBuilder,private router: Router) {
   }
   ngAfterViewInit(): void {
@@ -161,6 +163,12 @@ export class VideoAudioComponent implements OnInit,AfterViewInit{
       per_page: pageSize,
       current_page: currentPage,
       total_pages: pageCount
+    };
+    this.pageHeaderObj = {
+      title:'صوتيات ومرئيات',
+      hasSubTitle : true,
+      subtitle:'دروس و دورات',
+      total:this.selectedItems.length
     };
   }
 
