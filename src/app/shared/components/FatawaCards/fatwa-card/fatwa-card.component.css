@@ -51,7 +51,7 @@
 }
 .fatwa-question{
     color: #1A201D;
-    font-weight: 700;
+    /* font-weight: 700; */
     font-size: 16px;
     line-height: 32px;
     margin-top: 15px;

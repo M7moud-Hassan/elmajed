@@ -46,3 +46,14 @@ transform: rotate(-1deg);
 flex-shrink: 0; 
 } */
 
+/* .fatwa-name-line{
+    border: 1px solid #00a88e;
+    padding: 10px 20px;
+    width: 350px;
+}
+@media(0px <= width <= 676px){
+    .fatwa-name-line{
+        display: block;
+        width: 120px;
+    }
+} */

@@ -33,3 +33,11 @@ line-height: normal;
     border-radius: 25px;
     background: #00A58C;
 }
+.head{
+    color: white;
+}
+@media(0px <= width <= 676px){
+    .text-btn{
+        font-size: 18px;
+    }
+}

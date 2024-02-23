@@ -88,19 +88,20 @@ export class FatawaAdvancedSearchComponent implements AfterViewInit, OnInit {
   detailsData:any;
   getFatawySearch(key:any){
     key = parseInt(key);
-    this.service.getFatwaDetails(key).subscribe({
-      next : (res:any)=>{
-        if(res.status==200 && res.success==true){
-          if(res.data.data[0].id != null){
-            console.log(res.data.data[0]);
-            this.detailsData=res.data.data[0];
-            this.navigateToRouteWithDetails();
-          }else{
-            this.openNotFoundDialog();
-          }
-        }
-      }
-    })
+    this.router.navigate(['/fatawa/getFatwaById/',key]);
+    // this.service.getFatwaDetails(key).subscribe({
+    //   next : (res:any)=>{
+    //     if(res.status==200 && res.success==true){
+    //       if(res.data.data[0].id != null){
+    //         console.log(res.data.data[0]);
+    //         this.detailsData=res.data.data[0];
+    //         this.navigateToRouteWithDetails();
+    //       }else{
+    //         this.openNotFoundDialog();
+    //       }
+    //     }
+    //   }
+    // })
   }
   isModelHasData():boolean{
   return this.searchModel.title!="" || this.searchModel.ques!="" || this.searchModel.ans!="" ||

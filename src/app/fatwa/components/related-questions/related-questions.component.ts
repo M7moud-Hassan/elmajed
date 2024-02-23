@@ -171,18 +171,19 @@ export class RelatedQuestionsComponent implements OnInit {
   }
 
   getFatawaDetails(key:any){
-    this.service.getFatwaDetails(key).subscribe({
-      next : (res:any)=>{
-        if(res.status==200 && res.success==true){
-          if(res.data!.data[0].id != null){
-            console.log(res.data.data[0]);
-            this.detailsData=res.data.data[0];
-            this.navigateToRouteWithData();
-          }else{
-          }
-        }
-      }
-    })
+    this.router.navigate(['/fatawa/getFatwaById/',key]);
+    // this.service.getFatwaDetails(key).subscribe({
+    //   next : (res:any)=>{
+    //     if(res.status==200 && res.success==true){
+    //       if(res.data!.data[0].id != null){
+    //         console.log("Fatwa Details : === > ",res.data.data[0]);
+    //         this.detailsData=res.data.data[0];
+    //         this.navigateToRouteWithData();
+    //       }else{
+    //       }
+    //     }
+    //   }
+    // })
   }
   
   navigateToRouteWithData() {

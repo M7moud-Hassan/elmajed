@@ -104,4 +104,7 @@
         font-size: 18px;
         line-height: 32px;
     }
+    .card-description-image{
+        height: 320px;
+    }
 }

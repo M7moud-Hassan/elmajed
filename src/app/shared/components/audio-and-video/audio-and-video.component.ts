@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { HomeService } from 'src/app/home/core/services/home.service';
+import { PageHeaderVM } from '../../core/models/page-header-vm';
 declare var $: any;
 @Component({
   selector: 'app-audio-and-video',
@@ -25,7 +26,6 @@ export class AudioAndVideoComponent implements AfterViewInit,OnInit {
         this.service.getLessons(1,10).subscribe(res=>{
           this.lessons=res.data.items
           console.log(this.lessons);
-          
           setTimeout(()=>{
             this.setUpCarousal()
             this.onSelect(0)
