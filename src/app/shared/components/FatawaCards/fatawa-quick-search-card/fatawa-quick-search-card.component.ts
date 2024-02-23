@@ -48,21 +48,24 @@ export class FatawaQuickSearchCardComponent  {
   detailsData:any;
   getFatawySearch(key:any){
     key = parseInt(key);
-    this.service.getFatwaDetails(key).subscribe({
-      next : (res:any)=>{
-        if(res.status==200 && res.success==true){
-          if(res.data.data[0].id != null){
-            console.log(res.data.data[0]);
-            this.detailsData=res.data.data[0];
-            this.navigateToRouteWithData();
-            this.clearFatwaNameValue();
-            this.clearInputValue();
-          }else{
-            this.openNotFoundDialog();
-          }
-        }
-      }
-    })
+    this.router.navigate(['/fatawa/getFatwaById/',key]);
+    this.clearFatwaNameValue();
+    this.clearInputValue();
+    // this.service.getFatwaDetails(key).subscribe({
+    //   next : (res:any)=>{
+    //     if(res.status==200 && res.success==true){
+    //       if(res.data.data[0].id != null){
+    //         console.log(res.data.data[0]);
+    //         this.detailsData=res.data.data[0];
+    //         this.navigateToRouteWithData();
+    //         this.clearFatwaNameValue();
+    //         this.clearInputValue();
+    //       }else{
+    //         this.openNotFoundDialog();
+    //       }
+    //     }
+    //   }
+    // })
   }
 
   navigateToRouteWithData() {

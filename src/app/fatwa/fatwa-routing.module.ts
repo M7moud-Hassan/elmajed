@@ -13,6 +13,7 @@ const routes: Routes = [
   {path:'search/:id',component:FatawaAdvancedSearchComponent},
   {path:'send-question',component:SendQuestionComponent},
   {path:'search-result',component:FatawaSearchResultComponent},
+  {path:'getFatwaById/:id',component:FatwaDetailsComponent},
   {path:'details/:data',component:FatwaDetailsComponent},
   {path:'related-questions/:id',component:RelatedQuestionsComponent},
   {path:'related-questions-keywords/:keyword',component:RelatedQuestionsComponent},
