@@ -68,3 +68,12 @@ font-style: normal;
 font-weight: 700;
 line-height: normal;
 }
+@media(0px<= width <=676px){
+    .header-card{
+        font-size: 20px;
+    }
+    .text-body{
+        font-size: 17px;
+        line-height: 24px;
+    }
+}

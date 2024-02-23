@@ -69,3 +69,8 @@
         height: 450px;
     }
 }
+.more-fatwa{
+    position: absolute;
+    left: 20px;
+    bottom: 10px;
+}

@@ -432,3 +432,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   font-size: 20px;
   line-height: 23px;
 }
+.head{
+  color: #171717;
+text-align: right;
+font-family: Almarai;
+font-size: 42px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}

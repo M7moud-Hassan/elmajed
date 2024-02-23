@@ -50,4 +50,13 @@
     .hamdi{
       height: 100vh !important;
     }
+    .head{
+  font-size: 25px !important;
+  font-weight: 700 !important;
+  }
+  .pp{
+    font-size: 20px !important;
+    text-align: center;
+    display: block;
+  }
 }
